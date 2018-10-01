@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>libcaca</Name>
+        <Homepage>http://caca.zoy.org/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>WTFPL-2</License>
+        <License>LGPLv2.1</License>
+        <License>GPLv2</License>
+        <IsA>library</IsA>
+        <Summary>A library that creates colored ASCII-art graphics</Summary>
+        <Description>libcaca is a graphics library that outputs text instead of pixels, so that it can work on older video cards or text terminals</Description>
+        <Archive sha1sum="ed138f3717648692113145b99a80511178548010" type="targz">https://fossies.org/linux/privat/libcaca-0.99.beta19.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>imlib2-devel</Dependency>
+            <Dependency>slang-devel</Dependency>
+            <Dependency>ncurses-devel</Dependency>
+            <Dependency>libX11-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>libcaca</Name>
+        <RuntimeDependencies>
+            <Dependency>imlib2</Dependency>
+            <Dependency>zlib</Dependency>
+            <Dependency>slang</Dependency>
+            <Dependency>ncurses</Dependency>
+            <Dependency>libX11</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="data">/usr/share/libcaca</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libcaca-devel</Name>
+        <Summary>Development files for libcaca</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">libcaca</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/caca-config</Path>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-08-03</Date>
+            <Version>0.99_beta19</Version>
+            <Comment>Rebuild for new toolchain.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-03-23</Date>
+            <Version>0.99_beta19</Version>
+            <Comment>Rebuild for new toolchain.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>0.99_beta19</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-03-23</Date>
+            <Version>0.99_beta19</Version>
+            <Comment>First release</Comment>
+            <Name>Kamil Atlı</Name>
+            <Email>suvarice@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

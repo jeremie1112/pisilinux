@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>reiserfsprogs</Name>
+        <Homepage>http://www.kernel.org/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>app:console</IsA>
+        <Summary>Tools to work with Reiserfs filesystems</Summary>
+        <Description>Contains tools designed to create, modify and check Reiserfs filesystems.</Description>
+        <!--<Archive sha1sum="bbeb832cbbd10701cc81a7a508308572095bf735" type="tarbz2">http://www.kernel.org/pub/linux/utils/fs/reiserfs/reiserfsprogs-3.6.21.tar.bz2</Archive>-->
+        <Archive sha1sum="c42b82d66c6379e3b60a556e0a9eea0101ecbb53" type="tarxz">https://www.kernel.org/pub/linux/kernel/people/jeffm/reiserfsprogs/v3.6.27/reiserfsprogs-3.6.27.tar.xz</Archive>
+        <BuildDependencies>
+            <Dependency>libutil-linux-devel</Dependency>
+            <Dependency>e2fsprogs-devel</Dependency>
+            <Dependency>acl-devel</Dependency>            
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>reiserfsprogs</Name>
+        <RuntimeDependencies>
+            <Dependency>e2fsprogs</Dependency>
+            <Dependency>libutil-linux</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/sbin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="6">
+            <Date>2018-08-19</Date>
+            <Version>3.6.27</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="5">
+            <Date>2017-03-05</Date>
+            <Version>3.6.27</Version>
+            <Comment>Version bump</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="4">
+            <Date>2017-03-05</Date>
+            <Version>3.6.25</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-01-28</Date>
+            <Version>3.6.25</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>3.6.24</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2014-12-13</Date>
+            <Version>3.6.24</Version>
+            <Comment>First release</Comment>
+            <Name>Yusuf Aydemir</Name>
+            <Email>yusuf.aydemir@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

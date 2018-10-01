@@ -1,0 +1,101 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>libgnome-keyring</Name>
+        <Homepage>http://live.gnome.org/GnomeKeyring</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>library</IsA>
+        <Summary>Compatibility library for accessing gnome-keyring3</Summary>
+        <Description>libgnome-keyring is a library that used by applications to integrate with the gnome-keyring system.</Description>
+        <Archive sha1sum="d94f68dfc790363dd508804f88c9c8954d572837" type="tarxz">http://ftp.gnome.org/pub/gnome/sources/gnome-keyring/3.20/gnome-keyring-3.20.1.tar.xz</Archive>
+        <BuildDependencies>
+          <Dependency>intltool</Dependency>
+          <Dependency>gcr-devel</Dependency>
+          <Dependency>glib2-devel</Dependency>
+          <Dependency>dbus-devel</Dependency>
+          <Dependency>libcap-ng-devel</Dependency>
+          <Dependency>libgcrypt-devel</Dependency>
+        </BuildDependencies>    
+    </Source>
+        
+        
+    <Package>
+        <Name>libgnome-keyring</Name>
+        <RuntimeDependencies>
+          <Dependency>libcap-ng</Dependency>  
+          <Dependency>libgcrypt</Dependency>
+          <Dependency>glib2</Dependency>
+          <Dependency>dbus</Dependency>
+          <Dependency>gcr</Dependency>  
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="config">/etc/xdg/autostart</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="data">/usr/share</Path>
+            <Path fileType="data">/usr/share/dbus-1</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="doc">/usr/share/vala</Path>
+            <Path fileType="doc">/usr/share/gir-1.0</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+        </Files>
+    </Package>
+
+    <!--Package>
+        <Name>libgnome-keyring-devel</Name>
+        <Summary>Development files for libgnome-keyring</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">libgnome-keyring</Dependency>
+            <Dependency>glib2-devel</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="library">/usr/lib/pkgconfig</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libgnome-keyring-docs</Name>
+        <IsA>data:doc</IsA>
+        <Summary>Referance documents for libgnome-keyring</Summary>
+        <Files>
+            <Path fileType="data">/usr/share/gtk-doc</Path>
+        </Files>
+    </Package-->
+
+    <History>
+        <Update release="4">
+            <Date>2018-08-14</Date>
+            <Version>3.20.1</Version>
+            <Comment>Version Bump.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-03-02</Date>
+            <Version>3.12</Version>
+            <Comment>Rebuild for new toolchain.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>3.12</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2015-08-25</Date>
+            <Version>3.12</Version>
+            <Comment>First release</Comment>
+            <Name>Vedat Demir</Name>
+            <Email>vedat@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

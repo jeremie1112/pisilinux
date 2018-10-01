@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>gsoap</Name>
+        <Homepage>http://sourceforge.net/projects/gsoap2/</Homepage>
+        <Packager>
+            <Name>Osman Erkan</Name>
+            <Email>osman.erkan@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <Summary>Offers an XML language binding to ease the development of SOAP/XML Web services in C and C/C++</Summary>
+        <Description>The gSOAP toolkit is an extensive suite of portable C and C++ software to develop XML Web services with powerful type-safe XML data bindings.</Description>
+        <Archive sha1sum="770aa730692f747e9ec472486f17597afb33049a" type="zip">https://sourceforge.net/projects/gsoap2/files/gsoap-2.8/gsoap_2.8.69.zip</Archive>
+        <BuildDependencies>
+            <Dependency>zlib-devel</Dependency>
+            <Dependency>openssl-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch level="1">0001-no-xlocale.patch</Patch>
+	  <!--<Patch level="1">gsoap-libtool.patch</Patch> -->
+	  <!--<Patch level="1">gsoap-private-lm.patch</Patch> -->
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>gsoap</Name>
+        <RuntimeDependencies>
+            <Dependency>zlib</Dependency>
+            <Dependency>openssl</Dependency>
+            <Dependency>libgcc</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="data">/usr/share/gsoap</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>gsoap-devel</Name>
+        <Summary>Development files for gsoap</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">gsoap</Dependency>
+            <Dependency>zlib-devel</Dependency>
+            <Dependency>openssl-devel</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-08-09</Date>
+            <Version>2.8.69</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2018-02-11</Date>
+            <Version>2.8.61</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-03-19</Date>
+            <Version>2.8.44</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>2.8.22</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2015-08-12</Date>
+            <Version>2.8.22</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

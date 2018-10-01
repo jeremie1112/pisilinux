@@ -1,0 +1,101 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>isodumper</Name>
+        <Homepage>https://github.com/papoteur-mga/isodumper</Homepage>
+        <Packager>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>app:gui</IsA>
+        <Summary>A tool for writing ISO images on a USB stick. It's a fork of usb-imagewriter.</Summary>
+        <Description>A tool for writing ISO images on a USB stick. It's a fork of usb-imagewriter.</Description>
+        <Archive sha1sum="e8880ba8d9186615756359099e43d25fffa1724d" type="targz">http://gitweb.mageia.org/software/isodumper/snapshot/isodumper-0.48.tar.gz</Archive>
+        <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0644" target="isodumper.svg">isodumper.svg</AdditionalFile>
+            <AdditionalFile owner="root" permission="0644" target="isodumper.png">isodumper.png</AdditionalFile>
+            <AdditionalFile owner="root" permission="0644" target="share/isodumper/header.png">header.png</AdditionalFile>
+            <AdditionalFile owner="root" permission="0644" target="share/isodumper/header.svg">header.svg</AdditionalFile>
+            <AdditionalFile owner="root" permission="0644" target="share/applications/isodumper.desktop.in">isodumper.desktop.in</AdditionalFile>
+            <AdditionalFile owner="root" permission="0644" target="po/tr.po">tr.po</AdditionalFile>
+        </AdditionalFiles>
+        <BuildDependencies>
+            <Dependency>intltool</Dependency>
+            <Dependency>imagemagick-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+    
+    <Package>
+        <Name>isodumper</Name>
+        <RuntimeDependencies>
+            <Dependency>coreutils</Dependency>
+            <Dependency>pango</Dependency>
+            <Dependency>polkit</Dependency>
+            <Dependency>procps</Dependency>
+            <Dependency>imagemagick</Dependency>
+            <Dependency>python-gtk</Dependency>
+            <Dependency>python-cairo</Dependency>
+            <Dependency>python-pygobject</Dependency>
+            <Dependency>libglade</Dependency>
+            <Dependency>python</Dependency>
+            <Dependency>dbus-python</Dependency>
+            <Dependency>pyparted</Dependency>
+            <Dependency>udisks2</Dependency>
+            <Dependency>xterm</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="config">/etc</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="library">/usr/libexec</Path>
+            <Path fileType="data">/usr/share</Path>
+            <Path fileType="data">/usr/share/applications</Path>
+            <Path fileType="data">/usr/share/icons</Path>
+            <Path fileType="data">/usr/share/pixmaps</Path>
+            <Path fileType="data">/usr/share/isodumper</Path>
+            <Path fileType="data">/usr/share/polkit-1</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+    
+    <History>
+        <Update release="5">
+            <Date>2018-08-20</Date>
+            <Version>0.48</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="4">
+            <Date>2017-08-31</Date>
+            <Version>0.48</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2016-06-08</Date>
+            <Version>0.45</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-05-22</Date>
+            <Version>0.45</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-04-04</Date>
+            <Version>0.45</Version>
+            <Comment>First Release</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

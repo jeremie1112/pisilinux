@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>libass</Name>
+        <Homepage>http://code.google.com/p/libass/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>library</IsA>
+        <Summary>Subtitle rendering library</Summary>
+        <Description>libass is a portable subtitle rendering library for the ASS/SSA.</Description>
+        <Archive sha1sum="e7335c043445e6febaa6330fc38828b00c526cac" type="tarxz">https://github.com/libass/libass/releases/download/0.14.0/libass-0.14.0.tar.xz</Archive>
+        <BuildDependencies>
+            <Dependency versionFrom="2.12.1">fontconfig-devel</Dependency>
+            <Dependency versionFrom="2.7.1">freetype-devel</Dependency>
+            <Dependency versionFrom="0.19.7">fribidi-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>libass</Name>
+        <RuntimeDependencies>
+            <Dependency versionFrom="2.12.1">fontconfig</Dependency>
+            <Dependency versionFrom="2.7.1">freetype</Dependency>
+            <Dependency versionFrom="0.19.7">fribidi</Dependency>
+            <Dependency>harfbuzz</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc/libass</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libass-devel</Name>
+        <Summary>Development files for libass</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">libass</Dependency>
+            <Dependency versionFrom="2.12.1">fontconfig-devel</Dependency>
+            <Dependency versionFrom="2.7.1">freetype-devel</Dependency>
+            <Dependency versionFrom="0.19.7">fribidi-devel</Dependency>
+            <Dependency>harfbuzz-devel</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="3">
+            <Date>2018-08-03</Date>
+            <Version>0.14.0</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-02-15</Date>
+            <Version>0.13.6</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>0.13.1</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-01-06</Date>
+            <Version>0.13.1</Version>
+            <Comment>First release</Comment>
+            <Name>Stefan Gronewold</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

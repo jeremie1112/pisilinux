@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>python-udev</Name>
+        <Homepage>http://packages.python.org/pyudev</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>LGPLv2.1</License>
+        <IsA>library</IsA>
+        <Summary>Python bindings for libudev library</Summary>
+        <Description>These bindings enable using of udev library in Python programs.</Description>
+        <Archive sha1sum="58263b4358951d3a990bce7661e2e2ff30ca6cbe" type="targz">https://pypi.python.org/packages/bc/a2/31a07829acea8e70a28c247f43fa5d981229ae0f9edfeddedf52de00709b/pyudev-0.21.0.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>python-setuptools</Dependency>
+            <Dependency>eudev-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>python-udev</Name>
+        <RuntimeDependencies>
+            <!--Dependency>python-pygobject</Dependency-->
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <!--Package>
+        <Name>python-udev-qt</Name>
+        <Summary>Qt bindings for libudev library</Summary>
+        <Description>These bindings provide udev capability for Python programs where Qt is used.</Description>
+        <RuntimeDependencies>
+            <Dependency>python-udev</Dependency>
+            <Dependency>python-qt</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib/python2*/site-packages/pyudev/pyqt4.py</Path>
+        </Files>
+    </Package-->
+
+    <History>
+        <Update release="5">
+            <Date>2018-08-19</Date>
+            <Version>0.21.0</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="4">
+            <Date>2017-03-05</Date>
+            <Version>0.21.0</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-01-25</Date>
+            <Version>0.21.0</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>0.16.1</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-01-02</Date>
+            <Version>0.16.1</Version>
+            <Comment>First release</Comment>
+            <Name>Serdar Soytetir</Name>
+            <Email>kaptan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

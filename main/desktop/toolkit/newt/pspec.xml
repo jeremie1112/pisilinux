@@ -1,0 +1,89 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>newt</Name>
+        <Homepage>https://fedorahosted.org/newt/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>library</IsA>
+        <IsA>app:console</IsA>
+        <Summary>A windowing toolkit for text mode</Summary>
+        <Description>newt is a windowing toolkit for text mode, which provides many widgets and stackable windows.</Description>
+        <Archive sha1sum="aec1a633abe595eadb55e568b759e7188d2a6766" type="targz">https://releases.pagure.org/newt/newt-0.52.20.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>tcl-devel</Dependency>
+            <Dependency>slang-devel</Dependency>
+            <Dependency>popt-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>newt</Name>
+        <RuntimeDependencies>
+            <Dependency>tcl</Dependency>
+            <Dependency>slang</Dependency>
+            <Dependency>popt</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>newt-devel</Name>
+        <Summary>Development files for newt</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">newt</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="5">
+            <Date>2018-08-13</Date>
+            <Version>0.52.20</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="4">
+            <Date>2018-01-31</Date>
+            <Version>0.52.20</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-01-26</Date>
+            <Version>0.52.19</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>0.52.17</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2014-07-05</Date>
+            <Version>0.52.17</Version>
+            <Comment>First release</Comment>
+            <Name>Serdar Soytetir</Name>
+            <Email>kaptan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

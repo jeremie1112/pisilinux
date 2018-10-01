@@ -1,0 +1,109 @@
+<PISI>
+    <Source>
+        <Name>kirigami</Name>
+        <Homepage>https://quickgit.kde.org/?p=kirigami.git</Homepage>
+        <Packager>
+            <Name>Ali Algul</Name>
+            <Email>aligulle3801@gmail.com</Email>
+        </Packager>
+        <License>LGPL</License>
+        <Summary>A set of QML components for mobile/desktop convergent applications made by KDE</Summary>
+        <Description>A set of QML components for mobile/desktop convergent applications made by KDE</Description>
+        <BuildDependencies>
+<!--             <Dependency>libgcc</Dependency> -->
+            <Dependency versionFrom="5.46.0">extra-cmake-modules</Dependency>
+            <Dependency versionFrom="5.7.1">qt5-base-devel</Dependency>
+            <Dependency versionFrom="5.7.1">qt5-declarative-devel</Dependency>
+            <Dependency versionFrom="5.7.1">qt5-quickcontrols2-devel</Dependency>
+            <Dependency versionFrom="5.7.1">qt5-graphicaleffects</Dependency>
+            <Dependency versionFrom="5.7.1">qt5-linguist</Dependency>
+            <Dependency versionFrom="5.7.1">qt5-svg-devel</Dependency>
+            <!--Dependency>plasma-framework-devel</Dependency-->
+        </BuildDependencies>
+        <Archive sha1sum="02fe835a5b902435530c141b2968b055bb92f9bf" type="tarxz">https://download.kde.org/stable/frameworks/5.46/kirigami2-5.46.0.tar.xz</Archive>
+    </Source>
+    <Package>
+        <Name>kirigami</Name>
+        <Summary>A set of QML components for mobile/desktop convergent applications made by KDE</Summary>
+        <RuntimeDependencies>
+            <Dependency>libgcc</Dependency>
+            <Dependency>qt5-base</Dependency>
+            <Dependency>qt5-declarative</Dependency>
+            <Dependency>qt5-quickcontrols2</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="local">/usr/share/locale/</Path>
+            <Path fileType="libary">/usr/lib/</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>kirigami-devel</Name>
+        <Summary>Development files for kirigami</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">kirigami</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+            <Path fileType="data">/usr/lib/cmake</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="8">
+            <Date>2018-08-11</Date>
+            <Version>5.46.0</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="7">
+            <Date>2018-05-14</Date>
+            <Version>5.46.0</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="6">
+            <Date>2018-04-23</Date>
+            <Version>5.45.0</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="5">
+            <Date>2018-03-22</Date>
+            <Version>5.44.0</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="4">
+            <Date>2018-02-03</Date>
+            <Version>5.42.0</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-12-15</Date>
+            <Version>5.41.0</Version>
+            <Comment>Version bump</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2017-11-11</Date>
+            <Version>5.40.0</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="1">
+            <Date>2017-07-18</Date>
+            <Version>2.2.0</Version>
+            <Comment>F. Release.</Comment>
+            <Name>Ali Algul</Name>
+            <Email>aligulle3801@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>mupdf</Name>
+        <Homepage>https://mupdf.com/</Homepage>
+        <Packager>
+            <Name>Kamil Atlı</Name>
+            <Email>suvari@pisilinux.org</Email>
+        </Packager>
+        <License>AGPL3</License>
+        <IsA>app:gui</IsA>
+        <Summary>Lightweight PDF and XPS viewer</Summary>
+        <Description>MuPDF is a lightweight open source software framework for viewing and converting PDF, XPS, and E-book documents.</Description>
+        <Archive sha1sum="0daee66600023de2bda2f1928a97a8515c17d2d2" type="targz"> http://www.mupdf.com/downloads/archive/mupdf-1.12.0-source.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>mesa-devel</Dependency>
+            <Dependency>curl-devel</Dependency>
+            <Dependency>zlib-devel</Dependency>
+            <Dependency>libX11-devel</Dependency>
+            <Dependency>libXi-devel</Dependency>
+            <Dependency>libXext-devel</Dependency>
+            <Dependency>openssl-devel</Dependency>
+            <Dependency>freeglut-devel</Dependency>
+            <Dependency>harfbuzz-devel</Dependency>
+            <Dependency>mesa-glu-devel</Dependency>
+            <Dependency>openjpeg2-devel</Dependency>
+            <Dependency>libjpeg-turbo-devel</Dependency>
+            <Dependency>libXrandr-devel</Dependency>
+            <Dependency>libXcursor-devel</Dependency>
+            <Dependency>libXinerama-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch>mupdf-1.12.0-security-roundup.patch</Patch>
+            <Patch>mupdf-CVE-2017-17858.patch</Patch>
+<!--             <Patch>mupdf-1.12.0-security_fix-1.patch</Patch> -->
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>mupdf</Name>
+        <RuntimeDependencies>
+            <Dependency>mesa</Dependency>
+            <Dependency>libX11</Dependency>
+            <Dependency>libXext</Dependency>
+            <Dependency>openssl</Dependency>
+            <Dependency>libXrandr</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>mupdf-devel</Name>
+        <Summary>Development files for mupdf</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">mupdf</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="library">/usr/lib/pkgconfig</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="3">
+            <Date>2018-08-09</Date>
+            <Version>1.12.0</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2018-02-11</Date>
+            <Version>1.12.0</Version>
+            <Comment>Version Bump.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2017-07-13</Date>
+            <Version>1.11</Version>
+            <Comment>First Release</Comment>
+            <Name>Kamil Atlı</Name>
+            <Email>suvari@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

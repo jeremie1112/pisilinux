@@ -1,0 +1,93 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>perl-libwww</Name>
+        <Homepage>http://search.cpan.org/dist/libwww-perl</Homepage>
+        <Packager>
+            <Name>Pisi Linux Admins</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>Artistic</License>
+        <IsA>library</IsA>
+        <Summary>Application programming interface to the World-Wide Web</Summary>
+        <Description>libwww-perl collection is a set of Perl modules which provides a simple and consistent application programming interface to the World-Wide Web.</Description>
+        <Archive sha1sum="9e27f58108135b7871bbe406e39353a1dbc99462" type="targz">https://cpan.metacpan.org/authors/id/E/ET/ETHER/libwww-perl-6.15.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>perl</Dependency>
+            <Dependency>perl-URI</Dependency>
+            <Dependency>perl-NET-HTTP</Dependency>
+            <Dependency>perl-HTTP-Date</Dependency>
+            <Dependency>perl-HTML-Parser</Dependency>
+            <Dependency>perl-HTML-Tagset</Dependency>
+            <Dependency>perl-HTTP-Cookies</Dependency>
+            <Dependency>perl-HTTP-Daemon</Dependency>
+            <Dependency>perl-File-Listing</Dependency>
+            <Dependency>perl-HTTP-Message</Dependency>
+            <Dependency>perl-Encode-Locale</Dependency>
+            <Dependency>perl-HTTP-Negotiate</Dependency>
+            <Dependency>perl-LWP-Mediatypes</Dependency>
+            <Dependency>perl-WWW-Robotrules</Dependency>
+            <Dependency>perl-LWP-Protocol-https</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>perl-libwww</Name>
+        <RuntimeDependencies>
+            <Dependency>perl</Dependency>
+            <Dependency>perl-URI</Dependency>
+            <Dependency>perl-NET-HTTP</Dependency>
+            <Dependency>perl-HTTP-Date</Dependency>
+            <Dependency>perl-HTML-Parser</Dependency>
+            <Dependency>perl-HTML-Tagset</Dependency>
+            <Dependency>perl-HTTP-Daemon</Dependency>
+            <Dependency>perl-File-Listing</Dependency>
+            <Dependency>perl-HTTP-Message</Dependency>
+            <Dependency>perl-Encode-Locale</Dependency>
+            <Dependency>perl-HTTP-Negotiate</Dependency>
+            <Dependency>perl-LWP-Mediatypes</Dependency>
+            <Dependency>perl-WWW-Robotrules</Dependency>
+            <Dependency>perl-LWP-Protocol-https</Dependency>
+            <Dependency>perl-HTTP-Cookies</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="data">/usr/share/perl</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-07-26</Date>
+            <Version>6.15</Version>
+            <Comment>Rebuild for new toolchain.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-01-24</Date>
+            <Version>6.15</Version>
+            <Comment>Rebuild for new toolchain</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>6.15</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-03-27</Date>
+            <Version>6.15</Version>
+            <Comment>First release</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

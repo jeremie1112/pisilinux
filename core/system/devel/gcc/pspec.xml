@@ -1,0 +1,185 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>gcc</Name>
+        <Homepage>http://gcc.gnu.org</Homepage>
+        <Packager>
+            <Name>Serdar Soytetir</Name>
+            <Email>kaptan@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv3+</License>
+        <License>LGPLv3+</License>
+        <IsA>app:console</IsA>
+        <IsA>library</IsA>
+        <Summary>The GNU Compiler Collection, includes C, C++, Objective-C and Fortran compilers</Summary>
+        <Description>The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, as well as libraries for these languages</Description>
+        <Archive sha1sum="9689b9cae7b2886fdaa08449a26701f095c04e48" type="tarxz">http://ftp.gnu.org/gnu/gcc/gcc-7.3.0/gcc-7.3.0.tar.xz</Archive>
+        <BuildDependencies>
+            <Dependency versionFrom="2.30">binutils</Dependency>
+            <Dependency>bison</Dependency>
+            <Dependency>gettext</Dependency>
+            <Dependency>ncurses</Dependency>
+            <Dependency>zlib</Dependency>
+            <Dependency>gnuconfig</Dependency>
+            <Dependency>patch</Dependency>
+            <Dependency>sed</Dependency>
+            <Dependency>texinfo</Dependency>
+            <Dependency>gmp-devel</Dependency>
+            <Dependency>mpfr-devel</Dependency>
+            <Dependency>libmpc-devel</Dependency>
+            <Dependency>ppl</Dependency>
+            <Dependency>zlib-devel</Dependency>
+            <Dependency>isl-devel</Dependency>
+            <Dependency>elfutils</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <!-- Pisilinux Patches -->
+            <!-- Fix paths in 64bit -->
+            <Patch level="1">pisilinux/64.patch</Patch>
+            <Patch level="1">pisilinux/gcc_47_based-record_gcc_options.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>libquadmath</Name>
+        <IsA>library</IsA>
+        <PartOf>system.base</PartOf>
+        <Summary>The GNU Fortran Compiler Quadmath Runtime Library</Summary>
+        <Files>
+            <Path fileType="library">/usr/lib/libquadmath.so*</Path>
+            <Path fileType="library">/usr/lib/libquadmath.spec*</Path>
+            <Path fileType="library">/usr/lib32/libquadmath.so*</Path>
+            <Path fileType="library">/usr/lib32/libquadmath.spec*</Path>
+            <Path fileType="info">/usr/share/info/libquadmath.info</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libgcc</Name>
+        <IsA>library</IsA>
+        <PartOf>system.base</PartOf>
+        <Summary>Contains a shared library of support routines used by GCC's runtime, and thus by every program on the system</Summary>
+        <Files>
+            <Path fileType="config">/etc</Path>
+            <Path fileType="library">/usr/lib/libstdc++.so*</Path>
+            <Path fileType="library">/usr/lib/libgcc_s.so*</Path>
+            <Path fileType="library">/usr/lib32/libstdc++.so*</Path>
+            <Path fileType="library">/usr/lib32/libgcc_s.so*</Path>
+            <Path fileType="library">/usr/share/gcc-*</Path>
+            <Path fileType="library">/usr/share/gdb</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libgomp</Name>
+        <IsA>library</IsA>
+        <Summary>Contains GCC shared support library which is needed for OpenMP 2.5 support</Summary>
+        <Files>
+            <Path fileType="library">/usr/lib/libgomp.so*</Path>
+            <Path fileType="library">/usr/lib/libgomp.spec*</Path>
+            <Path fileType="library">/usr/lib32/libgomp.so*</Path>
+            <Path fileType="library">/usr/lib32/libgomp.spec*</Path>
+            <Path fileType="info">/usr/share/info/libgomp.info</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libgfortran</Name>
+        <RuntimeDependencies>
+            <Dependency>libquadmath</Dependency>
+        </RuntimeDependencies>
+        <IsA>library</IsA>
+        <Summary>Contains GCC shared support library for gfortran</Summary>
+        <Files>
+            <Path fileType="library">/usr/lib/libgfortran.so*</Path>
+            <Path fileType="library">/usr/lib32/libgfortran.so*</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libobjc</Name>
+        <IsA>library</IsA>
+        <Summary>Contains GCC shared support library for objc</Summary>
+        <Files>
+            <Path fileType="library">/usr/lib/libobjc.so*</Path>
+            <Path fileType="library">/usr/lib32/libobjc.so*</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>gcc-l10n</Name>
+        <PartOf>system.locale</PartOf>
+        <Summary>Contains available GCC localization files, includes also turkish translations</Summary>
+        <RuntimeDependencies>
+            <Dependency>gcc</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="localedata">/usr/share/locale</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>gcc</Name>
+        <RuntimeDependencies>
+            <Dependency>gmp</Dependency>
+            <Dependency>isl</Dependency>
+            <Dependency>mpfr</Dependency>
+            <Dependency>zlib</Dependency>
+            <!--Dependency>cloog</Dependency-->
+            <Dependency>libmpc</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/lib</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="library">/usr/lib32</Path>
+            <Path fileType="library">/usr/libexec</Path>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="info">/usr/share/info</Path>
+        </Files>
+        <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0755" target="/usr/bin/gfilt">gfilt</AdditionalFile>
+            <AdditionalFile owner="root" permission="0644" target="/usr/libexec/gSTLFilt.pl">gSTLFilt.pl</AdditionalFile>
+        </AdditionalFiles>
+    </Package>
+
+    <History>
+        <Update release="5">
+            <Date>2018-07-15</Date>
+            <Version>7.3.0</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="4">
+            <Date>2018-04-14</Date>
+            <Version>6.3.0</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-01-02</Date>
+            <Version>6.3.0</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-04-26</Date>
+            <Version>5.3.0</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-03-20</Date>
+            <Version>5.3.0</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

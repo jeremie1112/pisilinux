@@ -1,0 +1,52 @@
+
+<PISI>
+    <Source>
+        <Name>qps</Name>
+        <Homepage>https://github.com/QtDesktop/qps</Homepage>
+        <Packager>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Packager>
+        <License>GPL2</License>
+        <Icon>qps</Icon>
+        <IsA>app</IsA>
+        <Summary>Qt Process Manager</Summary>
+        <Description>Qt Process Manager</Description>
+        <Archive sha1sum="a3d784449d07260f7c943ec8222cd4d5ab82bd6f" type="tarxz">https://github.com/QtDesktop/qps/releases/download/1.10.18/qps-1.10.18.tar.xz</Archive>
+        <BuildDependencies>
+            <Dependency>cmake</Dependency>
+            <Dependency>qt5-base-devel</Dependency>
+            <Dependency>qt5-x11extras-devel</Dependency>
+            <Dependency>libXrender-devel</Dependency>
+            <Dependency>qt5-linguist</Dependency>
+        </BuildDependencies>
+    </Source>
+    <Package>
+        <Name>qps</Name>
+        <RuntimeDependencies>
+            <Dependency>qt5-base</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/qps</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="data">/usr/share</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="2">
+            <Date>2018-08-31</Date>
+            <Version>1.10.18</Version>
+            <Comment>Rebuild New T.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+      <Update release="1">
+            <Date>2018-04-23</Date>
+            <Version>1.10.17</Version>
+            <Comment>First release</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

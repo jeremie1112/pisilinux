@@ -1,0 +1,57 @@
+<PISI>
+    <Source>
+        <Name>pisilinux-theme-damadamas</Name>
+        <Homepage>http://www.pisilinux.org/</Homepage>
+        <Packager>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>app:gui</IsA>
+        <Summary>PisiLinux için görsel çalışmaları.</Summary>
+        <Description>PisiLinux için simge seti, şifre ekranı, açılış ekranı ve kilit ekranı.</Description>
+        <Archive sha1sum="e0081ad837ec4079940822c51bd2ba083eb3c320" type="targz">https://github.com/sonakinci41/DamaDamas-icon-theme/archive/0.7.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>extra-cmake-modules</Dependency>
+            <Dependency>qt5-base-devel</Dependency>
+            <Dependency>plasma-framework-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+    <Package>
+        <Name>pisilinux-theme-damadamas</Name>
+        <Summary>PisiLinux için görsel çalışmaları.</Summary>
+        <Files>
+            <Path fileType="data">/usr/share</Path>
+            <Path fileType="data">/usr/share/color-schemes</Path>
+            <Path fileType="data">/usr/share/icons</Path>
+            <Path fileType="data">/usr/share/kservices5</Path>
+            <Path fileType="data">/usr/share/plasma</Path>
+            <Path fileType="data">/usr/share/sddm</Path>
+            <Path fileType="data">/usr/share/wallpapers</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files> 
+    </Package>
+    <History>
+        <Update release="3">
+            <Date>2018-08-31</Date>
+            <Version>0.7</Version>
+            <Comment>Rebuild New T.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2018-04-01</Date>
+            <Version>0.7</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="1">
+            <Date>2017-03-11</Date>
+            <Version>0.1</Version>
+            <Comment>First release</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

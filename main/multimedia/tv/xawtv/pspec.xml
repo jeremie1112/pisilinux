@@ -1,0 +1,143 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>xawtv</Name>
+        <Homepage>http://linuxtv.org/downloads/xawtv/</Homepage>
+        <Packager>
+            <Name>Erdinc Gultekin</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <Icon>xawtv</Icon>
+        <IsA>app:gui</IsA>
+        <PartOf>multimedia.tv</PartOf>
+        <Summary>TV application</Summary>
+        <Description>xawtv is a TV application that supports many interfaces (analog video streams), such as Xvideo, v4l2 and bktr etc. It can display TV streams and record them.</Description>
+        <Archive sha1sum="15dedae6cada7c5f598daef22b71603c2ab16669" type="tarbz2">http://linuxtv.org/downloads/xawtv/xawtv-3.105.tar.bz2</Archive>
+        <BuildDependencies>
+            <Dependency>alsa-lib-devel</Dependency>
+            <Dependency>aalib-devel</Dependency>
+            <Dependency>libquicktime-devel</Dependency>
+            <Dependency>openmotif-devel</Dependency>
+            <Dependency>libdv-devel</Dependency>
+            <Dependency>zvbi-devel</Dependency>
+            <Dependency>lirc-devel</Dependency>
+            <Dependency>libv4l-devel</Dependency>
+            <Dependency>xorg-font</Dependency>
+            <Dependency>libXxf86dga-devel</Dependency>
+            <Dependency>libdv</Dependency>
+            <Dependency>libXpm-devel</Dependency>
+            <Dependency>libXrender-devel</Dependency>
+            <Dependency>libXv-devel</Dependency>
+            <Dependency>mesa-devel</Dependency>
+            <Dependency>libXext-devel</Dependency>
+            <Dependency>libXrandr-devel</Dependency>
+            <Dependency>libXxf86vm-devel</Dependency>
+            <Dependency>libXmu-devel</Dependency>
+            <Dependency>libFS-devel</Dependency>
+            <Dependency>fontconfig-devel</Dependency>
+            <Dependency>libXt-devel</Dependency>
+            <Dependency>libXft-devel</Dependency>
+            <Dependency>libXaw-devel</Dependency>
+            <Dependency>zvbi-devel</Dependency>
+            <Dependency>libXinerama-devel</Dependency>
+            <Dependency>libSM-devel</Dependency>
+            <Dependency>libICE-devel</Dependency>
+            <Dependency>libexplain-devel</Dependency>
+            <Dependency>libjpeg-turbo-devel</Dependency>
+            <Dependency>gpm</Dependency>
+            <Dependency>zlib-devel</Dependency>
+            <Dependency>libX11-devel</Dependency>
+            <Dependency>libpng-devel</Dependency>
+            <Dependency>ncurses-devel</Dependency>
+            <Dependency>freetype-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch level="0">v4l-conf_non-position-independent-executable_fix.patch</Patch>
+            <Patch level="1">xawtv-3.95.patch</Patch>
+        </Patches>
+      </Source>
+
+    <Package>
+        <Name>xawtv</Name>
+        <RuntimeDependencies>
+            <Dependency>gpm</Dependency>
+            <Dependency>zvbi</Dependency>
+            <Dependency>lirc</Dependency>
+            <Dependency>mesa</Dependency>
+            <Dependency>zlib</Dependency>
+            <Dependency>aalib</Dependency>
+            <Dependency>libSM</Dependency>
+            <Dependency>libdv</Dependency>
+            <Dependency>libXt</Dependency>
+            <Dependency>libXv</Dependency>
+            <Dependency>libX11</Dependency>
+            <Dependency>libpng</Dependency>
+            <Dependency>libXmu</Dependency>
+            <Dependency>libXaw</Dependency>
+            <Dependency>libICE</Dependency>
+            <Dependency>libv4l</Dependency>
+            <Dependency>libXpm</Dependency>
+            <Dependency>libXft</Dependency>
+            <Dependency>ncurses</Dependency>
+            <Dependency>libXext</Dependency>
+            <Dependency>freetype</Dependency>
+            <Dependency>alsa-lib</Dependency>
+            <Dependency>xorg-font</Dependency>
+            <Dependency>libXrandr</Dependency>
+            <Dependency>libXrender</Dependency>
+            <Dependency>libXxf86vm</Dependency>
+            <Dependency>fontconfig</Dependency>
+            <Dependency>libexplain</Dependency>
+            <Dependency>libXxf86dga</Dependency>
+            <Dependency>libXinerama</Dependency>
+            <Dependency>libquicktime</Dependency>
+            <Dependency>libjpeg-turbo</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="config">/etc</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib/xawtv</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="data">/usr/share/xawtv</Path>
+            <Path fileType="data">/usr/share/applications</Path>
+            <Path fileType="data">/usr/share/pixmaps</Path>
+        </Files>
+        <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0644" target="/usr/share/applications/xawtv.desktop">xawtv.desktop</AdditionalFile>
+        </AdditionalFiles>
+    </Package>
+    
+    <History>
+        <Update release="4">
+            <Date>2018-09-01</Date>
+            <Version>3.105</Version>
+            <Comment>Rebuild New T.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-01-15</Date>
+            <Version>3.103</Version>
+            <Comment>Add Dependency.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>3.103</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-01-09</Date>
+            <Version>3.103</Version>
+            <Comment>First release</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>osman.erkan@pisilinux.org</Email>
+        </Update>
+      </History>
+</PISI>

@@ -1,0 +1,115 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>kdb</Name>
+        <Homepage>http://www.kexi-project.org/</Homepage>
+        <Packager>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2+</License>
+        <IsA>app:gui</IsA>
+        <Summary>A database connectivity and creation framework for various database vendors.</Summary>
+        <Description>A database connectivity and creation framework for various database vendors</Description>
+        <Archive sha1sum="5dc8275617998cb2c68526883a4670b0de518c55" type="tarxz">https://download.kde.org/stable/kdb/src/kdb-3.1.0.tar.xz</Archive>
+        <BuildDependencies>
+            <Dependency>extra-cmake-modules</Dependency>
+            <Dependency>qt5-base-devel</Dependency>
+            <Dependency>qt5-linguist</Dependency>
+            <Dependency>kcoreaddons-devel</Dependency>
+            <Dependency>icu4c-devel</Dependency>
+            <Dependency>ki18n-devel</Dependency>
+            <Dependency>sqlite-devel</Dependency>
+            <Dependency>mariadb-lib</Dependency>
+            <Dependency>mariadb-client</Dependency>
+            <Dependency>postgresql-lib</Dependency>
+            <Dependency>icu4c-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>kdb</Name>
+        <Summary>A database connectivity and creation framework for various database vendors.</Summary>
+        <RuntimeDependencies>
+            <Dependency>icu4c</Dependency>
+            <Dependency>libgcc</Dependency>
+            <Dependency>sqlite</Dependency>
+            <Dependency>qt5-base</Dependency>
+            <Dependency>kcoreaddons</Dependency>
+            <Dependency>mariadb-lib</Dependency>
+            <Dependency>postgresql-lib</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib/qt5</Path>
+            <Path fileType="library">/usr/lib/libKDb3*</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>kdb-devel</Name>
+        <Summary>Development files for kdb.</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">kdb</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib/cmake</Path>
+            <Path fileType="library">/usr/lib/pkgconfig</Path>
+            <Path fileType="header">/usr/include</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="7">
+            <Date>2018-09-10</Date>
+            <Version>3.1.0</Version>
+            <Comment>Version bump</Comment>
+            <Name>Mustafa Cinasl</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="6">
+            <Date>2018-08-11</Date>
+            <Version>3.0.2</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="5">
+            <Date>2018-02-03</Date>
+            <Version>3.0.2</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Mustafa Cinasl</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="4">
+            <Date>2017-10-14</Date>
+            <Version>3.0.2</Version>
+            <Comment>Version bump</Comment>
+            <Name>Mustafa Cinasl</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-07-17</Date>
+            <Version>3.0.93</Version>
+            <Comment>Version bump</Comment>
+            <Name>Ali Algul</Name>
+            <Email>aligulle3801@gmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2017-06-30</Date>
+            <Version>3.0.1</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Kamil Atlı</Name>
+            <Email>suvari@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2017-01-06</Date>
+            <Version>3.0.0</Version>
+            <Comment>First release</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>m4</Name>
+        <Homepage>http://www.gnu.org/software/m4/m4.html</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv3</License>
+        <IsA>app:console</IsA>
+        <Summary>GNU macro processor</Summary>
+        <Description>The m4 utility is a macro processor that shall read one or more text files, process them according to their included macro statements, and write the results to standard output</Description>
+        <Archive sha1sum="228604686ca23f42e48b98930babeb5d217f1899" type="tarxz">mirrors://gnu/m4/m4-1.4.18.tar.xz</Archive>
+        <BuildDependencies>
+            <Dependency>gettext</Dependency>
+            <Dependency>libsigsegv-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>m4</Name>
+        <RuntimeDependencies>
+            <Dependency>libsigsegv</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="info">/usr/share/info</Path>
+            <Path fileType="man">/usr/share/man</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-07-30</Date>
+            <Version>1.4.18</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-01-27</Date>
+            <Version>1.4.18</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-04-27</Date>
+            <Version>1.4.17</Version>
+            <Comment>Release Bump</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-02-28</Date>
+            <Version>1.4.17</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>python-mutagen</Name>
+        <Homepage>http://code.google.com/p/mutagen</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>library</IsA>
+        <Summary>An audio tag editing library</Summary>
+        <Description>Mutagen is an audio metadata tag reader and writer implemented in pure Python.</Description>
+        <Archive sha1sum="d60b8a80ff73e10c05a5232c517d3153c0fa86d8" type="targz">https://files.pythonhosted.org/packages/c0/17/e1c3c18f5d637ebebcb94aa19d74c8c06925cb4ffb9f1031fe5f21a698d3/mutagen-1.41.1.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>python-devel</Dependency>
+            <Dependency>python3-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>python-mutagen</Name>
+        <RuntimeDependencies>
+            <Dependency>python</Dependency>
+            <Dependency>python3</Dependency>            
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-08-30</Date>
+            <Version>1.41.1</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2018-02-25</Date>
+            <Version>1.40.0</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2017-01-25</Date>
+            <Version>1.36.2</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>  
+        <Update release="1">
+            <Date>2016-06-18</Date>
+            <Version>1.32</Version>
+            <Comment>First release</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>        
+    </History>
+</PISI>

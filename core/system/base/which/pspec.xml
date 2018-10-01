@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>which</Name>
+        <Homepage>http://www.xs4all.nl/~carlo17/which/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>app:console</IsA>
+        <Summary>Prints the location of specified executable in your path</Summary>
+        <Description>which , Locates a program file in the user's path.</Description>
+        <Archive sha1sum="6b6bec3d2b3d4661c164feb81b9b1d22d1359ded" type="targz">mirrors://gnu/which/which-2.21.tar.gz</Archive>
+        <Patches>
+            <!--<Patch level="1">which-gentoo.patch</Patch>-->
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>which</Name>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="info">/usr/share/info</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-07-15</Date>
+            <Version>2.21</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+         <Update release="3">
+            <Date>2017-01-23</Date>
+            <Version>2.21</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-04-27</Date>
+            <Version>2.21</Version>
+            <Comment>Release Bump</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-03-02</Date>
+            <Version>2.21</Version>
+            <Comment>First release</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

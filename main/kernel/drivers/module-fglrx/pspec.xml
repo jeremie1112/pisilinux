@@ -1,0 +1,152 @@
+
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>module-fglrx</Name>
+        <Homepage>http://ati.amd.com/support/driver.html</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>ATI</License>
+        <Summary>ATI display drivers.</Summary>
+        <Description>Fglrx is a driver written by AMD(ATI) for ATI graphics cards.Radeons HD 2 3 4 X series are not supported</Description>
+        <Archive sha1sum="cafe3419525a8ecc517c4192888f84df1abaa41b" type="targz">http://archive.ubuntu.com/ubuntu/pool/restricted/f/fglrx-installer/fglrx-installer_15.201.orig.tar.gz</Archive>
+        <AdditionalFiles>
+            <AdditionalFile target="desktop-files.patch">desktop-files.patch</AdditionalFile>
+            <AdditionalFile target="makefile_compat.patch">makefile_compat.patch</AdditionalFile>
+            <AdditionalFile target="fglrx_gpl_symbol.patch">fglrx_gpl_symbol.patch</AdditionalFile>
+            <AdditionalFile target="kolasa_4.0-cr4-strn.patch">kolasa_4.0-cr4-strn.patch</AdditionalFile>
+            <AdditionalFile target="lano1106_fglrx_intel_iommu.patch">lano1106_fglrx_intel_iommu.patch</AdditionalFile>
+            <AdditionalFile target="lano1106_kcl_agp_13_4.patch">lano1106_kcl_agp_13_4.patch</AdditionalFile>
+            <AdditionalFile target="LICENSE.TXT">LICENSE.TXT</AdditionalFile>
+            <AdditionalFile target="4.4-manjaro-xstate.patch">4.4-manjaro-xstate.patch</AdditionalFile><!--support kernel 4.x-->
+        </AdditionalFiles>
+        <BuildDependencies>
+            <Dependency version="4.4.4">kernel-module-headers</Dependency>
+            <Dependency vesion="4.4.4">kernel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>module-fglrx</Name>
+        <Conflicts>
+            <Package>module-fglrx-legacy</Package>
+        </Conflicts>
+        <IsA>driver</IsA>
+        <Summary>Kernel module for ATI display drivers</Summary>
+        <RuntimeDependencies>
+            <Dependency version="4.4.4">kernel</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library" permanent="true">/lib/modules</Path>
+            <Path fileType="config">/etc/conf.d</Path>
+            <Path fileType="config">/etc/modprobe.d</Path>
+        </Files>
+        <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0644" target="/etc/modprobe.d/blacklist-fglrx.conf">blacklist-fglrx.conf</AdditionalFile>
+            <AdditionalFile owner="root" permission="0644" target="/etc/modprobe.d/fglrx.conf">modprobe.conf</AdditionalFile>
+            <AdditionalFile owner="root" permission="0644" target="/etc/conf.d/atieventsd">atieventsd</AdditionalFile>
+        </AdditionalFiles>
+        <BuildFlags>
+            <Flag>noDelta</Flag>
+        </BuildFlags>
+    </Package>
+
+    <Package>
+        <Name>xorg-video-fglrx</Name>
+        <Conflicts>
+            <Package>xorg-video-fglrx-legacy</Package>
+        </Conflicts>
+        <IsA>driver</IsA>
+        <PartOf>x11.driver</PartOf>
+        <RuntimeDependencies>
+            <AnyDependency>
+                <Dependency version="current">module-fglrx</Dependency>
+            </AnyDependency>
+            <Dependency>qt</Dependency>
+            <Dependency>mesa</Dependency>
+            <Dependency>libSM</Dependency>
+            <Dependency>libICE</Dependency>
+            <Dependency>uClibc</Dependency>
+            <Dependency>libXext</Dependency>
+            <Dependency>libXrandr</Dependency>
+            <Dependency>libXfixes</Dependency>
+            <Dependency>libXcursor</Dependency>
+            <Dependency>libXrender</Dependency>
+            <Dependency>fontconfig</Dependency>
+            <Dependency>libXxf86vm</Dependency>
+            <Dependency>libXinerama</Dependency>
+            <Dependency>xorg-server</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="data">/usr/share</Path>
+            <Path fileType="config">/etc</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="executable">/usr/sbin</Path>
+            <Path fileType="data">/usr/X11R6</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man</Path>
+        </Files>
+        <Provides>
+            <COMAR script="package.py">System.Package</COMAR>
+            <COMAR script="service.py" name="atieventsd">System.Service</COMAR>
+        </Provides>
+        <BuildFlags>
+            <Flag>noDelta</Flag>
+        </BuildFlags>
+    </Package>
+
+    <Package>
+        <Name>xorg-video-fglrx-32bit</Name>
+        <Conflicts>
+            <Package>xorg-video-fglrx-legacy-32bit</Package>
+        </Conflicts>
+        <PartOf>emul32</PartOf>
+        <BuildType>emul32</BuildType>
+        <Summary>32-bit shared libraries for xorg-video-fglrx</Summary>
+        <BuildDependencies>
+            <Dependency>xvba-video-32bit</Dependency>
+            <Dependency>fontconfig-32bit</Dependency>
+            <Dependency>freetype-32bit</Dependency>
+            <Dependency>libXcursor-32bit</Dependency>
+            <Dependency>libXext-32bit</Dependency>
+            <Dependency>libXfixes-32bit</Dependency>
+            <Dependency>libXinerama-32bit</Dependency>
+            <Dependency>libXrandr-32bit</Dependency>
+            <Dependency>libXrender-32bit</Dependency>
+            <Dependency>libXxf86vm-32bit</Dependency>
+            <Dependency>libX11-32bit</Dependency>
+            
+        </BuildDependencies>
+        <RuntimeDependencies>
+            <Dependency release="current">xorg-video-fglrx</Dependency>
+            <Dependency>libXext-32bit</Dependency>
+            <Dependency>libX11-32bit</Dependency>
+            <Dependency>mesa-32bit</Dependency>
+            
+            <Dependency>libgcc</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib32</Path>
+        </Files>
+        <Provides>
+            <COMAR script="package-emul32.py">System.Package</COMAR>
+        </Provides>
+        <BuildFlags>
+            <Flag>noDelta</Flag>
+        </BuildFlags>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2016-03-06</Date>
+            <Version>15.201</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

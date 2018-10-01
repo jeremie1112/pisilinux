@@ -1,0 +1,91 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>lsb-release</Name>
+        <Homepage>http://www.linuxbase.org</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>app:console</IsA>
+        <Summary>LSB version query program</Summary>
+        <Description>lsb-release prints certain LSB (Linux Standard Base) and distribution information.</Description>
+        <Archive sha1sum="ecf883ada9bf4e1feca3f2e1494bd798792aee18" type="targz">mirrors://sourceforge/project/lsb/lsb_release/1.4/lsb-release-1.4.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>util-linux</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>lsb-release</Name>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="data">/etc</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+        <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0644" target="/etc/lsb-release">lsb-release</AdditionalFile>
+        </AdditionalFiles>
+    </Package>
+    <History>
+        <Update release="7">
+            <Date>2018-07-15</Date>
+            <Version>1.4</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="6">
+            <Date>2018-03-28</Date>
+            <Version>1.4</Version>
+            <Comment>2.0 Stable.</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="5">
+            <Date>2017-04-04</Date>
+            <Version>1.4</Version>
+            <Comment>RC.</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="4">
+            <Date>2017-03-19</Date>
+            <Version>1.4</Version>
+            <Comment>Beta 2.1.</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="4">
+            <Date>2016-08-17</Date>
+            <Version>1.4</Version>
+            <Comment>Beta 2</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2016-08-17</Date>
+            <Version>1.4</Version>
+            <Comment>Release Bump</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-04-27</Date>
+            <Version>1.4</Version>
+            <Comment>Release Bump</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-03-09</Date>
+            <Version>1.4</Version>
+            <Comment>First release</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

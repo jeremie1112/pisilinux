@@ -1,0 +1,206 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>kompare</Name>
+        <Homepage>http://www.kde.org/</Homepage>
+        <Packager>
+            <Name>Pisi Linux Admins</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>app:gui</IsA>
+        <PartOf>desktop.kde.sdk</PartOf>
+        <Summary>File difference viewer</Summary>
+        <Description>Diff/Patch Frontend. </Description>
+        <Archive sha1sum="aedfcf52ce03efdbb5204a9ed19023a57851af72" type="tarxz">mirrors://kde/stable/applications/18.04.1/src/kompare-18.04.1.tar.xz</Archive>
+        <BuildDependencies>
+            <Dependency>extra-cmake-modules</Dependency>
+            <Dependency>kdoctools-devel</Dependency>
+            <Dependency versionFrom="5.7.1">qt5-base-devel</Dependency>
+            <Dependency>gettext-devel</Dependency>
+            <Dependency>libkomparediff2-devel</Dependency>
+            <Dependency>kcoreaddons-devel</Dependency>
+            <Dependency>kcodecs-devel</Dependency>
+            <Dependency>kiconthemes-devel</Dependency>
+            <Dependency>kjobwidgets-devel</Dependency>
+            <Dependency>kconfig-devel</Dependency>
+            <Dependency>kparts-devel</Dependency>
+            <Dependency>ktexteditor-devel</Dependency>
+            <Dependency>kwidgetsaddons-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>kompare</Name>
+        <RuntimeDependencies>
+            <Dependency versionFrom="5.7.1">qt5-base</Dependency>
+            <Dependency>libkomparediff2</Dependency>
+            <Dependency>kio</Dependency>
+            <Dependency>ki18n</Dependency>
+            <Dependency>kparts</Dependency>
+            <Dependency>libgcc</Dependency>
+            <Dependency>kcodecs</Dependency>
+            <Dependency>kconfig</Dependency>
+            <Dependency>kxmlgui</Dependency>
+            <Dependency>kservice</Dependency>
+            <Dependency>kcompletion</Dependency>
+            <Dependency>kcoreaddons</Dependency>
+            <Dependency>kiconthemes</Dependency>
+            <Dependency>kjobwidgets</Dependency>
+            <Dependency>ktexteditor</Dependency>
+            <Dependency>kconfigwidgets</Dependency>
+            <Dependency>kwidgetsaddons</Dependency>
+        </RuntimeDependencies>
+        <Replaces>
+            <Package>kdesdk</Package>
+        </Replaces>
+        <Conflicts>
+            <Package>kdesdk</Package>
+        </Conflicts>
+        <Files>
+            <Path fileType="data">/usr/share</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="library">/usr/lib/qt5</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="header">/usr/include</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="19">
+            <Date>2018-08-11</Date>
+            <Version>18.04.1</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="18">
+            <Date>2018-05-15</Date>
+            <Version>18.04.1</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="17">
+            <Date>2018-04-25</Date>
+            <Version>18.04.0</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="16">
+            <Date>2018-03-22</Date>
+            <Version>17.12.3</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="15">
+            <Date>2018-02-03</Date>
+            <Version>17.12.1</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="14">
+            <Date>2017-12-15</Date>
+            <Version>17.12.0</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="13">
+            <Date>2017-11-11</Date>
+            <Version>17.08.3</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="12">
+            <Date>2017-10-15</Date>
+            <Version>17.08.2</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="11">
+            <Date>2017-09-14</Date>
+            <Version>17.08.1</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="10">
+            <Date>2017-07-17</Date>
+            <Version>17.04.3</Version>
+            <Comment>Version bump</Comment>
+            <Name>Ali Algul</Name>
+            <Email>aligulle3801@gmail.com</Email>
+        </Update>
+        <Update release="9">
+            <Date>2017-07-01</Date>
+            <Version>17.04.2</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Kamil Atlı</Name>
+            <Email>suvari@pisilinux.org</Email>
+        </Update>
+        <Update release="8">
+            <Date>2017-03-09</Date>
+            <Version>16.12.0</Version>
+            <Comment>Rebuild for new Toolchain.</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+        <Update release="7">
+            <Date>2016-12-25</Date>
+            <Version>16.12.0</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+        <Update release="6">
+            <Date>2016-11-27</Date>
+            <Version>16.08.3</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+        <Update release="5">
+            <Date>2016-10-22</Date>
+            <Version>16.08.2</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Yusuf Aydemir</Name>
+            <Email>yusuf.aydemir@pisilnux.org</Email>
+        </Update>
+        <Update release="4">
+            <Date>2016-10-20</Date>
+            <Version>16.08.1</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Yusuf Aydemir</Name>
+            <Email>yusuf.aydemir@pisilnux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2016-07-31</Date>
+            <Version>16.04.3</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Yusuf Aydemir</Name>
+            <Email>yusuf.aydemir@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-05-23</Date>
+            <Version>16.04.0</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Burak Ertürk</Name>
+            <Email>burakerturk@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-03-24</Date>
+            <Version>15.12.3</Version>
+            <Comment>First release</Comment>
+            <Name>Yusuf Aydemir</Name>
+            <Email>yusuf.aydemir@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

@@ -1,0 +1,159 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM 'http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd'>
+<PISI>
+    <Source>
+        <Name>system-config-printer</Name>
+        <Homepage>http://cyberelk.net/tim/software/system-config-printer</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>app:gui</IsA>
+        <Summary>A printer administration tool</Summary>
+        <Description>system-config-printer is a graphical user interface that allows the user to configure a CUPS print server.</Description>
+        <Archive sha1sum="2375c76f695165b7b976390abd55aaf721285df8" type="targz">https://github.com/zdohnal/system-config-printer/archive/1.5.11.tar.gz</Archive>
+        <AdditionalFiles>
+            <AdditionalFile target="po/tr.po">tr.po</AdditionalFile>
+        </AdditionalFiles>
+        <BuildDependencies>
+            <Dependency>gtk3-devel</Dependency>
+            <Dependency>util-linux</Dependency>
+            <Dependency>xmlto</Dependency>
+            <Dependency>libxslt-devel</Dependency>
+            <Dependency>intltool</Dependency>
+            <Dependency>python3-devel</Dependency>
+            <Dependency>cups-devel</Dependency>
+            <Dependency>eudev-devel</Dependency>
+            <Dependency>glib2-devel</Dependency>
+            <Dependency>libusb-devel</Dependency>
+            <Dependency>gettext-devel</Dependency>
+            <Dependency>desktop-file-utils</Dependency>
+            <Dependency>dbus-glib-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <!-- Replace emblem-default by dialog-ok -->
+            <Patch level="1">fix-icon.patch</Patch>
+            <!--make it actually work without libgnome-keyring -->
+<!--             <Patch>pass_libgnome_keyring_missing.diff</Patch> -->
+            <Patch>0001-Fix-constructing-the-auth-dialog.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>system-config-printer</Name>
+        <RuntimeDependencies>
+            <Dependency>eudev</Dependency>
+            <Dependency>glib2</Dependency>
+            <Dependency>libusb</Dependency>
+            <Dependency>libsecret</Dependency>
+            <Dependency>libgnome-keyring</Dependency>
+            <Dependency>python3-cups</Dependency>
+            <Dependency>python-smbc</Dependency>
+            <Dependency>dbus-python3</Dependency>
+            <Dependency>python3-pygobject3</Dependency>
+            <Dependency>python3-requests</Dependency>
+            <Dependency>cups</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="config">/etc/dbus-1</Path>
+            <Path fileType="data">/etc/cupshelpers</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="data">/lib/udev/rules.d</Path>
+            <Path fileType="data">/usr/share/dbus-1</Path>
+            <Path fileType="data">/usr/share/system-config-printer/debug.py</Path>
+            <Path fileType="data">/usr/share/appdata/system-config-printer.appdata.xml</Path>
+            <Path fileType="data">/usr/share/system-config-printer/smburi.py</Path>
+            <Path fileType="data">/usr/share/system-config-printer/config.py</Path>
+            <Path fileType="data">/usr/share/system-config-printer/ppdippstr.py</Path>
+            <Path fileType="library">/lib/systemd/system/configure-printer@.service</Path>
+            <Path fileType="data">/run/udev-configure-printer</Path>
+            <Path fileType="executable">/lib/udev</Path>
+            <Path fileType="executable">/usr/libexec</Path>
+            <Path fileType="config">/usr/lib/tmpfiles.d/system-config-printer.conf</Path>
+            <Path fileType="data">/usr/share/metainfo/system-config-printer.appdata.xml</Path>
+        </Files>
+        <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0644" target="/usr/lib/tmpfiles.d/system-config-printer.conf">tmpfiles.conf</AdditionalFile>
+        </AdditionalFiles>
+    </Package>
+    <Package>
+        <Name>system-config-printer-gtk</Name>
+        <Summary>GTK+ frontend of system-config-printer</Summary>
+        <RuntimeDependencies>
+            <Dependency>python-gtk</Dependency>
+            <Dependency>notify-python</Dependency>
+            <Dependency>python-pygobject</Dependency>
+            <Dependency>python-pygobject3</Dependency>
+            <Dependency>system-config-printer</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="doc">/usr/share/man</Path>
+            <Path fileType="data">/usr/share/system-config-printer</Path>
+            <Path fileType="data">/etc/xdg/autostart</Path>
+            <Path fileType="data">/usr/share/applications</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="8">
+            <Date>2018-08-15</Date>
+            <Version>1.5.11</Version>
+            <Comment>Rebuild New T.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="7">
+            <Date>2018-05-22</Date>
+            <Version>1.5.11</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="6">
+            <Date>2018-03-03</Date>
+            <Version>1.5.9</Version>
+            <Comment>Version bump</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+        <Update release="5">
+            <Date>2017-12-15</Date>
+            <Version>1.5.9</Version>
+            <Comment>Version bump</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+        <Update release="4">
+            <Date>2017-03-01</Date>
+            <Version>1.5.7</Version>
+            <Comment>Rebuild for new toolchain.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2016-06-09</Date>
+            <Version>1.5.7</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-05-25</Date>
+            <Version>1.5.7</Version>
+            <Comment>Release bump</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-05-08</Date>
+            <Version>1.5.7</Version>
+            <Comment>First release</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

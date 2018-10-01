@@ -1,0 +1,20 @@
+<PISI>
+    <Source>
+        <Name>xmlcopyeditor</Name>
+        <Summary xml:lang="tr">XML Copy Editor hızlı, ücretsiz, doğrulama XML editörüdür</Summary>
+        <Description xml:lang="tr">DTD / XML Şeması / NG doğrulama RELAX
+XSLT
+XPath
+Pretty-baskı
+sözdizimi vurgulama
+katlanır
+tag tamamlama
+Etiket kilitleme
+Tag-free düzenleme
+Yazım ve stili onay
+Dahili XHTML, XSL, DocBook'da ve TEI için destek
+Kayıpsız ithalat ve Microsoft Word belgelerinin ihracat (yalnızca Windows)</Description>
+    </Source>
+</PISI>
+
+<!-- By PiSiDo 2.0.0 -->

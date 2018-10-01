@@ -1,0 +1,51 @@
+<PISI>
+    <Source>
+        <Name>onyx</Name>
+        <Homepage>http://onyx.brandmaier.de</Homepage>
+        <Packager>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Packager>
+        <License>Onyx license</License>
+        <IsA>app:gui</IsA>
+        <Summary>Structural Equation Modelling</Summary>
+        <Description>Structural Equation Modelling</Description>
+        <Archive sha1sum="a7ece4fc0acc6719fab81b0832b4cb38fdad054a" target="onyx" type="binary">http://onyx.brandmaier.de/onyx-1.0-947.jar</Archive>
+        <BuildDependencies>
+            <Dependency>jre7-openjdk</Dependency>            
+        </BuildDependencies>
+    </Source>
+    <Package>
+        <Name>onyx</Name>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="executable">/usr/share/onyx/</Path>
+            <Path fileType="doc">/usr/share</Path>
+            <Path fileType="library">/usr/lib</Path>
+        </Files>
+        <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0644" target="/usr/share/pixmaps/onyx.png">onyx.png</AdditionalFile>
+            <AdditionalFile owner="root" permission="0644" target="/usr/share/applications/onyx.desktop">onyx.desktop</AdditionalFile>
+        </AdditionalFiles>
+        <RuntimeDependencies>
+            <Dependency>jre7-openjdk</Dependency>
+        </RuntimeDependencies>
+    </Package>
+    <History>
+        <Update release="2">
+            <Date>2016-06-20</Date>
+            <Version>1.0.947</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-05-14</Date>
+            <Version>1.0.937</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>
+

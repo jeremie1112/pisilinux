@@ -1,0 +1,176 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>amarok</Name>
+        <Homepage>http://amarok.kde.org</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <Icon>amarok</Icon>
+        <IsA>app:gui</IsA>
+        <Summary>Amarok audio player</Summary>
+        <Description>Amarok is a feature-rich audio player for the KDE desktop.</Description>
+        <Archive sha1sum="19885c9fddc8eed1176b06fa9f8cad105f0540b5" type="zip">https://github.com/KDE/amarok/archive/453aa79e03fc512abcca5b2109a2aecce6dab314.zip</Archive>
+        <BuildDependencies>
+            <Dependency>extra-cmake-modules</Dependency>
+            <Dependency>qt5-base-devel</Dependency>
+            <Dependency>qt5-svg-devel</Dependency>
+            <Dependency>qt5-script-devel</Dependency>
+            <Dependency>qt5-sql-mysql</Dependency>
+            <Dependency>qt5-sql-odbc</Dependency>
+            <Dependency>qt5-sql-postgresql</Dependency>
+            <Dependency>qt5-sql-sqlite</Dependency>
+            <Dependency>qt5-declarative-devel</Dependency>
+            <Dependency>qt5-webengine-devel</Dependency>
+            <Dependency>qt5-webkit-devel</Dependency>
+            <Dependency>kcoreaddons-devel</Dependency>
+            <Dependency>solid-devel</Dependency>
+            <Dependency>kdelibs4-support-devel</Dependency>
+            <Dependency>kcodecs-devel</Dependency>
+            <Dependency>ki18n-devel</Dependency>
+            <Dependency>threadweaver-devel</Dependency>
+            <Dependency>plasma-framework-devel</Dependency>
+            <Dependency>kcmutils-devel</Dependency>
+            <Dependency>knewstuff-devel</Dependency>
+            <Dependency>ktexteditor-devel</Dependency>
+            <Dependency>kglobalaccel-devel</Dependency>
+            <Dependency>kio-devel</Dependency>
+            <Dependency>knotifyconfig-devel</Dependency>
+            <Dependency>karchive-devel</Dependency>
+            <Dependency>kdnssd-devel</Dependency>
+            <Dependency>kdesignerplugin</Dependency>
+            <Dependency>kdoctools-devel</Dependency>
+            <Dependency>kemoticons-devel</Dependency>
+            <Dependency>kitemmodels-devel</Dependency>
+            <Dependency>kinit-devel</Dependency>
+            <Dependency>kunitconversion-devel</Dependency>
+            <Dependency>taglib-devel</Dependency>
+            <Dependency>libqjson-devel</Dependency>
+            <Dependency>curl-devel</Dependency>
+            <Dependency>libmtp-devel</Dependency>
+            <Dependency>ffmpeg-devel</Dependency>
+            <Dependency>liblastfm-devel</Dependency>
+            <Dependency>qca2-qt5-devel</Dependency>
+            <Dependency>openssl-devel</Dependency>
+            <Dependency>libofa-devel</Dependency>
+            <Dependency>clamz</Dependency>
+            <Dependency>ifuse</Dependency>
+            <Dependency>loudmouth-devel</Dependency>
+            <Dependency>libgpod-devel</Dependency>
+            <Dependency>libmygpo-qt-devel</Dependency>
+            <Dependency>taglib-extras-devel</Dependency>
+            <Dependency>gdk-pixbuf-devel</Dependency>
+            <Dependency>gst-plugins-base-devel</Dependency>
+            <Dependency>gst-plugins-bad-devel</Dependency>
+            <Dependency>mariadb-lib</Dependency>
+            <Dependency>mariadb-client</Dependency>
+            <Dependency>mariadb-server</Dependency>
+            <Dependency>fftw3-devel</Dependency>
+            <Dependency>kirigami-devel</Dependency>
+            <Dependency>qt5-quickcontrols2-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+<!--             <Patch level="1">rb126682.patch</Patch> -->
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>amarok</Name>
+        <RuntimeDependencies>
+            <Dependency>kio</Dependency>
+            <Dependency>ki18n</Dependency>
+            <Dependency>fftw3</Dependency>
+            <Dependency>glib2</Dependency>
+            <Dependency>kdnssd</Dependency>
+            <Dependency>solid</Dependency>
+            <Dependency>libgpod</Dependency>
+            <Dependency>libmtp</Dependency>
+            <Dependency>kwallet</Dependency>
+            <Dependency>ffmpeg</Dependency>
+            <Dependency>kpackage</Dependency>
+            <Dependency>libgcc</Dependency>
+            <Dependency>libofa</Dependency>
+            <Dependency>taglib</Dependency>
+            <Dependency>kcodecs</Dependency>
+            <Dependency>kconfig</Dependency>
+            <Dependency>kxmlgui</Dependency>
+            <Dependency>qt5-svg</Dependency>
+            <Dependency>karchive</Dependency>
+            <Dependency>kcmutils</Dependency>
+            <Dependency>kservice</Dependency>
+            <Dependency>qt5-base</Dependency>
+            <Dependency>knewstuff</Dependency>
+            <Dependency>gdk-pixbuf</Dependency>
+            <Dependency>libmygpo-qt</Dependency>
+            <Dependency>kdeclarative</Dependency>
+            <Dependency>liblastfm</Dependency>
+            <Dependency>kguiaddons</Dependency>
+            <Dependency>kitemviews</Dependency>
+            <Dependency>qt5-phonon</Dependency>
+            <Dependency>qt5-script</Dependency>
+            <Dependency>qt5-webengine</Dependency>
+            <Dependency>qt5-declarative</Dependency>
+            <Dependency>kcompletion</Dependency>
+            <Dependency>kcoreaddons</Dependency>
+            <Dependency>kdbusaddons</Dependency>
+            <Dependency>kiconthemes</Dependency>
+            <Dependency>ktexteditor</Dependency>
+            <Dependency>mariadb-lib</Dependency>
+            <Dependency>kglobalaccel</Dependency>
+            <Dependency>ktextwidgets</Dependency>
+            <Dependency>threadweaver</Dependency>
+            <Dependency>kwindowsystem</Dependency>
+            <Dependency>taglib-extras</Dependency>
+            <Dependency>kconfigwidgets</Dependency>
+            <Dependency>knotifications</Dependency>
+            <Dependency>kwidgetsaddons</Dependency>
+            <Dependency>kdelibs4-support</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="config">/etc</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="data">/usr/share</Path>
+            <Path fileType="data">/usr/share/amarok</Path>
+            <Path fileType="data">/usr/share/appdata</Path>
+            <Path fileType="data">/usr/share/applications/</Path>
+            <Path fileType="config">/usr/share/config.kcfg</Path>
+            <Path fileType="data">/usr/share/dbus-1/interfaces</Path>
+            <Path fileType="data">/usr/share/metainfo</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="data">/usr/share/icons</Path>
+            <Path fileType="data">/usr/share/kconf_update</Path>
+            <Path fileType="data">/usr/share/knotifications5</Path>
+            <Path fileType="data">/usr/share/kservices5</Path>
+            <Path fileType="data">/usr/share/kservicetypes5</Path>   
+            <Path fileType="data">/usr/share/solid</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="3">
+            <Date>2018-04-27</Date>
+            <Version>2.9.0</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2018-04-11</Date>
+            <Version>2.9.0</Version>
+            <Comment>First release</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2017-01-07</Date>
+            <Version>2.8.83</Version>
+            <Comment>First release</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

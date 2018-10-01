@@ -1,0 +1,18 @@
+--- QScintilla-gpl-2.9/Python/configure.py.orig	2015-04-20 17:38:24.000000000 +0300
++++ QScintilla-gpl-2.9/Python/configure.py	2015-04-26 21:54:18.000000000 +0300
+@@ -31,6 +31,7 @@
+ import os
+ import optparse
+ import sys
++src_dir = os.path.dirname(os.path.abspath(__file__))
+ 
+ 
+ ###############################################################################
+@@ -1411,6 +1414,7 @@
+     includepath = qmake_config.get('INCLUDEPATH')
+     if includepath:
+         pro.write('INCLUDEPATH += %s\n' % includepath)
++        pro.write('INCLUDEPATH += %s\n' % '/usr/include/qt5/QtWidgets /usr/include/qt5/QtPrintSupport')
+ 
+     # Make sure the SIP include directory is searched before the Python include
+     # directory if they are different.

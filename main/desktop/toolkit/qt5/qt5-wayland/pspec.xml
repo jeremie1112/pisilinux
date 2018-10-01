@@ -1,0 +1,148 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>qt5-wayland</Name>
+        <Homepage>http://qt.digia.com/</Homepage>
+        <Packager>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Packager>
+        <Summary>Provides APIs for Wayland</Summary>
+        <Description>Provides APIs for Wayland</Description>
+        <License>LGPLv2.1-linking-exception</License>
+        <Archive sha1sum="d3748cbb671d7421c30df8e273e330771c529a9e" type="tarxz">http://download.qt.io/official_releases/qt/5.10/5.10.1/submodules/qtwayland-everywhere-src-5.10.1.tar.xz</Archive>
+        <BuildDependencies>
+            <Dependency versionFrom="5.10.1">qt5-base-devel</Dependency>
+            <Dependency versionFrom="5.10.1">qt5-declarative-devel</Dependency>
+            <Dependency>libxkbcommon-devel</Dependency>
+            <Dependency>xorg-server-xwayland</Dependency>
+            <Dependency versionFrom="2.50.2">glib2-devel</Dependency>
+            <Dependency>libX11-devel</Dependency>
+            <Dependency>libgcc</Dependency>
+            <Dependency versionFrom="13.0.4">mesa-devel</Dependency>
+            <Dependency>fontconfig-devel</Dependency>
+            <Dependency versionFrom="2.7.1">freetype-devel</Dependency>
+            <Dependency>libXrender-devel</Dependency>
+            <Dependency versionFrom="3.2.1">eudev-devel</Dependency>
+            <Dependency>libXcomposite-devel</Dependency>
+            <Dependency>libxkbcommon-devel</Dependency>
+            <Dependency>wayland-client</Dependency>
+            <Dependency>wayland-cursor</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch level="1">qtbug-62044.patch</Patch>
+            <Patch level="1">qtbug-66867.patch</Patch>
+            <Patch level="1">qtbug-67150.patch</Patch>
+            <Patch level="1">qtwayland-context-create.patch</Patch>
+            <Patch level="1">qtwayland-key-compose.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>qt5-wayland</Name>
+        <RuntimeDependencies>
+            <Dependency versionFrom="13.0.4">mesa</Dependency>
+            <Dependency versionFrom="2.50.2">glib2</Dependency>
+            <Dependency>libX11</Dependency>
+            <Dependency>libgcc</Dependency>
+            <Dependency versionFrom="2.7.1">freetype</Dependency>
+            <Dependency versionFrom="5.10.1">qt5-base</Dependency>
+            <Dependency>fontconfig</Dependency>
+            <Dependency>libXrender</Dependency>
+            <Dependency>libxkbcommon</Dependency>
+            <Dependency>libXcomposite</Dependency>
+            <Dependency>wayland-client</Dependency>
+            <Dependency>wayland-cursor</Dependency>
+            <Dependency>wayland-server</Dependency>
+            <Dependency versionFrom="5.10.1">qt5-declarative</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="library">/usr/lib/qt5</Path>
+            <Path fileType="executable">/usr/lib/qt5/bin</Path>
+            <Path fileType="executable">/usr/bin</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>qt5-wayland-devel</Name>
+        <RuntimeDependencies>
+            <Dependency release="current">qt5-wayland</Dependency>
+            <Dependency versionFrom="5.10.1">qt5-base-devel</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib/pkgconfig</Path>
+            <Path fileType="headers">/usr/include</Path>
+        </Files>
+    </Package>
+    
+    <Package>
+        <Name>qt5-wayland-docs</Name>
+        <RuntimeDependencies>
+            <Dependency versionFrom="5.10.1">qt5-base</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="8">
+            <Date>2018-09-03</Date>
+            <Version>5.10.1</Version>
+            <Comment>Version bump</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="7">
+            <Date>2018-05-02</Date>
+            <Version>5.9.5</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="6">
+            <Date>2018-02-01</Date>
+            <Version>5.9.3</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+        <Update release="5">
+            <Date>2017-02-20</Date>
+            <Version>5.7.1</Version>
+            <Comment>Release bump.</Comment>
+            <Name>Stefan Gronewold</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+        <Update release="4">
+            <Date>2016-10-22</Date>
+            <Version>5.6.2</Version>
+            <Comment>Version bump</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2016-06-29</Date>
+            <Version>5.6.0</Version>
+            <Comment>Version bump</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2015-06-03</Date>
+            <Version>5.4.2</Version>
+            <Comment>Version bump</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2015-05-09</Date>
+            <Version>5.4.1</Version>
+            <Comment>First release</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

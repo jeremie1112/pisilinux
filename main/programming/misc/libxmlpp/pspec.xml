@@ -1,0 +1,91 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>libxmlpp</Name>
+        <Homepage>http://libxmlplusplus.sourceforge.net</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>LGPLv2.1</License>
+        <IsA>library</IsA>
+        <Summary>C++ wrapper for the libxml2 XML parser library</Summary>
+        <Description>libxml++ is a C++ wrapper for the libxml XML parser library.</Description>
+        <Archive sha1sum="00a4082da23f8293bc8cf7d529977171ccf020bb" type="tarxz">http://ftp.acc.umu.se/pub/GNOME/sources/libxml++/3.0/libxml++-3.0.1.tar.xz</Archive>
+        <BuildDependencies>
+            <Dependency>glibmm-devel</Dependency>
+            <Dependency>libsigc++-devel</Dependency>
+            <Dependency>libxml2-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>libxmlpp</Name>
+        <RuntimeDependencies>
+            <Dependency>libgcc</Dependency>
+            <Dependency>libxml2</Dependency>
+            <Dependency>glibmm</Dependency>
+            <!--<Dependency>libsigc++</Dependency>-->
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libxmlpp-devel</Name>
+        <Summary>Development files for libxmlpp</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">libxmlpp</Dependency>
+            <Dependency>glibmm-devel</Dependency>
+            <Dependency>libxml2-devel</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+            <Path fileType="header">/usr/lib/libxml++-2.6</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libxmlpp-docs</Name>
+        <Summary>Development documents for libxmlpp in HTML</Summary>
+        <Files>
+            <Path fileType="doc">/usr/share/doc/libxmlpp/html</Path>
+            <Path fileType="doc">/usr/share/devhelp</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-09-16</Date>
+            <Version>3.0.1</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-02-17</Date>
+            <Version>2.40.1</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>2.38.1</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2015-05-21</Date>
+            <Version>2.38.1</Version>
+            <Comment>First release</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

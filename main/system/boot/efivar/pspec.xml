@@ -1,0 +1,79 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>efivar</Name>
+        <Homepage>https://github.com/vathpela/efivar</Homepage>
+        <Packager>
+            <Name>Aydın Demirel</Name>
+            <Email>aydin.demirel@pisilinux.org</Email>
+        </Packager>
+        <License>LGPL2.1</License>
+        <IsA>app:console</IsA>
+        <Summary>Tools and library to manipulate EFI variables</Summary>
+        <Description>Tools and library to manipulate EFI variables.</Description>
+        <Archive sha1sum="ae5b4c3aeb29fe0ef5212142b0a21d6f003dd266" type="tarbz2">https://github.com/rhinstaller/efivar/releases/download/31/efivar-31.tar.bz2</Archive>
+        <BuildDependencies>
+           <Dependency>popt-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <!--<Patch level="1">0001-Workaround-rename-of-linux-nvme.h.patch</Patch>-->
+            <!--<Patch level="1">deprecated-readdir_r.patch</Patch>-->
+            <!--Patch level="1">efivar-no-static.patch</Patch-->
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>efivar</Name>
+        <RuntimeDependencies>
+            <Dependency>popt</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="executable">/usr/bin</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>efivar-devel</Name>
+        <RuntimeDependencies>
+            <Dependency>popt-devel</Dependency>
+            <Dependency release="current">efivar</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="7">
+            <Date>2018-08-13</Date>
+            <Version>31</Version>
+            <Comment>Rebuild New T.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="6">
+            <Date>2017-12-09</Date>
+            <Version>31</Version>
+            <Comment>Version bump</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="5">
+            <Date>2017-01-24</Date>
+            <Version>26</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>                
+        <Update release="1">
+            <Date>2016-03-29</Date>
+            <Version>0.23</Version>
+            <Comment>First release</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>osman.erkan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

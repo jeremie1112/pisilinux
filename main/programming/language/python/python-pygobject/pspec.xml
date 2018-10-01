@@ -1,0 +1,112 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>python-pygobject</Name>
+        <Homepage>http://www.pygtk.org</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>LGPLv2.1</License>
+        <IsA>library</IsA>
+        <Summary>Glib bindings for Python</Summary>
+        <Description>pygobject is GLib's GObject library bindings for Python.</Description>
+        <Archive sha1sum="8e3cb8621c2e1d8dbeba5c3c007c7421b936a36c" type="tarxz">http://ftp.gnome.org/pub/GNOME/sources/pygobject/2.28/pygobject-2.28.7.tar.xz</Archive>
+        <BuildDependencies>
+            <Dependency>python-devel</Dependency>
+            <Dependency>python-cairo-devel</Dependency>
+            <Dependency>glib2-devel</Dependency>
+            <Dependency>gobject-introspection-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch level="1">pygobject-2.16.1-fixdetection.patch</Patch>
+<!--             <Patch level="1">pygobject-2.28.6-fixes-1.patch</Patch> -->
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>python-pygobject</Name>
+        <RuntimeDependencies>
+            <Dependency>glib2</Dependency>
+            <Dependency>gobject-introspection</Dependency>
+            <Dependency>python-cairo</Dependency>
+            <Dependency>libffi</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>python-pygobject-devel</Name>
+        <Summary>pygobject development files</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">python-pygobject</Dependency>
+            <Dependency>gobject-introspection-devel</Dependency>
+            <Dependency>glib2-devel</Dependency>
+            <Dependency>libffi-devel</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/pygobject-codegen-2.0</Path>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+            <Path fileType="data">/usr/share/pygobject</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>python-pygobject-docs</Name>
+        <IsA>data:doc</IsA>
+        <Summary>API documents for pygobject</Summary>
+        <Files>
+            <Path fileType="data">/usr/share/gtk-doc</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="5">
+            <Date>2018-08-14</Date>
+            <Version>2.28.7</Version>
+            <Comment>Rebuild New T.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+         <Update release="4">
+            <Date>2018-02-25</Date>
+            <Version>2.28.7</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="4">
+            <Date>2017-02-06</Date>
+            <Version>2.28.6</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-01-25</Date>
+            <Version>2.28.6</Version>
+            <Comment>Rebuild for new toolchain</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>2.28.6</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-04-04</Date>
+            <Version>2.28.6</Version>
+            <Comment>First release</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

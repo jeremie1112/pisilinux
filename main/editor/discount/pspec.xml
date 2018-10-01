@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>discount</Name>
+        <Homepage>https://github.com/Orc/discount</Homepage>
+        <Packager>
+            <Name>Stefan Gronewold (groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Packager>
+        <License>BSD</License>
+        <IsA>app:console</IsA>
+        <Summary>A Markdown implementation written in C</Summary>
+        <Description>implementation of the Markdown markup language in C</Description>
+        <Archive sha1sum="038e754afe234d92e5f327353fab5772c3f97f63" type="tarbz2">http://download.openpkg.org/components/cache/discount/discount-2.2.4.tar.bz2</Archive>       
+    </Source>
+
+    <Package>
+        <Name>discount</Name>        
+        <Files>            
+            <Path fileType="executable">/usr/bin</Path>                        
+            <Path fileType="library">/usr/lib</Path>                        
+            <Path fileType="man">/usr/share/man</Path>            
+            <Path fileType="doc">/usr/share/doc</Path>            
+        </Files>        
+    </Package>
+
+    <Package>
+        <Name>discount-devel</Name>
+        <Summary>Development files for discount</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">discount</Dependency>                        
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>            
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+        </Files>
+    </Package>
+    
+    <History>
+        <Update release="3">
+            <Date>2018-08-29</Date>
+            <Version>2.2.4</Version>
+            <Comment>Version Bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2017-05-08</Date>
+            <Version>2.2.1</Version>
+            <Comment>Rebuild with new toolchain</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-11-06</Date>
+            <Version>2.2.1</Version>
+            <Comment>First release</Comment>
+            <Name>Stefan Gronewold (groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

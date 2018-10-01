@@ -1,0 +1,12 @@
+Index: playonlinux/etc/PlayOnLinux.desktop
+===================================================================
+diff -Nuar a/etc/PlayOnLinux.desktop b/etc/PlayOnLinux.desktop
+--- a/etc/PlayOnLinux.desktop	2018-01-04 16:18:56.701241026 +0300
++++ b/etc/PlayOnLinux.desktop	2018-01-04 16:19:45.358237516 +0300
+@@ -5,4 +5,4 @@
+ Type=Application
+ Exec=playonlinux %F
+ Icon=playonlinux
+-Categories=Utility;Emulator;
++Categories=Game;
+

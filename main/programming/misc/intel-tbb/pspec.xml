@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>intel-tbb</Name>
+        <Homepage>http://www.threadingbuildingblocks.org/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>library</IsA>
+        <Summary>Intel Threading Building Blocks Library</Summary>
+        <Description>Threading Building Blocks (TBB) is a C++ runtime library that abstracts the low-level threading details necessary for optimal multi-core performance.</Description>
+        <Archive sha1sum="b277fbfbac9c12825ac1522212fad899c41dabfa" type="targz">https://github.com/01org/tbb/archive/2018_U5.tar.gz</Archive>
+        <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0755" target="install.sh">install.sh</AdditionalFile>
+        </AdditionalFiles>
+        <Patches>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>intel-tbb</Name>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>intel-tbb-devel</Name>
+        <Summary>Development files for intel-tbb</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">intel-tbb</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-09-09</Date>
+            <Version>2018_20180618</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-04-30</Date>
+            <Version>44_20160128</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Kamil Atlı</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>44_20160128</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-03-08</Date>
+            <Version>44_20160128</Version>
+            <Comment>First release</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

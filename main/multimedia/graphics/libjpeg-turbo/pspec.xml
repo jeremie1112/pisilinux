@@ -1,0 +1,110 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>libjpeg-turbo</Name>
+        <Homepage>http://www.libjpeg-turbo.org/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv3</License>
+        <PartOf>multimedia.graphics</PartOf>
+        <IsA>app:gui</IsA>
+        <Summary>MMX, SSE, and SSE2 SIMD accelerated JPEG library</Summary>
+        <Description>libjpeg-turbo is a derivative of libjpeg for x86 and x86-64 processors which uses SIMD instructions (MMX, SSE2, etc.) to accelerate baseline JPEG compression and decompression. libjpeg-turbo is generally 2-4x as fast as the unmodified version of libjpeg v6b, all else being equal.</Description>
+        <Archive sha1sum="87ebf4cab2bb27fcb8e7ccb18ec4eb680e1f2c2d" type="targz">mirrors://sourceforge/libjpeg-turbo/1.5.3/libjpeg-turbo-1.5.3.tar.gz</Archive>
+        <Patches>
+            <!--Patch>fix_doc.patch</Patch-->
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>libjpeg-turbo</Name>
+        <Replaces>
+            <Package>jpeg</Package>
+        </Replaces>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libjpeg-turbo-devel</Name>
+        <Summary>Development files for libjpeg-turbo</Summary>
+        <RuntimeDependencies>
+            <Dependency releaseFrom="current">libjpeg-turbo</Dependency>
+        </RuntimeDependencies>
+        <Replaces>
+            <Package>jpeg-devel</Package>
+        </Replaces>
+        <Files>
+            <Path fileType="data">/usr/include/</Path>
+            <Path fileType="library">/usr/lib/pkgconfig</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libjpeg-turbo-32bit</Name>
+        <PartOf>emul32</PartOf>
+        <Summary>32-bit shared libraries for jpeg</Summary>
+        <BuildType>emul32</BuildType>
+        <RuntimeDependencies>
+            <Dependency release="current">libjpeg-turbo</Dependency>
+        </RuntimeDependencies>
+        <Replaces>
+            <Package>jpeg-32bit</Package>
+        </Replaces>
+        <Files>
+            <Path fileType="library">/usr/lib32</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="6">
+            <Date>2018-07-25</Date>
+            <Version>1.5.3</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="5">
+            <Date>2018-03-20</Date>
+            <Version>1.5.3</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="4">
+            <Date>2017-09-20</Date>
+            <Version>1.5.1</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2016-06-09</Date>
+            <Version>1.4.2</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-05-27</Date>
+            <Version>1.4.2</Version>
+            <Comment>Release bump</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-04-08</Date>
+            <Version>1.4.2</Version>
+            <Comment>First release</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

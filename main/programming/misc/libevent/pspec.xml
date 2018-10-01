@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>libevent</Name>
+        <Homepage>http://monkey.org/~provos/libevent</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>BSD</License>
+        <IsA>library</IsA>
+        <Summary>A library to execute a function when a specific event occurs on a file descriptor</Summary>
+        <Description>The libevent API provides a mechanism to execute a callback function when a specific event occurs on a file descriptor or after a timeout has been reached. libevent is meant to replace the asynchronous event loop found in event driven network servers. An application just needs to call event_dispatch() and can then add or remove events dynamically without having to change the event loop.</Description>
+        <Archive sha1sum="8a37ad06dd28ed3da785819da297b1a3b2ea9307" type="targz">https://github.com/libevent/libevent/archive/release-2.1.8-stable.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency versionFrom="1.0.2j">openssl-devel</Dependency>
+            <Dependency>zlib-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch level="0">libevent-linkage_fix.diff</Patch>
+            <Patch level="1">libevent-2.0.13-manpages-on.patch</Patch>
+            <!--Patch level="1">libevent-2.0.21-stable-automake-fix.patch</Patch-->
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>libevent</Name>
+        <RuntimeDependencies>
+            <Dependency versionFrom="1.0.2j">openssl</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libevent-devel</Name>
+        <Summary>Development files for libevent</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">libevent</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+            <Path fileType="man">/usr/share/man/man3</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-08-05</Date>
+            <Version>2.1.8</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-03-02</Date>
+            <Version>2.1.8</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>2.0.22</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2015-07-30</Date>
+            <Version>2.0.22</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

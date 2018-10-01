@@ -1,0 +1,82 @@
+<PISI>
+    <Source>
+        <Name>libodfgen</Name>
+        <Homepage>http://sf.net/p/libwpd/libodfgen/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>LGPLv2</License>
+        <IsA>library</IsA>
+        <Summary>Library for generating documents</Summary>
+        <Description>Library for generating documents in Open Document Format</Description>
+        <Archive sha1sum="42628faa433c57497566438f9048ce44e820b945" type="tarxz">https://sourceforge.net/projects/libwpd/files/libodfgen/libodfgen-0.1.7/libodfgen-0.1.7.tar.xz</Archive>
+        <BuildDependencies>
+            <Dependency>boost-devel</Dependency>
+            <Dependency>libwpd-devel</Dependency>
+            <Dependency>libwpg-devel</Dependency>
+            <Dependency>libetonyek-devel</Dependency>
+            <Dependency>librevenge-devel</Dependency>
+            <Dependency>libxml2-devel</Dependency>
+            <Dependency>zlib-devel</Dependency>
+            <Dependency>gperf</Dependency>
+        </BuildDependencies>
+    </Source>
+    
+    <Package>
+        <Name>libodfgen</Name>
+        <RuntimeDependencies>
+            <Dependency>libgcc</Dependency>
+            <Dependency>librevenge</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+        </Files>
+    </Package>
+    
+    <Package>
+        <Name>libodfgen-devel</Name>
+        <Summary>Development files for libodfgen</Summary>
+        <RuntimeDependencies>
+            <Dependency>librevenge-devel</Dependency>
+            <Dependency>libetonyek-devel</Dependency>
+            <Dependency release="current">libodfgen</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="library">/usr/lib/pkgconfig</Path>
+        </Files>
+    </Package>
+    
+    <History>
+        <Update release="4">
+            <Date>2018-08-09</Date>
+            <Version>0.1.7</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2018-03-22</Date>
+            <Version>0.1.6</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2017-04-04</Date>
+            <Version>0.1.6</Version>
+            <Comment>release bump</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2017-01-01</Date>
+            <Version>0.1.6</Version>
+            <Comment>First release</Comment>
+            <Name>Kamil Atlı</Name>
+            <Email>suvarice@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

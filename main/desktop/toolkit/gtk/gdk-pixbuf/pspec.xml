@@ -1,0 +1,162 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>gdk-pixbuf</Name>
+        <Homepage>http://www.gnome.org</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>library</IsA>
+        <Summary>GDK pixbuf library</Summary>
+        <Description>gdk-pixbuf is a library that provides image loading and scaling support for gtk+ applications</Description>
+        <Archive sha1sum="2a32bf71fd7c47b22abd9843bc3116e771772fbe" type="tarxz">mirrors://gnome/gdk-pixbuf/2.36/gdk-pixbuf-2.36.12.tar.xz</Archive>
+        <BuildDependencies>
+            <Dependency>gtk-doc</Dependency>
+            <Dependency>glib2-devel</Dependency>
+            <Dependency>libX11-devel</Dependency>
+            <Dependency>tiff-devel</Dependency>
+            <Dependency>libjpeg-turbo-devel</Dependency>
+            <Dependency>libpng-devel</Dependency>
+            <Dependency>jasper-devel</Dependency>
+            <Dependency>shared-mime-info</Dependency>
+            <Dependency>python-six</Dependency>
+            <Dependency>gobject-introspection-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>gdk-pixbuf</Name>
+        <RuntimeDependencies>
+            <Dependency>glib2</Dependency>
+            <Dependency>libpng</Dependency>
+            <Dependency>libX11</Dependency>
+            <Dependency>tiff</Dependency>
+            <Dependency>jasper</Dependency>
+            <Dependency>libjpeg-turbo</Dependency>
+        </RuntimeDependencies>>
+        <Files>
+            <Path fileType="config">/etc</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="data">/usr/share</Path>
+        </Files>
+        <Provides>
+            <COMAR script="pakhandler.py">System.PackageHandler</COMAR>
+        </Provides>
+    </Package>
+
+    <Package>
+        <Name>gdk-pixbuf-devel</Name>
+        <Summary>Development files for gdk-pixbuf</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">gdk-pixbuf</Dependency>
+            <Dependency>glib2-devel</Dependency>
+            <Dependency>libpng-devel</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/gdk-pixbuf-csource</Path>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="library">/usr/lib/pkgconfig</Path>
+            <Path fileType="library">/usr/lib32/pkgconfig</Path>
+            <Path fileType="data">/usr/share/gir-1.0</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>gdk-pixbuf-docs</Name>
+        <Summary>Reference documents for gdk-pixbuf</Summary>
+        <Files>
+            <Path fileType="data">/usr/share/gtk-doc</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>gdk-pixbuf-32bit</Name>
+        <PartOf>emul32</PartOf>
+        <Summary>32-bit shared libraries for gdk-pixbuf</Summary>
+        <BuildType>emul32</BuildType>
+        <BuildDependencies>
+            <Dependency>tiff-32bit</Dependency>
+            <Dependency>libjpeg-turbo-32bit</Dependency>
+            <Dependency>glib2-32bit</Dependency>
+            <Dependency>libX11-32bit</Dependency>
+            <Dependency>libpng-32bit</Dependency>
+            <Dependency>jasper-32bit</Dependency>
+            <Dependency>libX11-32bit</Dependency>
+        </BuildDependencies>
+        <RuntimeDependencies>
+            <Dependency release="current">gdk-pixbuf</Dependency>
+            <Dependency>tiff-32bit</Dependency>
+            <Dependency>glib2-32bit</Dependency>
+            <Dependency>libpng-32bit</Dependency>
+            <Dependency>libX11-32bit</Dependency>
+            <Dependency>jasper-32bit</Dependency>
+            <Dependency>libjpeg-turbo-32bit</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/gdk-pixbuf-query-loaders-32</Path>
+            <Path fileType="library">/usr/lib32</Path>
+        </Files>
+        <Provides>
+            <COMAR script="pakhandler-32.py">System.PackageHandler</COMAR>
+        </Provides>
+    </Package>
+
+    <History>
+        <Update release="7">
+            <Date>2018-09-16</Date>
+            <Version>2.36.12</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="6">
+            <Date>2018-04-17</Date>
+            <Version>2.36.12</Version>
+            <Comment>Version Bump.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="5">
+            <Date>2018-01-28</Date>
+            <Version>2.36.11</Version>
+            <Comment>Version Bump.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="4">
+            <Date>2017-02-06</Date>
+            <Version>2.36.4</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2016-06-09</Date>
+            <Version>2.31.4</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-05-25</Date>
+            <Version>2.31.4</Version>
+            <Comment>Release bump</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-03-25</Date>
+            <Version>2.31.4</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

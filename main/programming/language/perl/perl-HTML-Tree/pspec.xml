@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>perl-HTML-Tree</Name>
+        <Homepage>http://search.cpan.org/dist/HTML-Tree/</Homepage>
+        <Packager>
+            <Name>Pisi Linux Admins</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>library</IsA>
+        <IsA>app:console</IsA>
+        <Summary>A Perl module that build and scan parse-trees of HTML</Summary>
+        <Description>Build and scan parse-trees of HTML. It allows to represent,create and extract information from HTML syntax trees.</Description>
+        <Archive sha1sum="8f94fad3837fb8abe73305f2598b0345c69457f1" type="targz">https://cpan.metacpan.org/authors/id/K/KE/KENTNL/HTML-Tree-5.06.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>perl</Dependency>
+            <Dependency>perl-HTML-Tagset</Dependency>
+            <Dependency>perl-HTML-Parser</Dependency>
+            <Dependency>perl-Test-Exception</Dependency>
+            <Dependency>perl-Test-Pod-Coverage</Dependency>
+            <Dependency>perl-Module-Build</Dependency>
+            <Dependency>perl-Test-Fatal</Dependency>
+            <Dependency>perl-HTML-Format</Dependency>
+            <Dependency>perl-libwww</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>perl-HTML-Tree</Name>
+        <RuntimeDependencies>
+            <Dependency>perl</Dependency>
+            <Dependency>perl-HTML-Tagset</Dependency>
+            <Dependency>perl-HTML-Parser</Dependency>
+            <Dependency>perl-Test-Exception</Dependency>
+            <Dependency>perl-Test-Pod-Coverage</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-07-26</Date>
+            <Version>5.06</Version>
+            <Comment>Rebuild for new toolchain.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-01-24</Date>
+            <Version>5.03</Version>
+            <Comment>Rebuild for new toolchain</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>5.03</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-03-27</Date>
+            <Version>5.03</Version>
+            <Comment>First release</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

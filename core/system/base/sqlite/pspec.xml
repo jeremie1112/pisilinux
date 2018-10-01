@@ -1,0 +1,178 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>sqlite</Name>
+        <Homepage>http://www.sqlite.org/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>as-is</License>
+        <IsA>library</IsA>
+        <Summary>An SQL Database Engine in a C Library</Summary>
+        <Description>SQLite is a small C library that implements a self-contained, embeddable, zero-configuration SQL database engine. Supports databases up to 2 terabytes in size.</Description>
+        <Archive sha1sum="da68915e3563b5244cbcdb6c7e20fb35559bcfc6" type="targz">https://sqlite.org/2018/sqlite-autoconf-3240000.tar.gz</Archive>
+        <Archive sha1sum="9684d06b7e6ec1868b1ef075993dc29d952dac97" type="zip">https://sqlite.org/2018/sqlite-doc-3240000.zip</Archive>
+        <BuildDependencies>
+            <Dependency>readline-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>sqlite</Name>
+        <RuntimeDependencies>
+            <Dependency>readline</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="doc">/usr/share/doc/sqlite/README</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>sqlite-devel</Name>
+        <PartOf>system.devel</PartOf>
+        <Summary>Development files for sqlite</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">sqlite</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+            <Path fileType="data">/usr/lib32/pkgconfig</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>sqlite-32bit</Name>
+        <Summary>sqlite-32bit için paylaşımlı kitaplıklar</Summary>
+        <PartOf>emul32</PartOf>
+        <Summary>32-bit shared libraries for sqlite</Summary>
+        <BuildType>emul32</BuildType>
+        <RuntimeDependencies>
+            <Dependency release="current">sqlite</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib32</Path>
+        </Files>
+    </Package>
+
+
+    <!--<Package>
+        <Name>sqlite-tcl</Name>
+        <PartOf>programming.language.tcl</PartOf>
+        <Summary>sqlite Tcl Extension Architecture (TEA)</Summary>
+        <BuildDependencies>
+            <Dependency>tcl-devel</Dependency>
+        </BuildDependencies>
+        <RuntimeDependencies>
+            <Dependency>sqlite</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib/sqlite3.8.10.2</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>sqlite-tcl-32bit</Name>
+        <PartOf>emul32</PartOf>
+        <Summary>sqlite-tcl-32bit için paylaşımlı kitaplıklar</Summary>
+        <BuildDependencies>
+            
+        </BuildDependencies>
+        <RuntimeDependencies>
+            
+            <Dependency>sqlite</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib32/sqlite3.8.10.2/</Path>
+        </Files>
+    </Package>-->
+
+    <Package>
+        <Name>sqlite-doc</Name>
+        <Summary>sqlite-doc, sqlite için doküman belgeleri</Summary>
+        <RuntimeDependencies>
+            <Dependency>sqlite</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/share/doc/sqlite/</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="10">
+            <Date>2018-07-15</Date>
+            <Version>3.24.0</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="9">
+            <Date>2018-07-08</Date>
+            <Version>3.24.0</Version>
+            <Comment>Verison Bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="8">
+            <Date>2018-05-05</Date>
+            <Version>3.22.0</Version>
+            <Comment>Verison Bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="7">
+            <Date>2017-09-26</Date>
+            <Version>3.20.1</Version>
+            <Comment>Verison Bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="6">
+            <Date>2017-03-22</Date>
+            <Version>3.17.0</Version>
+            <Comment>Verison Bump.</Comment>
+            <Name>Kamil Atlı</Name>
+            <Email>suvari@pisilinux.org</Email>
+        </Update>
+        <Update release="5">
+            <Date>2017-01-26</Date>
+            <Version>3.16.2</Version>
+            <Comment>Verison Bump.</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="4">
+            <Date>2017-01-07</Date>
+            <Version>3.11.1</Version>
+            <Comment>Rebuildwith new toolchain.</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-01-05</Date>
+            <Version>3.11.1</Version>
+            <Comment>Version Bump</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-15</Date>
+            <Version>3.11.0.0</Version>
+            <Comment>Release Bump</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-03-02</Date>
+            <Version>3.11.0.0</Version>
+            <Comment>First release</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

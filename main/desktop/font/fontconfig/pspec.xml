@@ -1,0 +1,150 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>fontconfig</Name>
+        <Homepage>http://fontconfig.org</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>MIT</License>
+        <IsA>library</IsA>
+        <Summary>A library for configuring and customizing font access</Summary>
+        <Description>Fontconfig is a library designed to provide system-wide font configuration, customization and application access.</Description>
+        <Archive sha1sum="b7bcc5d47211b7bbac35bb221860407db3601f5b" type="tarbz2">https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.13.0.tar.bz2</Archive>
+        <BuildDependencies>
+            <Dependency>libutil-linux-devel</Dependency>
+            <Dependency>gperf</Dependency>
+            <Dependency>freetype-devel</Dependency>
+            <Dependency>expat-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <!-- prefer dejavu over bitstream -->
+            <Patch level="1">0001-fix-test-with-freetype2-2.7.1.patch</Patch>
+            <Patch level="1">prefer_dejavu.patch</Patch>
+<!--             <Patch level="1">anymetrics_urw.patch</Patch> -->
+            <Patch level="1">use_legacy_lcdfilter_on_small_monospace.patch</Patch>
+<!--             <Patch level="1">add_hinting_and_antialiasing_to_proper_fonts.patch</Patch> -->
+            <!-- Sleep less in fc-cache -->
+            <Patch level="1">fontconfig-2.8.0-sleep-less.patch</Patch>
+            <!-- remove deprecated user conf dir -->
+            <Patch level="0">deprecated-user-conf.patch</Patch>
+            <Patch level="1">fontconfig-const-name-in-range.patch</Patch>
+            <Patch level="1">fontconfig-implicit-object-for-const-name.patch</Patch>
+            <Patch level="1">fontconfig-locale.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>fontconfig</Name>
+        <RuntimeDependencies>
+            <Dependency>libutil-linux</Dependency>
+            <Dependency>freetype</Dependency>
+            <Dependency>expat</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="config">/etc/fonts</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="data">/var/cache/fontconfig</Path>
+            <Path fileType="data">/usr/share</Path>
+        </Files>
+        <Provides>
+            <COMAR script="package.py">System.Package</COMAR>
+            <COMAR script="pakhandler.py">System.PackageHandler</COMAR>
+        </Provides>
+    </Package>
+
+    <Package>
+        <Name>fontconfig-devel</Name>
+        <Summary>Development files for fontconfig</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">fontconfig</Dependency>
+            <Dependency>libutil-linux-devel</Dependency>
+            <Dependency>freetype-devel</Dependency>
+            <Dependency>expat-devel</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+            <Path fileType="data">/usr/lib32/pkgconfig</Path>
+            <Path fileType="doc">/usr/share/doc/fontconfig/fontconfig-devel.txt</Path>
+            <Path fileType="man">/usr/share/man</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>fontconfig-32bit</Name>
+        <PartOf>emul32</PartOf>
+        <Summary>32-bit shared libraries for fontconfig</Summary>
+        <BuildType>emul32</BuildType>
+        <BuildDependencies>
+            <Dependency>expat-32bit</Dependency>
+            <Dependency>freetype-32bit</Dependency>
+            <Dependency>libutil-linux-32bit</Dependency>
+        </BuildDependencies>
+        <RuntimeDependencies>
+            <Dependency release="current">fontconfig</Dependency>
+            <Dependency>expat-32bit</Dependency>
+            <Dependency>freetype-32bit</Dependency>
+            <Dependency>libutil-linux-32bit</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib32</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="7">
+            <Date>2018-07-30</Date>
+            <Version>2.13.0</Version>
+            <Comment>Rebuild for New Toolchain</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="6">
+            <Date>2018-05-10</Date>
+            <Version>2.13.0</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="5">
+            <Date>2017-02-13</Date>
+            <Version>2.12.1</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="4">
+            <Date>2016-06-09</Date>
+            <Version>2.12.1</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2016-06-09</Date>
+            <Version>2.11.1</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-05-25</Date>
+            <Version>2.11.1</Version>
+            <Comment>Release bump.</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2014-05-17</Date>
+            <Version>2.11.1</Version>
+            <Comment>First release</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

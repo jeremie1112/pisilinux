@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>telepathy-python</Name>
+        <Homepage>http://telepathy.freedesktop.org/wiki</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>LGPLv2+</License>
+        <IsA>library</IsA>
+        <Summary>Python libraries for Telepathy</Summary>
+        <Description>telepathy-python is the Python libraries for use in Telepathy client and connection managers.</Description>
+        <Archive sha1sum="a0cc066088f2fc25849c1d005baaea2b7c6409fd" type="targz">http://telepathy.freedesktop.org/releases/telepathy-python/telepathy-python-0.15.19.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>libxslt-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch level="1">telepathy-python-0.15.19-mkdir_p.patch</Patch>
+            <Patch level="1">dont-compile-py.patch</Patch>
+            <Patch level="1">python-telepathy-no_double_errors-py.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>telepathy-python</Name>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-08-30</Date>
+            <Version>0.15.19</Version>
+            <Comment>Rebuild for new toolchain</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-01-25</Date>
+            <Version>0.15.19</Version>
+            <Comment>Rebuild for new toolchain</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>0.15.19</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2015-11-22</Date>
+            <Version>0.15.19</Version>
+            <Comment>First release</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

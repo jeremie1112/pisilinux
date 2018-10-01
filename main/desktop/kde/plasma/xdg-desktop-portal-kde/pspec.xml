@@ -1,0 +1,120 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>xdg-desktop-portal-kde</Name>
+        <Homepage>https://download.kde.org/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>library</IsA>
+        <Summary>A backend implementation for xdg-desktop-portal using Qt/KF5</Summary>
+        <Description>A backend implementation for xdg-desktop-portal using Qt/KF5</Description>
+        <Archive sha1sum="4295352e2a875742f2ccaef968cd31bfe0b8e912" type="tarxz">https://download.kde.org/stable/plasma/5.12.5/xdg-desktop-portal-kde-5.12.5.tar.xz</Archive>
+        <BuildDependencies>
+             <Dependency>extra-cmake-modules</Dependency>
+             <Dependency versionFrom="5.7.1">qt5-base-devel</Dependency>
+             <Dependency>kcoreaddons-devel</Dependency>
+             <Dependency>ki18n-devel</Dependency>
+             <Dependency>knotifications-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+    <Package>
+        <Name>xdg-desktop-portal-kde</Name>
+        <RuntimeDependencies>
+            <Dependency>ki18n</Dependency>
+            <Dependency>libgcc</Dependency>
+            <Dependency>qt5-base</Dependency>
+            <Dependency>kcoreaddons</Dependency>
+            <Dependency>knotifications</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="data">/usr/share/dbus-1</Path>
+            <Path fileType="data">/usr/share</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="11">
+            <Date>2018-08-11</Date>
+            <Version>5.12.5</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="10">
+            <Date>2018-05-14</Date>
+            <Version>5.12.5</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="9">
+            <Date>2018-04-23</Date>
+            <Version>5.12.4</Version>
+            <Comment>Version bump</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="8">
+            <Date>2018-04-06</Date>
+            <Version>5.12.4</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="7">
+            <Date>2018-03-22</Date>
+            <Version>5.12.3</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="6">
+            <Date>2018-02-03</Date>
+            <Version>5.11.5</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="5">
+            <Date>2017-12-15</Date>
+            <Version>5.11.4</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="4">
+            <Date>2017-11-08</Date>
+            <Version>5.11.3</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-11-02</Date>
+            <Version>5.11.2</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2017-10-14</Date>
+            <Version>5.11.0</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="1">
+            <Date>2017-09-14</Date>
+            <Version>5.10.5</Version>
+            <Comment>First release</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

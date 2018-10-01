@@ -1,0 +1,77 @@
+<?xml version="1.0" ?> 
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>decibel-audio-player</Name>
+        <Homepage>http://decibel.silent-blade.org/</Homepage>
+        <Packager>
+            <Name>Yoyo Fernández</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv3</License>
+        <PartOf>multimedia.sound</PartOf>
+        <IsA>app:gui</IsA>
+        <Summary>Decibel Audio Player es un reproductor de audio escrito en GTK+ de código abierto (GPL) para GNU/Linux</Summary>
+        <Description>Decibel Audio Player es un reproductor de audio escrito en GTK+ de código abierto (GPL) para GNU/Linux. Está especialmente dirigido a Gnome aunque puede usarse en KDE</Description>
+        <Archive sha1sum="b611bfc724ccef8f5517ebab218e70bf2975c857" type="targz">http://decibel.silent-blade.org/uploads/Main/decibel-audio-player-1.08.tar.gz</Archive>
+        <Patches>
+            <Patch level="1">prefix.patch</Patch>
+            <Patch level="1">decibel-audio-player-pil.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>decibel-audio-player</Name>
+        <RuntimeDependencies>
+            <Dependency>dbus-python</Dependency>            
+            <Dependency>gst-python</Dependency>
+            <Dependency>python-gtk</Dependency>
+            <Dependency>python-imaging</Dependency>
+            <Dependency>python-mutagen</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="man">/usr/share/man/man1</Path>
+            <Path fileType="data">/usr/share/decibel-audio-player</Path>
+            <Path fileType="data">/usr/share/applications</Path>
+            <Path fileType="data">/usr/share/pixmaps</Path>
+            <Path fileType="locadata">/usr/share/locale/</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+        <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0755" target="/usr/bin/decibel-audio-player">decibel-audio-player</AdditionalFile>
+            <AdditionalFile owner="root" permission="0755" target="/usr/bin/decibel-audio-player-remote">decibel-audio-player-remote</AdditionalFile>
+        </AdditionalFiles>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-09-01</Date>
+            <Version>1.08</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2018-02-25</Date>
+            <Version>1.08</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2017-02-18</Date>
+            <Version>1.08</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-12-07</Date>
+            <Version>1.08</Version>
+            <Comment>First Release</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

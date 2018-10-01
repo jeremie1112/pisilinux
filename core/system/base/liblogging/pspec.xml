@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>liblogging</Name>
+        <Homepage>http://www.liblogging.org</Homepage>
+        <Packager>
+            <Name>Marcin Bojara</Name>
+            <Email>marcin@pisilinux.org</Email>
+        </Packager>
+        <License>BSD-2</License>
+        <IsA>library</IsA>
+        <Summary>Easy to use, portable, open source library for system logging</Summary>
+        <Description>Liblogging offers an enhanced replacement for the syslog() call, but retains its ease of use.</Description>
+        <Archive sha1sum="e202bf9412747ecd384678e8b3024a4646d45c2f" type="targz">https://sourceforge.net/projects/pisilinux/files/source/liblogging-1.0.5.tar.gz</Archive>
+    </Source>
+
+    <Package>
+        <Name>liblogging</Name>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc/liblogging</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>liblogging-devel</Name>
+        <PartOf>system.devel</PartOf>
+        <Summary>Development files for liblogging</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">liblogging</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include/liblogging/stdlog.h</Path>
+            <Path fileType="data">/usr/lib/pkgconfig/liblogging-stdlog.pc</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-07-19</Date>
+            <Version>1.0.5</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-01-30</Date>
+            <Version>1.0.5</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-04-27</Date>
+            <Version>1.0.5</Version>
+            <Comment>Release Bump</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-03-08</Date>
+            <Version>1.0.5</Version>
+            <Comment>First release</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

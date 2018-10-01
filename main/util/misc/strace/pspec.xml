@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>strace</Name>
+        <Homepage>http://sourceforge.net/projects/strace/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>as-is</License>
+        <IsA>app:console</IsA>
+        <Summary>Tracks and displays system calls associated with a running process</Summary>
+        <Description>strace intercepts and records the system calls called and received by a running process. strace can print a record of each system call, its arguments and its return value.</Description>
+        <Archive sha1sum="c7d2a8f9d48a70792fafab77cb2e63fa7f976d6c" type="tarxz">https://sourceforge.net/projects/strace/files/strace/4.21/strace-4.21.tar.xz</Archive>
+        <BuildDependencies>
+            <Dependency>libaio-devel</Dependency>
+	    <Dependency>libunwind-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+	  <!--<Patch level="1">strace-fix-ftbfs.patch</Patch> -->
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>strace</Name>
+	<RuntimeDependencies>
+            <Dependency>libunwind</Dependency>
+	</RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="5">
+            <Date>2018-08-10</Date>
+            <Version>4.21</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="4">
+            <Date>2018-01-14</Date>
+            <Version>4.20</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-01-25</Date>
+            <Version>4.15</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-08</Date>
+            <Version>4.9</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2015-01-25</Date>
+            <Version>4.9</Version>
+            <Comment>First release</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

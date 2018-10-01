@@ -1,0 +1,146 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>firebird</Name>
+        <Homepage>http://www.firebirdsql.org/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>IPL-1</License>
+        <License>IDPL-1</License>
+        <License>LGPLv2.1</License>
+        <IsA>service</IsA>
+        <IsA>library</IsA>
+        <Summary>A relational database offering many ANSI SQL-99 features</Summary>
+        <Description>Firebird is an open source relational database management system offering many ANSI SQL-99 features.</Description>
+        <Archive sha1sum="39ed55321ea1a18c525e3100301ac57a53c59423" type="tarbz2">http://sourceforge.net/projects/firebird/files/firebird/2.5.7-Release/Firebird-2.5.7.27050-0.tar.bz2</Archive>
+        <BuildDependencies>
+            <Dependency>icu4c-devel</Dependency>
+            <Dependency>btyacc</Dependency>
+            <Dependency>libedit-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <!--Patch>hosts_equiv.patch</Patch>
+            <Patch>firebird-gcc-icu.patch</Patch>
+            <Patch>firebird-mcpu-to-mtune.patch</Patch>
+            <Patch level="1">fix-lib64-dir.diff</Patch>
+            <Patch level="1">firebird-2.5.1-svn-CORE-3610.patch</Patch>-->
+            <!--Patch level="1">editline-dumb-tr.patch</Patch-->
+            <Patch level="1">firebird-c++11.patch</Patch>
+            <Patch level="1">firebird-c++14.patch</Patch>
+            <Patch level="1">firebird-2.5.1.26351.0-deps-flags.patch</Patch>
+            <!--Patch level="1">Provide-sized-global-delete-operators-when-compiled.patch</Patch>
+            <Patch level="1">Make-the-generated-code-compatible-with-gcc-6-in-C-1.patch</Patch>
+            <Patch level="1">Firebird-gcc-icu.patch</Patch-->
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>firebird-client</Name>
+        <RuntimeDependencies>
+            <Dependency>libgcc</Dependency>
+        </RuntimeDependencies>
+        <Summary>Firebird database client library</Summary>
+        <Description>Firebird relational database client library.</Description>
+        <Files>
+            <Path fileType="library">/usr/lib/libfbclient.*</Path>
+            <Path fileType="library">/usr/lib/libgds.*</Path>
+            <Path fileType="library">/usr/lib/libib_util.*</Path>
+            <Path fileType="library">/usr/lib/libfbtrace.so</Path>
+            <Path fileType="library">/opt/firebird/lib/libfbclient.*</Path>
+            <Path fileType="library">/opt/firebird/lib/libgds.*</Path>
+            <Path fileType="library">/opt/firebird/lib/libib_util.*</Path>
+            <Path fileType="library">/opt/firebird/plugins/libfbtrace.so</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>firebird-superserver</Name>
+        <RuntimeDependencies>
+            <Dependency>firebird-client</Dependency>
+            <Dependency>icu4c</Dependency>
+            <Dependency>libedit</Dependency>
+            <Dependency>libgcc</Dependency>
+        </RuntimeDependencies>
+        <Summary>Firebird super server</Summary>
+        <Files>
+            <Path fileType="config">/etc/firebird</Path>
+            <Path fileType="config">/etc/env.d/50firebird</Path>
+            <Path fileType="config">/opt/firebird/*.conf</Path>
+            <Path fileType="localedata">/opt/firebird/*.msg</Path>
+            <Path fileType="data">/opt/firebird/security2.fdb</Path>
+            <Path fileType="doc">/opt/firebird/README</Path>
+            <Path fileType="doc">/opt/firebird/WhatsNew</Path>
+            <Path fileType="library">/opt/firebird/UDF</Path>
+            <Path fileType="executable">/opt/firebird/bin</Path>
+            <Path fileType="doc">/opt/firebird/doc</Path>
+            <Path fileType="doc">/opt/firebird/examples</Path>
+            <Path fileType="data">/opt/firebird/help</Path>
+            <Path fileType="data">/opt/firebird/intl</Path>
+            <Path fileType="library">/opt/firebird/lib/libicu*</Path>
+            <Path fileType="doc">/opt/firebird/upgrade</Path>
+            <Path fileType="data">/opt/firebird/firebird.log</Path>
+            <Path fileType="data">/opt/firebird</Path>
+            <Path fileType="data">/run/firebird</Path>
+        </Files>
+        <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0644" target="/etc/firebird/hosts.equiv">hosts.equiv</AdditionalFile>
+            <AdditionalFile owner="root" permission="0644" target="/etc/env.d/50firebird">50firebird</AdditionalFile>
+        </AdditionalFiles>
+        <Provides>
+            <COMAR script="service.py">System.Service</COMAR>
+            <COMAR script="package.py">System.Package</COMAR>
+        </Provides>
+    </Package>
+
+    <Package>
+        <Name>firebird-devel</Name>
+        <Summary>Development files for firebird</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">firebird-client</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include/firebird</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="5">
+            <Date>2018-07-31</Date>
+            <Version>2.5.7.27050</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="4">
+            <Date>2018-01-30</Date>
+            <Version>2.5.7.27050</Version>
+            <Comment>Version Bump.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-02-18</Date>
+            <Version>2.5.6.27020</Version>
+            <Comment>Version Bump.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-08</Date>
+            <Version>2.5.4.26856</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+         <Update release="1">
+            <Date>2015-07-03</Date>
+            <Version>2.5.4.26856</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

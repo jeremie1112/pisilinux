@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>foomatic-db-nonfree</Name>
+        <Homepage>http://www.linuxprinting.org/</Homepage>
+        <Packager>
+            <Name>Osman Erkan</Name>
+            <Email>osman.erkan@pisilinux.org</Email>
+        </Packager>
+        <License>Custom</License>
+        <IsA>app:console</IsA>
+        <Summary>Foomatic printer database nonfree</Summary>
+        <Description>Foomatic - database extension consisting of manufacturer-supplied PPD files released under non-free licenses.</Description>
+         <Archive sha1sum="0ee8d6495f3e8fd7fccb42ed21bf2e6ba24c9508" type="targz">http://www.openprinting.org/download/foomatic/foomatic-db-nonfree-20180813.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>cups-devel</Dependency>
+            <Dependency>foomatic-db</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>foomatic-db-nonfree</Name>
+        <RuntimeDependencies>
+            <Dependency>foomatic-db</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="data">/usr/share/foomatic/db/</Path>
+            <Path fileType="doc">/usr/share/doc/foomatic-db-nonfree</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="6">
+            <Date>2018-08-13</Date>
+            <Version>20180813</Version>
+            <Comment>version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail</Email>
+        </Update>
+        <Update release="5">
+            <Date>2018-03-10</Date>
+            <Version>20180310</Version>
+            <Comment>version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail</Email>
+        </Update>
+        <Update release="4">
+            <Date>2017-12-14</Date>
+            <Version>20171214</Version>
+            <Comment>Version Bump.</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-04-09</Date>
+            <Version>20170409</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Kamil Atlı</Name>
+            <Email>suvari@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>20160609</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-03-26</Date>
+            <Version>20160326</Version>
+            <Comment>First release</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

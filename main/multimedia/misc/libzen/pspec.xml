@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>libzen</Name>
+        <Homepage>http://sourceforge.net/projects/zenlib/</Homepage>
+        <Packager>
+            <Name>Pisi Linux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>ZLIB</License>
+        <License>as-is</License>
+        <IsA>app:console</IsA>
+        <Summary>Small C++ derivate class to have a simpler life.</Summary>
+        <Description>shared library for libmediainfo and mediainfo</Description>
+        <Archive sha1sum="ec0051f1afa385dd3d268132a15d38bccc94b9d3" type="tarbz2">https://mediaarea.net/download/source/libzen/0.4.37/libzen_0.4.37.tar.bz2</Archive>
+    </Source>
+
+    <Package>
+        <Name>libzen</Name>
+        <RuntimeDependencies>
+            <Dependency>libgcc</Dependency>
+        </RuntimeDependencies>
+
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libzen-devel</Name>
+        <RuntimeDependencies>
+            <Dependency release="current">libzen</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/libzen-config</Path>
+            <Path fileType="library">/usr/lib/pkgconfig</Path>
+            <Path fileType="library">/usr/lib/libzen.so</Path>
+            <Path fileType="header">/usr/include/ZenLib</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="3">
+            <Date>2018-09-01</Date>
+            <Version>0.4.37</Version>
+            <Comment>Rebuild New T.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2017-04-08</Date>
+            <Version>0.4.35</Version>
+            <Comment>Version bump</Comment>
+            <Name>Kamil Atlı</Name>
+            <Email>suvari@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-11-24</Date>
+            <Version>0.4.31</Version>
+            <Comment>First Release.</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

@@ -1,0 +1,90 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>libwpd</Name>
+        <Homepage>http://libwpd.sourceforge.net</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>LGPLv2.1</License>
+        <IsA>library</IsA>
+        <Summary>A C++ library designed to help process WordPerfect documents</Summary>
+        <Description>Library that handles Word Perfect documents.</Description>
+        <Archive sha1sum="d6c49f67c12c8ae637f99d0c56dd1e271376dbb3" type="targz">mirrors://sourceforge/libwpd/libwpd-0.10.2.tar.gz</Archive>        <BuildDependencies>
+            <Dependency>doxygen</Dependency>
+            <Dependency>libgsf-devel</Dependency>
+            <Dependency>boost-devel</Dependency>
+            <Dependency>librevenge-devel</Dependency>
+            <Dependency>libtool</Dependency>
+            <Dependency>grep</Dependency>
+            <Dependency>pkgconfig</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>libwpd</Name>
+        <RuntimeDependencies>
+            <Dependency>librevenge</Dependency>
+            <Dependency>libgcc</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="executable">/usr/bin</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libwpd-devel</Name>
+        <Summary>Development files for libwpd</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">libwpd</Dependency>
+            <Dependency>librevenge-devel</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libwpd-docs</Name>
+        <Summary>Documentation for libwpd</Summary>
+        <Files>
+            <Path fileType="doc">/usr/share/doc/libwpd/html</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-09-16</Date>
+            <Version>0.10.2</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-04-16</Date>
+            <Version>0.10.1</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>0.10.0</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2015-01-06</Date>
+            <Version>0.10.0</Version>
+            <Comment>First release</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>osman.erkan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

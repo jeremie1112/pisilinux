@@ -1,0 +1,105 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>x264</Name>
+        <Homepage>http://developers.videolan.org/x264.html</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>library</IsA>
+        <IsA>app:console</IsA>
+        <Summary>Open source H264/AVC encoder</Summary>
+        <Description>x264 is a free library for encoding H264/AVC video streams.</Description>
+        <!-- Archives come from http://download.videolan.org/pub/videolan/x264/snapshots/ -->
+        <Archive sha1sum="707b302136a381d2e634187528b4325d2ade0c3d" type="tarbz2">https://download.videolan.org/pub/videolan/x264/snapshots/last_stable_x264.tar.bz2</Archive>
+        <BuildDependencies>
+            <Dependency>yasm-devel</Dependency>
+            <Dependency>l-smash-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>x264</Name>
+        <RuntimeDependencies>
+            <Dependency>l-smash</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>x264-devel</Name>
+        <Summary>Development files for x264</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">x264</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="8">
+            <Date>2018-07-31</Date>
+            <Version>2245.20180730</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="7">
+            <Date>2018-05-19</Date>
+            <Version>2245.19052018</Version>
+            <Comment>Version bump</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="6">
+            <Date>2018-02-18</Date>
+            <Version>2245.17022018</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+        <Update release="5">
+            <Date>2017-09-20</Date>
+            <Version>2245.12062016</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+        <Update release="4">
+            <Date>2016-07-22</Date>
+            <Version>2245.12062016</Version>
+            <Comment>Fix relase</Comment>
+            <Name>Ergün Salman</Name>
+            <Email>poyraz76@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2016-06-13</Date>
+            <Version>2245.12062016</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>2245</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2014-12-02</Date>
+            <Version>2245</Version>
+            <Comment>First release</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

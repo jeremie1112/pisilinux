@@ -1,0 +1,102 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>xkeyboard-config</Name>
+        <Homepage>http://freedesktop.org/wiki/Software/XKeyboardConfig</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>MIT</License>
+        <IsA>data</IsA>
+        <Summary>X keyboard configuration database</Summary>
+        <Description>xkeyboard-config aims to provide consistent and well-structured X keyboard configuration data for X Window System implementations.</Description>
+        <Archive sha1sum="2df5b347a4cd9891d2a15fdc4c1734629756a070" type="tarbz2">mirrors://xorg/individual/data/xkeyboard-config/xkeyboard-config-2.24.tar.bz2</Archive>
+        <BuildDependencies>
+            <Dependency>intltool</Dependency>
+            <Dependency>xorg-proto</Dependency>
+            <Dependency>xorg-app</Dependency>
+            <Dependency>libxslt-devel</Dependency>
+            <Dependency>libX11-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+<!--             <Patch level="1">xkeyboard-config-1.4-jp-tilde.patch</Patch> -->
+<!--             <Patch>fix_typo_in_polish.patch</Patch> -->
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>xkeyboard-config</Name>
+        <RuntimeDependencies>
+            <Dependency>xorg-app</Dependency>
+            <Dependency>libxslt</Dependency>
+            <Dependency>libX11</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="config">/etc/X11/xorg.conf.d</Path>
+            <Path fileType="data">/lib/udev/rules.d</Path>
+            <Path fileType="data">/usr/share/X11/xkb</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="doc">/usr/share/locale</Path>
+            <Path fileType="data">/usr/share/pkgconfig</Path>
+            <Path fileType="man">/usr/share/man</Path>
+        </Files>
+        <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0644" target="/etc/X11/xorg.conf.d/10-keyboard.conf">10-keyboard.conf</AdditionalFile>
+            <AdditionalFile owner="root" permission="0644" target="/lib/udev/rules.d/95-xkb.rules">95-xkb.rules</AdditionalFile>
+        </AdditionalFiles>
+    </Package>
+
+    <History>
+        <Update release="7">
+            <Date>2018-09-12</Date>
+            <Version>2.24</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="6">
+            <Date>2018-07-28</Date>
+            <Version>2.23.1</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="5">
+            <Date>2018-02-22</Date>
+            <Version>2.23.1</Version>
+            <Comment>Version bump</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="4">
+            <Date>2017-02-16</Date>
+            <Version>2.20</Version>
+            <Comment>Version bump</Comment>
+            <Name>Stefan Gronewold</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2016-11-04</Date>
+            <Version>2.19</Version>
+            <Comment>Version bump</Comment>
+            <Name>Stefan Gronewold</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-05-02</Date>
+            <Version>2.17</Version>
+            <Comment>Version bump</Comment>
+            <Name>Hakan Yıldız</Name>
+            <Email>hknyldz93@gmail.com</Email>
+        </Update>
+        <Update release="1">
+            <Date>2015-05-14</Date>
+            <Version>2.14</Version>
+            <Comment>First release</Comment>
+            <Name>Hakan Yıldız</Name>
+            <Email>hknyldz93@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

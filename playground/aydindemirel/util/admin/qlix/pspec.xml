@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>qlix</Name>
+        <Homepage>http://qlix.berlios.de</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <Summary>Manage MTP Devices</Summary>
+        <Description>Qlix is a user interface that allows users to manage Media Transfer Protocol (MTP) devices such as Microsoft's Zune .</Description>
+        <Archive sha1sum="6358bdec011cef74e6144d2991b60410405df96a" type="targz">http://downloads.sourceforge.net/project/qlix.berlios/qlix_0.2.6.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>taglib-devel</Dependency>
+            <Dependency>libmtp-devel</Dependency>
+            <Dependency>qt-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch level="1">debian/01-ftbfs_64bit.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>qlix</Name>
+        <RuntimeDependencies>
+             <Dependency>mercurial</Dependency>
+             <Dependency>libusbx-devel</Dependency>
+             <Dependency>golang</Dependency>
+             <Dependency>go-mtpfs</Dependency>
+        </RuntimeDependencies>
+        <IsA>app:gui</IsA>
+        <Files>
+            <Path fileType="config">/etc</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="data">/usr/share/qlix</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2014-09-07</Date>
+            <Version>0.2.6</Version>
+            <Comment>First release</Comment>
+            <Name>Aydın Demirel</Name>
+            <Email>aydin.demirel@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

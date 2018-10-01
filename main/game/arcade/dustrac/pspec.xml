@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>dustrac</Name>
+        <Homepage>http://dustrac.sourceforge.net/</Homepage>
+        <Packager>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv3</License>
+        <IsA>app:gui</IsA>
+        <Summary>Dust Racing 2D (dustrac) is an open source, tile-based 2D racing game</Summary>
+        <Description>The purpose of the game is to race against 11 challenging computer players on different race tracks. Finishing in TOP-6 will unlock a new race track. Only a small portion of the race track is visible on the scrolling screen.</Description>
+        <Archive sha1sum="516c7e7e49ae43cc54cbe0e12b46ca4295947460" type="targz">https://github.com/juzzlin/DustRacing2D/archive/2.0.1.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>qt5-base-devel</Dependency>
+            <Dependency>qt5-linguist</Dependency>
+            <Dependency>openal-devel</Dependency>
+            <Dependency>cmake</Dependency>
+            <Dependency>pkgconfig</Dependency>
+            <Dependency>libvorbis-devel</Dependency>
+            <Dependency>mesa-devel</Dependency>
+            <Dependency>mesa-glu-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch>editor.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>dustrac</Name>
+        <RuntimeDependencies>
+            <Dependency>qt5-base</Dependency>
+            <Dependency>openal</Dependency>
+            <Dependency>libvorbis</Dependency>
+            <Dependency>libgcc</Dependency>
+            <Dependency>mesa</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="data">/usr/share/appdata/</Path>
+            <Path fileType="data">/usr/share/games</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+            <Path fileType="application">/usr/share/applications</Path>
+            <Path fileType="data">/usr/share/icons</Path>
+            <Path fileType="data">/usr/share/metainfo/dustrac.appdata.xml</Path>
+            <Path fileType="pixmaps">/usr/share/pixmaps</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-09-14</Date>
+            <Version>2.0.1</Version>
+            <Comment>Rebuild New T.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2018-02-19</Date>
+            <Version>2.0.1</Version>
+            <Comment>Version bump</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2017-04-25</Date>
+            <Version>1.12.0</Version>
+            <Comment>version bump</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2015-11-20</Date>
+            <Version>1.11.0</Version>
+            <Comment>First release</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

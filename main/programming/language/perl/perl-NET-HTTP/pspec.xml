@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>perl-NET-HTTP</Name>
+        <Homepage>http://search.cpan.org/~gaas/Net-HTTP-6.03/</Homepage>
+        <Packager>
+            <Name>Osman Erkan</Name>
+            <Email>osman.erkan@pisilinux.org</Email>
+        </Packager>
+        <License>Artistic</License>
+        <License>GPLv2</License>
+        <PartOf>programming.language.perl</PartOf>
+        <IsA>app:console</IsA>
+        <Summary>Low-level HTTP connection (client)</Summary>
+        <Description>The Net::HTTP class is a low-level HTTP client. An instance of the Net::HTTP class represents a connection to an HTTP server. The HTTP protocol is described in RFC 2616. The Net::HTTP class supports HTTP/1.0 and HTTP/1.1.</Description>
+        <Archive sha1sum="6f2e1600af1f36591e7bbc76487b8908323fc1ff" type="targz">http://search.cpan.org/CPAN/authors/id/E/ET/ETHER/Net-HTTP-6.09.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>perl</Dependency>
+            <Dependency>perl-URI</Dependency>
+        </BuildDependencies>
+    </Source>
+    
+    <Package>
+        <Name>perl-NET-HTTP</Name>
+        <RuntimeDependencies>
+            <Dependency>perl</Dependency>
+            <Dependency>perl-URI</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="data">/usr/share</Path>
+        </Files>
+    </Package>
+    
+    <History>
+        <Update release="4">
+            <Date>2018-07-26</Date>
+            <Version>6.09</Version>
+            <Comment>Rebuild for new toolchain</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-01-24</Date>
+            <Version>6.09</Version>
+            <Comment>Rebuild for new toolchain</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>6.09</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-03-26</Date>
+            <Version>6.09</Version>
+            <Comment>First release</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

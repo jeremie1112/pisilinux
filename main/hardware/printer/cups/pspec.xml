@@ -1,0 +1,206 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>cups</Name>
+        <Homepage>http://www.cups.org/</Homepage>
+        <Packager>
+            <Name>Pisi Linux Admins</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>service</IsA>
+        <Summary>Common Unix Printing System</Summary>
+        <Description>cups provides a portable printing layer for *nix-based operating systems.</Description>
+        <Archive sha1sum="aa2ae7c486d5957c9fc5f00aec63e453b19311b4" type="targz">https://github.com/apple/cups/releases/download/v2.2.7/cups-2.2.7-source.tar.gz</Archive>
+<!--         <Archive sha1sum="062beea95c6f8dda0a5e7eed51604e22806ffad3" type="tar" target="cups-2.2.3">http://source.pisilinux.org/1.0/cups-tr.tar</Archive> --> -->
+        <BuildDependencies>
+            <Dependency>acl-devel</Dependency>
+            <Dependency>pam-devel</Dependency>
+            <Dependency>dbus-devel</Dependency>
+            <Dependency>libpcre-devel</Dependency>
+            <Dependency>zlib-devel</Dependency>
+            <Dependency>python-devel</Dependency>
+            <Dependency>libusb-devel</Dependency>
+            <Dependency>libgcc</Dependency>
+            <Dependency>avahi-libs</Dependency>
+            <Dependency>avahi-devel</Dependency><!--not needed? -->
+            <!--<Dependency>cups-filters-devel</Dependency>--><!--çember ? -->
+            <Dependency>mit-kerberos</Dependency>
+            <Dependency>libpaper-devel</Dependency>
+            <Dependency>xdg-utils</Dependency>
+            <Dependency>colord-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <!-- ARCH Linux patches -->
+            <Patch level="1">archlinux/cups-no-export-ssllibs.patch</Patch>
+            <Patch level="1">archlinux/cups-no-gzip-man.patch</Patch>
+            <Patch level="1">archlinux/auth-workaround-for-certain-web-browsers.patch</Patch>
+            <Patch level="1">archlinux/guid.patch</Patch>
+
+            <!-- Fedora patches -->
+            <Patch level="1">fedora/cups-final-content-type.patch</Patch>
+            <Patch level="1">fedora/cups-res_init.patch</Patch>
+            <Patch level="1">fedora/cups-hp-deviceid-oid.patch</Patch>
+            <Patch level="1">fedora/cups-logrotate.patch</Patch>
+            <Patch level="1">fedora/cups-avahi-no-threaded.patch</Patch>
+            <Patch level="1">fedora/cups-web-devices-timeout.patch</Patch>
+
+            <!-- Gentoo patches -->
+            <Patch>gentoo/cups-2.2.6-fix-install-perms.patch</Patch>
+            <Patch >gentoo/cups-2.0.2-rename-systemd-service-files.patch</Patch>
+
+            <!-- Pisi Linux patches -->
+            <Patch level="1">pisilinux/nostrip.patch</Patch>
+            <Patch level="1">pisilinux/cups-run.patch</Patch>
+            <Patch level="1">pisilinux/lib64.patch</Patch>
+            <Patch level="1">pisilinux/statedir.patch</Patch>
+            <Patch level="1">pisilinux/desktop.patch</Patch>
+            <Patch level="1">pisilinux/auth.patch</Patch>
+
+            <!-- Pld-linux patches -->
+            <Patch>pld-linux/cups-avahi-address.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>cups</Name>
+        <RuntimeDependencies>
+            <Dependency>acl</Dependency>
+            <Dependency>pam</Dependency>
+            <Dependency>dbus</Dependency>
+            <Dependency>zlib</Dependency>
+            <Dependency>libusb</Dependency>
+            <Dependency>libgcc</Dependency>
+            <Dependency>libpaper</Dependency>
+            <Dependency>avahi</Dependency>
+            <Dependency>avahi-libs</Dependency>
+            <Dependency>mit-kerberos</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="config">/etc/cups/*conf</Path>
+            <Path fileType="config">/usr/lib/tmpfiles.d/cups.conf</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="executable">/usr/sbin</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="data">/var/cache/cups/rss</Path>
+            <Path fileType="data">/var/spool/cups/tmp</Path>
+            <Path fileType="data">/run/cups/certs</Path>
+            <Path fileType="data">/var/log/cups</Path>
+            <Path fileType="data">/etc</Path>
+            <Path fileType="data">/lib/udev/rules.d</Path>
+            <Path fileType="data">/lib/systemd/system</Path>
+            <Path fileType="data">/usr/share/cups</Path>
+            <Path fileType="data">/usr/share/icons</Path>
+            <Path fileType="data">/usr/share/applications</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+        </Files>
+        <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0644" target="/usr/lib/tmpfiles.d/cups.conf">tmpfiles.conf</AdditionalFile>
+
+            <!-- logrotate file for CUPS logs -->
+            <AdditionalFile owner="root" permission="0644" target="/etc/logrotate.d/cups">cups.logrotate</AdditionalFile>
+
+            <!-- Generic textonly ppd from Fedora which is also used by Ubuntu -->
+            <AdditionalFile owner="root" permission="0644" target="/usr/share/cups/model/textonly.ppd">fedora/textonly.ppd</AdditionalFile>
+        </AdditionalFiles>
+        <Provides>
+            <COMAR script="service.py">System.Service</COMAR>
+            <COMAR script="package.py">System.Package</COMAR>
+        </Provides>
+    </Package>
+
+    <Package>
+        <Name>cups-devel</Name>
+        <Summary>Development files for cups</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">cups</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="executable">/usr/bin/cups-config</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>cups-32bit</Name>
+        <PartOf>emul32</PartOf>
+        <Summary>32-bit shared libraries for cups</Summary>
+        <BuildType>emul32</BuildType>
+        <BuildDependencies>            
+            <Dependency>zlib-32bit</Dependency>
+            <Dependency>openssl-32bit</Dependency>
+        </BuildDependencies>
+        <RuntimeDependencies>            
+            <Dependency>zlib-32bit</Dependency>
+            <Dependency>openssl-32bit</Dependency>
+            <Dependency>libgcc</Dependency>
+            <Dependency release="current">cups</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/cups-config-32bit</Path>
+            <Path fileType="library">/usr/lib32</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="8">
+            <Date>2018-09-10</Date>
+            <Version>2.2.7</Version>
+            <Comment>Rebuild New T.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="7">
+            <Date>2017-12-13</Date>
+            <Version>2.2.7</Version>
+            <Comment>Version bump</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="6">
+            <Date>2017-12-13</Date>
+            <Version>2.2.6</Version>
+            <Comment>Version bump</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyacinsoy@pisilinux.org</Email>
+        </Update>
+        <Update release="5">
+            <Date>2017-07-16</Date>
+            <Version>2.2.3</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="4">
+            <Date>2017-02-17</Date>
+            <Version>2.2.2</Version>
+            <Comment>Version Bump.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2016-06-09</Date>
+            <Version>2.1.3</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-05-25</Date>
+            <Version>2.1.3</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-03-23</Date>
+            <Version>2.1.3</Version>
+            <Comment>First release</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

@@ -1,0 +1,86 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>sip</Name>
+        <Homepage>http://www.riverbankcomputing.co.uk/sip</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>app:console</IsA>
+        <Summary>SIP is a tool for generating bindings for C++ classes so that they can be used by Python</Summary>
+        <Description>SIP is a tool for generating bindings for C and C++ libraries so that they can be used by Python. It takes any C or C++ libraries and converts them into Python extension modules.</Description>
+        <Archive sha1sum="c0a09aa63523293c5ca39444746b1cef1253a0c5" type="targz">mirrors://sourceforge/pyqt/sip-4.16.9.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>python3-devel</Dependency>
+            <Dependency>python-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch level="1">no-strip.patch</Patch>
+            <Patch>disable-rpaths.diff</Patch>
+            <Patch>fix-linking.diff</Patch>
+            <Patch>sip-outoftree.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>sip</Name>
+        <RuntimeDependencies>
+            <Dependency>libgcc</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>python-sip</Name>
+        <Summary>Python 2.x SIP bindings for C and C++ libraries</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">sip</Dependency>
+            <Dependency>python</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib/python2*</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>python3-sip</Name>
+        <Summary>Python 3.x SIP bindings for C and C++ libraries</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">sip</Dependency>
+            <Dependency>python3</Dependency>
+            <Dependency>python</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib/python3*</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>sip-devel</Name>
+        <Summary>Development files for sip</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">sip</Dependency>
+            <Dependency release="current">python-sip</Dependency>
+            <Dependency release="current">python3-sip</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2015-08-28</Date>
+            <Version>4.16.9</Version>
+            <Comment>V.Bump</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

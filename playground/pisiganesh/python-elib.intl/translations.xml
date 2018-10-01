@@ -1,0 +1,9 @@
+<PISI>
+    <Source>
+        <Name>python-elib.intl</Name>
+        <Summary xml:lang="tr">Python için geliştirilmiş uluslararasılaşma (I18N)</Summary>
+        <Description xml:lang="tr">Python için geliştirilmiş uluslararasılaşma (I18N)</Description>
+    </Source>
+</PISI>
+
+<!-- By PiSiDo 2.0.0 -->

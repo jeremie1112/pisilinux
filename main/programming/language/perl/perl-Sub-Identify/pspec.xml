@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>perl-Sub-Identify</Name>
+        <Homepage>http://search.cpan.org/dist/Sub-Identify</Homepage>
+        <Packager>
+            <Name>Pisi Linux Admins</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>Artistic-2</License>
+        <License>GPLv1</License>
+        <IsA>library</IsA>
+        <Summary>Perl module to retrieve names of code references</Summary>
+        <Description>perl-Sub-Identify is a Perl module allowing you to retrieve the real name of code references through the introspection mechanism.</Description>
+        <Archive sha1sum="18f5f9819f5566d3470d60bd2d9baae97bc9f33f" type="targz">http://www.cpan.org/authors/id/R/RG/RGARCIA/Sub-Identify-0.14.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>perl</Dependency>
+            <Dependency>perl-Test-Pod</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>perl-Sub-Identify</Name>
+        <RuntimeDependencies>
+            <Dependency>perl</Dependency>
+            <Dependency>perl-Test-Pod</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="2">
+            <Date>2018-07-26</Date>
+            <Version>0.14</Version>
+            <Comment>Version Bump.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2017-01-24</Date>
+            <Version>0.12</Version>
+            <Comment>First release.</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

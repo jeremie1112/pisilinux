@@ -1,0 +1,115 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>rrdtool</Name>
+        <Homepage>http://oss.oetiker.ch/rrdtool/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>app:console</IsA>
+        <IsA>library</IsA>
+        <Summary>A system to store and display time-series data</Summary>
+        <Description>RRD is the acronym for Round Robin Database. RRD is a system to store and display time-series data (i.e. network bandwidth, machine/room temperature, server load average).</Description>
+        <Archive sha1sum="15a2009e2ee67eb41a2598d1a0f1f7cf1a651c78" type="targz">http://oss.oetiker.ch/rrdtool/pub/rrdtool-1.7.0.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>lua-devel</Dependency>
+            <Dependency>tcl-devel</Dependency>
+            <Dependency>ruby-devel</Dependency>
+            <Dependency>cairo-devel</Dependency>
+            <Dependency>pango-devel</Dependency>
+            <Dependency>libart_lgpl-devel</Dependency>
+            <Dependency>dejavu-fonts</Dependency>
+            <Dependency>perl</Dependency>
+            <Dependency>glib2-devel</Dependency>
+            <Dependency>python-devel</Dependency>
+            <Dependency>libxml2-devel</Dependency>
+            <Dependency>python-setuptools</Dependency>
+            <Dependency>tcp-wrappers-devel</Dependency>
+            <Dependency>groff</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <!--Patch level="1">rrdtool-1.4.7-ruby-2-fix.patch</Patch-->
+<!--             <Patch level="1">0001_rrdtool-1.4.7-configure.ac.patch</Patch> -->
+<!--             <Patch level="1">rrdtool-1.4.5-automake-1.11.2.patch</Patch> -->
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>rrdtool</Name>
+        <RuntimeDependencies>
+            <Dependency>lua</Dependency>
+            <Dependency>tcl</Dependency>
+            <Dependency>ruby</Dependency>
+            <Dependency>cairo</Dependency>
+            <Dependency>pango</Dependency>
+            <Dependency>libpng</Dependency>
+            <Dependency>libart_lgpl</Dependency>
+            <Dependency>dejavu-fonts</Dependency>
+            <Dependency>perl</Dependency>
+            <Dependency>glib2</Dependency>
+            <Dependency>python</Dependency>
+            <Dependency>libxml2</Dependency>
+            <Dependency>tcp-wrappers</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="data">/usr/share/rrdtool</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>rrdtool-devel</Name>
+        <RuntimeDependencies>
+            <Dependency release="current">rrdtool</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="5">
+            <Date>2018-08-15</Date>
+            <Version>1.7.0</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="4">
+            <Date>2018-01-31</Date>
+            <Version>1.7.0</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-03-01</Date>
+            <Version>1.6.0</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-15</Date>
+            <Version>1.5.3</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2015-07-30</Date>
+            <Version>1.5.3</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

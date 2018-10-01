@@ -1,0 +1,97 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>libusb-compat</Name>
+        <Homepage>http://libusb.sourceforge.net/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>LGPLv2.1</License>
+        <IsA>library</IsA>
+        <Summary>Userspace access to USB devices</Summary>
+        <Description>Project's main aim is to create a library for use by user level applications to access USB devices regardless of OS.</Description>
+        <Archive sha1sum="062319276d913c753a4b1341036e6a2e42abccc9" type="tarbz2">mirrors://sourceforge/libusb/libusb-compat-0.1.5.tar.bz2</Archive>
+        <BuildDependencies>
+            <Dependency>libtool</Dependency>
+            <Dependency>libusb-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>libusb-compat</Name>
+        <RuntimeDependencies>
+            <Dependency>libusb</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libusb-compat-devel</Name>
+        <PartOf>system.devel</PartOf>
+        <Summary>Development files for libusb</Summary>
+        <RuntimeDependencies>
+            <Dependency>libusb-devel</Dependency>
+            <Dependency release="current">libusb-compat</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+            <Path fileType="data">/usr/lib32/pkgconfig</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libusb-compat-32bit</Name>
+        <PartOf>emul32</PartOf>
+        <Summary>32-bit shared libraries for libXt</Summary>
+        <BuildType>emul32</BuildType>
+        <BuildDependencies>
+            <Dependency>libusb-32bit</Dependency>
+        </BuildDependencies>
+        <RuntimeDependencies>
+            <Dependency>libusb-32bit</Dependency>
+            <Dependency>libusb</Dependency>
+            <Dependency release="current">libusb-compat</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib32</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-07-15</Date>
+            <Version>0.1.5</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-01-30</Date>
+            <Version>0.1.5</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-04-27</Date>
+            <Version>0.1.5</Version>
+            <Comment>Release Bump</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-03-08</Date>
+            <Version>0.1.5</Version>
+            <Comment>First release</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

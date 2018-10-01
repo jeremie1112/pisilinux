@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>ant</Name>
+        <Homepage>http://ant.apache.org</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>Apache-2.0</License>
+        <IsA>app:console</IsA>
+        <Summary>Java-based build tool</Summary>
+        <Description>Apache Ant is a Java-based build tool. In theory, it is kind of like Make, but without Make's wrinkles.</Description>
+        <Archive sha1sum="4c815a6f560cde94fc2b3d15e34393ebf6dbca52" type="tarbz2">http://archive.apache.org/dist/ant/source/apache-ant-1.9.9-src.tar.bz2</Archive>
+        <BuildDependencies>
+            <Dependency>jdk7-openjdk</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>ant</Name>
+        <Files>
+            <Path fileType="config">/etc</Path>
+            <Path fileType="data">/usr/share/</Path>
+            <Path fileType="executable">/usr/bin</Path>
+        </Files>
+        <AdditionalFiles>
+            <AdditionalFile target="/etc/ant/ant.conf" permission="0644" owner="root">ant.conf</AdditionalFile>
+            <AdditionalFile owner="root" permission="0644" target="/etc/profile.d/ant.sh">ant.sh</AdditionalFile>
+            <AdditionalFile owner="root" permission="0644" target="/etc/profile.d/ant.csh">ant.csh</AdditionalFile>
+        </AdditionalFiles>
+    </Package>
+
+    <Package>
+        <Name>ant-docs</Name>
+        <Summary>Documentation package for ant build system</Summary>
+        <Files>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+    
+    <History>
+        <Update release="5">
+            <Date>2018-08-16</Date>
+            <Version>1.9.9</Version>
+            <Comment>Rebuild jdk7-2.6.14.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="4">
+            <Date>2018-01-16</Date>
+            <Version>1.9.9</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-01-28</Date>
+            <Version>1.9.8</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>1.9.6</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-01-25</Date>
+            <Version>1.9.6</Version>
+            <Comment>First release</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>osman.erkan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

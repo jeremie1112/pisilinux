@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>mpfr</Name>
+        <Homepage>http://www.mpfr.org</Homepage>
+        <Packager>
+            <Name>Serdar Soytetir</Name>
+            <Email>kaptan@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2+</License>
+        <License>LGPLv2+</License>
+        <IsA>library</IsA>
+        <Summary>Multiple precision floating point library</Summary>
+        <Description>The MPFR library is a C library for multiple-precision floating-point computations with exact rounding (also called correct rounding). It is based on the GMP multiple-precision library.</Description>
+        <Archive sha1sum="c0fab77c6da4cb710c81cc04092fb9bea11a9403" type="tarxz">https://ftp.gnu.org/gnu/mpfr/mpfr-3.1.5.tar.xz</Archive>
+        <BuildDependencies>
+            <Dependency>gmp-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>mpfr</Name>
+        <RuntimeDependencies>
+            <Dependency>gmp</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="info">/usr/share/info</Path>
+            <Path fileType="doc">/usr/share/doc/mpfr</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>mpfr-devel</Name>
+        <Summary>Development files for mpfr</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">mpfr</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="doc">/usr/share/doc/mpfr/examples</Path>
+            <Path fileType="doc">/usr/share/doc/mpfr/html</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="5">
+            <Date>2018-07-17</Date>
+            <Version>3.1.5</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="4">
+            <Date>2017-01-04</Date>
+            <Version>3.1.5</Version>
+            <Comment>Rebuild with new toolchain.</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-01-01</Date>
+            <Version>3.1.5</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-04-27</Date>
+            <Version>3.1.4</Version>
+            <Comment>Release Bump</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-03-13</Date>
+            <Version>3.1.4</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

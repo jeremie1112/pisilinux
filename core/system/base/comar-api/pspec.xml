@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>comar-api</Name>
+        <Homepage>http://www.pisilinux.org</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>library</IsA>
+        <Summary>Utility functions for Comar scripts</Summary>
+        <Description>Generic utility library for common Comar script operations.</Description>
+        <Archive sha1sum="80d3ebca0e57e1c5c5d649e92342676452da65d7" type="targz">https://github.com/PisiLinuxNew/comar-api/archive/v2.4.9.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>python</Dependency>
+        </BuildDependencies>
+        <!--Patches>
+            <Patch level="1">run_dir.patch</Patch>
+            <Patch level="1">pisilinux.patch</Patch>
+            <Patch level="1">add-stopdependencies.patch</Patch>
+        </Patches-->
+    </Source>
+
+    <Package>
+        <Name>comar-api</Name>
+        <RuntimeDependencies>
+            <Dependency>python</Dependency>
+            <Dependency>pisilinux-python</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib/pisilinux</Path>
+            <Path fileType="library">/usr/lib/python2.7</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-07-15</Date>
+            <Version>2.4.9</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-02-05</Date>
+            <Version>2.4.9</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-04-27</Date>
+            <Version>2.4.9</Version>
+            <Comment>Release Bump</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-03-11</Date>
+            <Version>2.4.9</Version>
+            <Comment>First release</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

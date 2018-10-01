@@ -1,0 +1,153 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>hugin</Name>
+        <Homepage>http://hugin.sourceforge.net</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <Icon>hugin</Icon>
+        <IsA>app:gui</IsA>
+        <IsA>library</IsA>
+        <Summary>A panoramic photo stitcher</Summary>
+        <Description>hugin can be used to stitch multiple images together. The resulting image can span 360 degrees. Another common use is the creation of very high resolution pictures by combining multiple images.</Description>
+        <Archive sha1sum="bf62cc597015f8fcbddb52590fe3f8eac497449f" type="tarbz2">https://sourceforge.net/projects/hugin/files/hugin/hugin-2018.0/hugin-2018.0.0.tar.bz2</Archive>
+        <BuildDependencies>
+            <Dependency>swig</Dependency>
+            <Dependency>cmake</Dependency>
+            <Dependency>glew-devel</Dependency>
+            <Dependency>tiff-devel</Dependency>
+            <Dependency>zlib-devel</Dependency>
+            <Dependency>vigra-devel</Dependency>
+            <Dependency>boost-devel</Dependency>
+            <Dependency>wxGTK-devel</Dependency>
+            <Dependency>lcms2-devel</Dependency>
+            <Dependency>exiv2-devel</Dependency>
+            <Dependency>fftw3-devel</Dependency>
+            <Dependency>flann-devel</Dependency>
+            <Dependency>libXmu-devel</Dependency>
+            <Dependency>libpng-devel</Dependency>
+            <Dependency>python-devel</Dependency>
+            <Dependency>lapack-devel</Dependency>
+            <Dependency>sqlite-devel</Dependency>
+            <Dependency>openexr-devel</Dependency>
+            <Dependency>freeglut-devel</Dependency>
+            <Dependency>libpano13-devel</Dependency>
+            <Dependency>libjpeg-turbo-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>hugin</Name>
+        <Replaces>
+            <Package>hugin-libs</Package>
+            <Package>hugin-tools</Package>
+        </Replaces>
+        <RuntimeDependencies>
+            <Dependency>blas</Dependency>
+            <Dependency>glew</Dependency>
+            <Dependency>mesa</Dependency>
+            <Dependency>tiff</Dependency>
+            <Dependency>boost</Dependency>
+            <Dependency>fftw3</Dependency>
+            <Dependency>vigra</Dependency>
+            <Dependency>wxGTK</Dependency>
+            <Dependency>lapack</Dependency>
+            <Dependency>libgcc</Dependency>
+            <Dependency>python</Dependency>
+            <Dependency>sqlite</Dependency>
+            <Dependency>enblend</Dependency>
+            <Dependency>ilmbase</Dependency>
+            <Dependency>libgomp</Dependency>
+            <Dependency>freeglut</Dependency>
+            <Dependency>mesa-glu</Dependency>
+            <Dependency>libpano13</Dependency>
+            <Dependency>exiv2-libs</Dependency>
+            <Dependency>openexr-libs</Dependency>
+            <Dependency>perl-Image-ExifTool</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib/</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="data">/usr/share/mime</Path>
+            <Path fileType="data">/usr/share/icons</Path>
+            <Path fileType="data">/usr/share/hugin</Path>
+            <Path fileType="data">/usr/share/pixmaps</Path>
+            <Path fileType="data">/usr/share/appdata</Path>
+            <Path fileType="data">/usr/share/applications</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>hugin-docs</Name>
+        <Summary>Help documents for hugin</Summary>
+        <Files>
+            <Path fileType="data">/usr/share/hugin/xrc/data/help*</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="8">
+            <Date>2018-09-01</Date>
+            <Version>2018.0.0</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+         <Update release="7">
+            <Date>2018-05-11</Date>
+            <Version>2018.0.0</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="6">
+            <Date>2018-03-22</Date>
+            <Version>2018.0.0</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="5">
+            <Date>2018-02-14</Date>
+            <Version>2018.0.0</Version>
+            <Comment>Ver.Bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="4">
+            <Date>2017-10-06</Date>
+            <Version>2017.0.0</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-04-17</Date>
+            <Version>2016.2.0</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>2015.0.0</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2015-11-06</Date>
+            <Version>2015.0.0</Version>
+            <Comment>First release</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>osman.erkan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

@@ -1,0 +1,79 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>xmlto</Name>
+        <Homepage>https://fedorahosted.org/xmlto/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2+</License>
+        <IsA>app:console</IsA>
+        <Summary>A frontend to an XSL toolchain</Summary>
+        <Description>The purpose of xmlto is to convert an XML file to the desired format using whatever means necessary.</Description>
+        <Archive sha1sum="aa63af9a86ab6ed0c92ea8b177dc808c18902c73" type="tarbz2">https://releases.pagure.org/xmlto/xmlto-0.0.28.tar.bz2</Archive>
+        <BuildDependencies>
+            <Dependency>libxslt-devel</Dependency>
+            <Dependency>util-linux</Dependency>
+            <Dependency>docbook-xsl</Dependency>
+            <Dependency>docbook-xml</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>xmlto</Name>
+        <RuntimeDependencies>
+            <Dependency>docbook-xsl</Dependency>
+            <Dependency>docbook-xml</Dependency>
+            <Dependency>util-linux</Dependency>
+            <!-- FIXME: Disabled for now as it brings whole texlive
+            <Dependency>latex-passivetex</Dependency>
+            -->
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="doc">/usr/share/doc/xmlto</Path>
+            <Path fileType="data">/usr/share/xmlto</Path>
+            <Path fileType="man">/usr/share/man</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="5">
+            <Date>2018-07-23</Date>
+            <Version>0.0.28</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="4">
+            <Date>2018-05-19</Date>
+            <Version>0.0.28</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-01-24</Date>
+            <Version>0.0.28</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-04-27</Date>
+            <Version>0.0.28</Version>
+            <Comment>Release Bump</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-03-19</Date>
+            <Version>0.0.28</Version>
+            <Comment>First release</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

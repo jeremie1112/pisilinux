@@ -1,0 +1,88 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>kcmutils</Name>
+        <Homepage>http://www.kde.org</Homepage>
+        <Packager>
+            <Name>Vedat Demir</Name>
+            <Email>vedat@pisilinux.org</Email>
+        </Packager>
+        <License>LGPLv2</License>
+        <IsA>library</IsA>
+        <Summary>Utilities for interacting with KCModules</Summary>
+        <Description>KCMUtils provides various classes to work with KCModules. KCModules can be created with the KConfigWidgets framework.</Description>
+        <Archive sha1sum="e2907fc348abbe1d0904ff63970d0678195269c9" type="tarxz">mirrors://kde/stable/frameworks/5.11/kcmutils-5.11.0.tar.xz</Archive>
+        <BuildDependencies>
+            <Dependency>qt5-base-devel</Dependency>
+            <Dependency>qt5-declarative-devel</Dependency>
+	    <Dependency versionFrom="5.11.0">kauth-devel</Dependency>
+	    <Dependency versionFrom="5.11.0">kconfig-devel</Dependency>
+	    <Dependency versionFrom="5.11.0">kdeclarative-devel</Dependency>
+	    <Dependency versionFrom="5.11.0">kwidgetsaddons-devel</Dependency>
+	    <Dependency versionFrom="5.11.0">kconfigwidgets-devel</Dependency>
+	    <Dependency versionFrom="5.11.0">kcoreaddons-devel</Dependency>
+	    <Dependency versionFrom="5.11.0">ki18n-devel</Dependency>
+	    <Dependency versionFrom="5.11.0">kiconthemes-devel</Dependency>
+	    <Dependency versionFrom="5.11.0">kitemviews-devel</Dependency>
+	    <Dependency versionFrom="5.11.0">kservice-devel</Dependency>
+	    <Dependency versionFrom="5.11.0">kxmlgui-devel</Dependency>
+	    <Dependency>extra-cmake-modules</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>kcmutils</Name>
+        <RuntimeDependencies>
+            <Dependency>qt5-base</Dependency>
+            <Dependency>qt5-declarative</Dependency>
+	    <Dependency versionFrom="5.11.0">kauth</Dependency>
+	    <Dependency versionFrom="5.11.0">kconfig</Dependency>
+	    <Dependency versionFrom="5.11.0">kdeclarative</Dependency>
+	    <Dependency versionFrom="5.11.0">kwidgetsaddons</Dependency>
+	    <Dependency versionFrom="5.11.0">kconfigwidgets</Dependency>
+	    <Dependency versionFrom="5.11.0">kcoreaddons</Dependency>
+	    <Dependency versionFrom="5.11.0">ki18n</Dependency>
+	    <Dependency versionFrom="5.11.0">kiconthemes</Dependency>
+	    <Dependency versionFrom="5.11.0">kitemviews</Dependency>
+	    <Dependency versionFrom="5.11.0">kservice</Dependency>
+	    <Dependency versionFrom="5.11.0">kxmlgui</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="data">/usr/share</Path>
+	    <Path fileType="localedata">/usr/share/locale</Path>
+	    <Path fileType="library">/usr/lib/qt5-base</Path>
+	    <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+    
+    <Package>
+        <Name>kcmutils-devel</Name>
+	<Summary>Development files for kcmutils</Summary>
+        <RuntimeDependencies>
+	    <Dependency>qt5-base-devel</Dependency>
+            <Dependency release="current">kcmutils</Dependency>
+	    <Dependency versionFrom="5.11.0">kconfigwidgets-devel</Dependency>
+	    <Dependency versionFrom="5.11.0">kiconthemes-devel</Dependency>
+	    <Dependency versionFrom="5.11.0">kitemviews-devel</Dependency>
+	    <Dependency versionFrom="5.11.0">kservice-devel</Dependency>
+	    <Dependency versionFrom="5.11.0">kxmlgui-devel</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/cmake</Path>
+	    <Path fileType="config">/usr/lib/pkgconfig</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2014-09-20</Date>
+            <Version>5.11.0</Version>
+            <Comment>First release</Comment>
+            <Name>Vedat Demir</Name>
+            <Email>vedat@pisilinux.org</Email>
+        </Update>        
+    </History>
+</PISI>

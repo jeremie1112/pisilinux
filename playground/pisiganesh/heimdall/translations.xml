@@ -1,0 +1,9 @@
+<PISI>
+    <Source>
+        <Name>heimdall</Name>
+        <Summary xml:lang="tr">Heimdall Samsung firmware flaş için kullanılan bir çapraz-platform açık kaynak aracı paketidir</Summary>
+        <Description xml:lang="tr">Heimdall Samsung firmware flaş için kullanılan bir çapraz-platform açık kaynak aracı paketidir</Description>
+    </Source>
+</PISI>
+
+<!-- By PiSiDo 2.0.0 -->

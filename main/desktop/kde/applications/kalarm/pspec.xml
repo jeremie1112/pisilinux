@@ -1,0 +1,207 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>kalarm</Name>
+        <Homepage>https://community.kde.org/KDE_PIM</Homepage>
+        <Packager>
+            <Name>Stefan Gronewold</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <Summary>Personal alarm scheduler</Summary>
+        <Description>KAlarm is a personal alarm message, audio, command and email scheduler</Description>
+        <Archive type="tarxz" sha1sum="d5d834f91a4d096ca94ca79afa58fd9d0cd9105b">http://download.kde.org/stable/applications/18.04.1/src/kalarm-18.04.1.tar.xz</Archive>
+        <BuildDependencies>
+            <Dependency>akonadi-contacts-devel</Dependency>
+            <Dependency>akonadi-devel</Dependency>
+            <Dependency>akonadi-mime-devel</Dependency>
+            <Dependency>extra-cmake-modules</Dependency>
+            <Dependency>kalarmcal-devel</Dependency>
+            <Dependency>kauth-devel</Dependency>
+            <Dependency>kcalcore-devel</Dependency>
+            <Dependency>kcalutils-devel</Dependency>
+            <Dependency>kcmutils-devel</Dependency>
+            <Dependency>kcodecs-devel</Dependency>
+            <Dependency>kcompletion-devel</Dependency>
+            <Dependency>kconfig-devel</Dependency>
+            <Dependency>kconfigwidgets</Dependency>
+            <Dependency>kdbusaddons-devel</Dependency>
+            <Dependency>kdelibs4-support-devel</Dependency>
+            <Dependency>kdepim-apps-libs-devel</Dependency>
+            <Dependency>kdoctools-devel</Dependency>
+            <Dependency>kguiaddons-devel</Dependency>
+            <Dependency>kholidays-devel</Dependency>
+            <Dependency>ki18n-devel</Dependency>
+            <Dependency>kiconthemes-devel</Dependency>
+            <Dependency>kidentitymanagement-devel</Dependency>
+            <Dependency>kio-devel</Dependency>
+            <Dependency>kjobwidgets-devel</Dependency>
+            <Dependency>kmime-devel</Dependency>
+            <Dependency>knotifications-devel</Dependency>
+            <Dependency>kpimtextedit-devel</Dependency>
+            <Dependency>kservice-devel</Dependency>
+            <Dependency>kwidgetsaddons-devel</Dependency>
+            <Dependency>kwindowsystem-devel</Dependency>
+            <Dependency>kxmlgui-devel</Dependency>
+            <Dependency>libX11-devel</Dependency>
+            <Dependency>libkdepim-devel</Dependency>
+            <Dependency>libxslt-devel</Dependency>
+            <Dependency>mailcommon-devel</Dependency>
+            <Dependency>pimcommon-devel</Dependency>
+            <Dependency>qt5-base-devel</Dependency>
+            <Dependency>qt5-phonon-devel</Dependency>
+            <Dependency>qt5-x11extras-devel</Dependency>
+            <Dependency>kemoticons-devel</Dependency>
+            <Dependency>kinit-devel</Dependency>
+            <Dependency>kunitconversion-devel</Dependency>
+            <Dependency>kitemmodels-devel</Dependency>
+            <Dependency>kcontacts-devel</Dependency>
+            <Dependency>messagelib-devel</Dependency>
+            <Dependency>kimap-devel</Dependency>
+            <Dependency>cyrus-sasl-devel</Dependency>
+            <Dependency>libkleo-devel</Dependency>
+            <Dependency versionFrom="1.7.1">gpgme-devel</Dependency>
+            <Dependency>kmailtransport-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>kalarm</Name>
+        <Summary>Personal alarm scheduler</Summary>
+        <RuntimeDependencies>
+            <Dependency>kio</Dependency>
+            <Dependency>kauth</Dependency>
+            <Dependency>ki18n</Dependency>
+            <Dependency>kmime</Dependency>
+            <Dependency>libgcc</Dependency>
+            <Dependency>akonadi</Dependency>
+            <Dependency>kcodecs</Dependency>
+            <Dependency>kconfig</Dependency>
+            <Dependency>kxmlgui</Dependency>
+            <Dependency>kcalcore</Dependency>
+            <Dependency>kservice</Dependency>
+            <Dependency>kalarmcal</Dependency>
+            <Dependency>kcalutils</Dependency>
+            <Dependency>kcontacts</Dependency>
+            <Dependency>kholidays</Dependency>
+            <Dependency>libkdepim</Dependency>
+            <Dependency>pimcommon</Dependency>
+            <Dependency>kguiaddons</Dependency>
+            <Dependency>qt5-phonon</Dependency>
+            <Dependency>kcompletion</Dependency>
+            <Dependency>kcoreaddons</Dependency>
+            <Dependency>kdbusaddons</Dependency>
+            <Dependency>kiconthemes</Dependency>
+            <Dependency>kitemmodels</Dependency>
+            <Dependency>kjobwidgets</Dependency>
+            <Dependency>akonadi-mime</Dependency>
+            <Dependency>kpimtextedit</Dependency>
+            <Dependency>ktextwidgets</Dependency>
+            <Dependency>kwindowsystem</Dependency>
+            <Dependency>kconfigwidgets</Dependency>
+            <Dependency>kmailtransport</Dependency>
+            <Dependency>knotifications</Dependency>
+            <Dependency>kwidgetsaddons</Dependency>
+            <Dependency>akonadi-contacts</Dependency>
+            <Dependency>kdelibs4-support</Dependency>
+            <Dependency>kidentitymanagement</Dependency>
+            <Dependency>qt5-base</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="config">/etc/dbus-1</Path>
+            <Path fileType="config">/etc/xdg</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="data">/usr/share</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="12">
+            <Date>2018-08-11</Date>
+            <Version>18.04.1</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="11">
+            <Date>2018-05-11</Date>
+            <Version>18.04.1</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="10">
+            <Date>2018-04-25</Date>
+            <Version>18.04.0</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="9">
+            <Date>2018-03-22</Date>
+            <Version>17.12.3</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="8">
+            <Date>2018-02-03</Date>
+            <Version>17.12.1</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="7">
+            <Date>2017-11-11</Date>
+            <Version>17.08.3</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="6">
+            <Date>2017-10-16</Date>
+            <Version>17.08.2</Version>
+            <Comment>Version bump</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="5">
+            <Date>2017-09-14</Date>
+            <Version>17.08.1</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="4">
+            <Date>2017-07-17</Date>
+            <Version>17.04.3</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Ali Algul</Name>
+            <Email>aligulle3801@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-07-09</Date>
+            <Version>17.04.2</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Kamil Atlı</Name>
+            <Email>suvari@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2017-07-04</Date>
+            <Version>17.04.2</Version>
+            <Comment>Version bummp.</Comment>
+            <Name>Kamil Atlı</Name>
+            <Email>suvari@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-12-27</Date>
+            <Version>16.12.0</Version>
+            <Comment>First Release</Comment>
+            <Name>Stefan Gronewold</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

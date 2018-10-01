@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>proj</Name>
+        <Homepage>http://trac.osgeo.org/proj/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>MIT</License>
+        <IsA>library</IsA>
+        <IsA>app:console</IsA>
+        <Summary>Cartographic Projections library</Summary>
+        <Description>Proj.4 cartographic projection software with updated NAD27 grids.</Description>
+        <Archive sha1sum="13b5fc606bc62d347908fb3f256d93516b0be2a1" type="targz">http://download.osgeo.org/proj/proj-5.1.0.tar.gz</Archive>
+        <Archive sha1sum="e054eba77dfe8260234775c6047cc147ed468261" type="zip" target="proj-5.1.0/nad">http://download.osgeo.org/proj/proj-datumgrid-1.7.zip</Archive>
+    </Source>
+
+    <Package>
+        <Name>proj</Name>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="data">/usr/share/proj</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>proj-devel</Name>
+        <Summary>Development files for proj</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">proj</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+            <Path fileType="man">/usr/share/man/man3</Path>
+        </Files>
+    </Package>
+
+    <History>
+         <Update release="4">
+            <Date>2018-09-07</Date>
+            <Version>5.1.0</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-04-15</Date>
+            <Version>4.9.3</Version>
+            <Comment>Rebuild with new toolchain</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>4.9.2</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-02-24</Date>
+            <Version>4.9.2</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

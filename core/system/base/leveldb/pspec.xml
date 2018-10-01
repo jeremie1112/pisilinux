@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>leveldb</Name>
+        <Homepage>https://code.google.com/p/leveldb</Homepage>
+        <Packager>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Packager>
+        <License>BSD</License>
+        <IsA>app:console</IsA>
+        <Summary>A fast and lightweight key/value database library</Summary>
+        <Description>LevelDB is a fast key-value storage library written at Google that provides an ordered mapping from string keys to string values.</Description>
+        <BuildDependencies>
+            <Dependency>gperftools-devel</Dependency>
+            <Dependency>snappy-devel</Dependency>
+        </BuildDependencies>
+        <Archive sha1sum="18684a0ad7a07920d10f5295b171fbf5eeec7337" type="targz">https://github.com/google/leveldb/archive/v1.18.tar.gz</Archive>
+    </Source>
+
+    <Package>
+        <Name>leveldb</Name>
+        <RuntimeDependencies>
+            <Dependency>libgcc</Dependency>
+            <Dependency>snappy</Dependency>
+            <Dependency>gperftools</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>leveldb-devel</Name>
+        <RuntimeDependencies>
+            <Dependency release="current">leveldb</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-07-15</Date>
+            <Version>1.18</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-01-21</Date>
+            <Version>1.18</Version>
+            <Comment>Rebuild with new toolchain.</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-04-27</Date>
+            <Version>1.18</Version>
+            <Comment>Release Bump</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-03-02</Date>
+            <Version>1.18</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

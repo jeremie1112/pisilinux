@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>lm_sensors</Name>
+        <Homepage>http://www.lm-sensors.org</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>LGPLv2+</License>
+        <IsA>app:console</IsA>
+        <IsA>library</IsA>
+        <Summary>Hardware monitoring tools</Summary>
+        <Description>lm_sensors provides essential tools for monitoring the temperatures, voltages, and fans of Linux systems with hardware monitoring devices. It also contains scripts for sensor hardware identification and fan speed control.</Description>
+        <Archive sha1sum="3e245b61a69756ea94f9c8a7c7614ec543970b8c" type="tarbz2">http://pkgs.fedoraproject.org/repo/pkgs/lm_sensors/lm_sensors-3.4.0.tar.bz2/c03675ae9d43d60322110c679416901a/lm_sensors-3.4.0.tar.bz2</Archive>
+        <BuildDependencies>
+            <Dependency>rrdtool-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+             <Patch>lm_sensors-fancontrol.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>lm_sensors</Name>
+        <RuntimeDependencies>
+            <Dependency>dmidecode</Dependency>
+            <Dependency>rrdtool</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="config">/etc</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="executable">/usr/sbin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>lm_sensors-devel</Name>
+        <Summary>Development files for lm_sensors</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">lm_sensors</Dependency>
+            <Dependency>rrdtool-devel</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="man">/usr/share/man/man3</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-08-15</Date>
+            <Version>3.4.0</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-03-02</Date>
+            <Version>3.4.0</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>3.4.0</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2015-10-02</Date>
+            <Version>3.4.0</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

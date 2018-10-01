@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>hunspell-dict-tr</Name>
+        <Homepage>http://extensions.libreoffice.org/extension-center/turkish-spellcheck-dictionary/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>LGPLv2+</License>
+        <License>BSD</License>
+        <IsA>locale:en</IsA>
+        <IsA>data</IsA>
+        <Summary>Turkish hunspell dictionaries</Summary>
+        <Description>Turkish hunspell dictionaries</Description>
+        <Archive sha1sum="dd61b5a603077407218f8f0ff1052cc1f5ade1f1" type="binary">https://extensions.libreoffice.org/extensions/turkish-spellcheck-dictionary/1.2/@@download/file/oo-turkish-dict-v1-2.oxt</Archive>
+        <BuildDependencies>
+            <Dependency>hunspell</Dependency>
+            <!--<Dependency>aspell-tr</Dependency>-->
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>hunspell-dict-tr</Name>
+        <Files>
+            <Path fileType="library">/usr/lib/libreoffice/share/extensions/hunspell_tr/</Path>
+            <Path fileType="data">/usr/share/hunspell</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-08-09</Date>
+            <Version>1.2</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-04-07</Date>
+            <Version>1.2</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>1.1</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2015-10-03</Date>
+            <Version>1.1</Version>
+            <Comment>First release</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

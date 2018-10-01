@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM 'http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd'>
+<PISI>
+    <Source>
+        <Name>python3-sanic</Name>
+        <Homepage></Homepage>
+        <Packager>
+            <Name>Ismet Sezer Simsek</Name>
+            <Email>ismetsezer1996@gmail.com</Email>
+        </Packager>
+        <License>MIT</License>
+        <IsA>library</IsA>
+        <IsA>app:console</IsA>
+        <Summary>A microframework based on uvloop, httptools, and learnings of flask</Summary>
+        <Description>Sanic is a Flask-like Python 3.5+ web server thats written to go fast. Its based on the work done by the amazing folks at magicstack</Description>
+        <Archive sha1sum="bacbbe0bb6625106d91797e1e947dc91a6644694" type="targz">https://pypi.python.org/packages/c1/d4/a6fa3efa7aa8ff6fb08cddac6f10e92da95e1fd44d6397fb481bf012c2a0/sanic-0.7.0.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency versionFrom="3.6.0">python3-devel</Dependency>
+            <Dependency versionFrom="19.6.1">python3-setuptools</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>python3-sanic</Name>
+        <RuntimeDependencies>
+            <Dependency versionFrom="3.6.0">python3</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="3">
+            <Date>2018-08-30</Date>
+            <Version>0.7.0</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2018-01-31</Date>
+            <Version>0.7.0</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2017-08-15</Date>
+            <Version>0.6.0</Version>
+            <Comment>First Release</Comment>
+            <Name>Ismet Sezer Simsek</Name>
+            <Email>ismetsezer1996@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

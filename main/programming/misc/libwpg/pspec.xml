@@ -1,0 +1,91 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>libwpg</Name>
+        <Homepage>http://libwpg.sourceforge.net</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>LGPLv2.1</License>
+        <IsA>library</IsA>
+        <Summary>A C++ library designed to help process WordPerfect Graphics documents</Summary>
+        <Description>Libwpg project is a library and to work with graphics in WPG (WordPerfect Graphics) format. WPG is the format used among others in Corel sofware, such as WordPerfect and Presentations.</Description>
+        <Archive sha1sum="74043970b9b7c8b64a86732074ee44a419c47b68" type="tarbz2">https://sourceforge.net/projects/libwpg/files/libwpg/libwpg-0.3.2/libwpg-0.3.2.tar.bz2</Archive>
+        <BuildDependencies>
+            <Dependency>doxygen</Dependency>
+            <Dependency>libwpd-devel</Dependency>
+            <Dependency>libtool</Dependency>
+            <Dependency>grep</Dependency>
+            <Dependency>pkgconfig</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>libwpg</Name>
+        <RuntimeDependencies>
+            <Dependency>libwpd</Dependency>
+            <Dependency>librevenge</Dependency>
+            <Dependency>libgcc</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="executable">/usr/bin</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libwpg-devel</Name>
+        <Summary>Development files for libwpg</Summary>
+        <RuntimeDependencies>
+            <Dependency>libwpd-devel</Dependency>
+            <Dependency>librevenge-devel</Dependency>
+            <Dependency release="current">libwpg</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libwpg-docs</Name>
+        <Summary>Documentation for libwpg</Summary>
+        <Files>
+            <Path fileType="doc">/usr/share/doc/libwpg/html</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-09-16</Date>
+            <Version>0.3.2</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-04-16</Date>
+            <Version>0.3.1</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>0.3.0</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2015-01-02</Date>
+            <Version>0.3.0</Version>
+            <Comment>First release</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>osman.erkan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

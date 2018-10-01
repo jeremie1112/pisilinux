@@ -1,0 +1,12 @@
+diff -Nuar cups_old-2.2.6/config-scripts/cups-network.m4 cups-2.2.6/config-scripts/cups-network.m4
+--- cups_old-2.2.6/config-scripts/cups-network.m4	2017-11-01 17:57:53.000000000 +0300
++++ cups-2.2.6/config-scripts/cups-network.m4	2017-12-14 09:40:48.442276087 +0300
+@@ -48,7 +48,7 @@
+ 		case "$host_os_name" in
+ 			darwin*)
+ 				# Darwin and macOS do their own thing...
+-				CUPS_DEFAULT_DOMAINSOCKET="$localstatedir/run/cupsd"
++				CUPS_DEFAULT_DOMAINSOCKET="/run/cupsd"
+ 				;;
+ 			*)
+ 				# All others use FHS standard...

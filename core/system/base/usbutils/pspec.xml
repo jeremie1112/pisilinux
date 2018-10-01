@@ -1,0 +1,88 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>usbutils</Name>
+        <Homepage>http://linux-usb.sourceforge.net/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2+</License>
+        <IsA>app:console</IsA>
+        <Summary>Linux USB utilities</Summary>
+        <Description>usbutils provides utilities for inspecting devices connected to a USB bus.</Description>
+        <Archive sha1sum="ae9caab499d76c0e9eb323f333d5ec92a25697a3" type="tarxz">https://www.kernel.org/pub/linux/utils/usb/usbutils/usbutils-009.tar.xz</Archive>
+        <AdditionalFiles>
+            <AdditionalFile target="usb.ids">usb.ids</AdditionalFile>
+        </AdditionalFiles>
+        <BuildDependencies>
+            <Dependency>libusb-devel</Dependency>
+            <Dependency>eudev-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>usbutils</Name>
+        <RuntimeDependencies>
+            <Dependency>libusb</Dependency>
+            <Dependency>eudev</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="executable">/usr/sbin</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="data">/usr/share/misc</Path>
+            <Path fileType="library">/usr/lib/pkgconfig</Path>
+        </Files>
+        <AdditionalFiles>
+             <AdditionalFile owner="root" permission="0644" target="/usr/share/misc/usb.ids">usb.ids</AdditionalFile>
+        </AdditionalFiles>
+    </Package>
+
+    <History>
+        <Update release="6">
+            <Date>2018-07-15</Date>
+            <Version>009</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="5">
+            <Date>2017-12-13</Date>
+            <Version>009</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="4">
+            <Date>2017-02-07</Date>
+            <Version>008</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2016-06-16</Date>
+            <Version>008</Version>
+            <Comment>Release Bump</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-04-27</Date>
+            <Version>008</Version>
+            <Comment>Release Bump</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-03-11</Date>
+            <Version>008</Version>
+            <Comment>First release</Comment>
+            <Name>Stefan Gronewold</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

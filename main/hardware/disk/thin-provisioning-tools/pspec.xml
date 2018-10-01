@@ -1,0 +1,77 @@
+<PISI>
+    <Source>
+        <Name>thin-provisioning-tools</Name>
+        <Homepage>http://github.com/jthornber/thin-provisioning-tools"</Homepage>
+        <Packager>
+            <Name>Ali Algul</Name>
+            <Email>alialgul@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <Summary>A  suite of tools for thin provisioning on Linux</Summary>
+        <Description>A  suite of tools for thin provisioning on Linux</Description>
+        <BuildDependencies>
+            <Dependency>libaio-devel</Dependency>
+            <Dependency>boost-devel</Dependency>
+            <Dependency>expat-devel</Dependency>
+            <Dependency>libgcc</Dependency>
+        </BuildDependencies>
+        <Archive sha1sum="80c5d9404ed95f9d18d8b39f2c6d821c537260b7" type="targz">https://github.com/jthornber/thin-provisioning-tools/archive/v0.7.6.tar.gz</Archive>
+    </Source>
+    <Package>
+        <Name>thin-provisioning-tools</Name>
+        <RuntimeDependencies>
+            <Dependency>expat</Dependency>
+            <Dependency>libgcc</Dependency> 
+            <Dependency>libaio</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/sbin/</Path>
+            <Path fileType="man">/usr/share/man/man8/</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="5">
+            <Date>2018-09-01</Date>
+            <Version>0.7.6</Version>
+            <Comment>Rebuild New T.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="4">
+            <Date>2018-03-22</Date>
+            <Version>0.7.5</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+         <Update release="3">
+            <Date>2018-01-01</Date>
+            <Version>0.7.5</Version>
+            <Comment>version Bump</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-04-09</Date>
+            <Version>0.6.3</Version>
+            <Comment>version Bump</Comment>
+            <Name>Kamil Atlı</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>0.6.0</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-01-31</Date>
+            <Version>0.6.0</Version>
+            <Comment>First release</Comment>
+            <Name>Ali Algul</Name>
+            <Email>alialgul@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

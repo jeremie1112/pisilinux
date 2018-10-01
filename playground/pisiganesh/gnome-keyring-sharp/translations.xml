@@ -1,0 +1,9 @@
+<PISI>
+    <Source>
+        <Name>gnome-keyring-sharp</Name>
+        <Summary xml:lang="tr">gnome-anahtarlık-keskin libgnome-anahtarlığa tam bir yönetilen uygulamasıdır</Summary>
+        <Description xml:lang="tr">gnome-anahtarlık-keskin libgnome-anahtarlığa tam bir yönetilen uygulamasıdır</Description>
+    </Source>
+</PISI>
+
+<!-- By PiSiDo 2.0.0 -->

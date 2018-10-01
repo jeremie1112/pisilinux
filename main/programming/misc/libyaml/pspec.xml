@@ -1,0 +1,70 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>libyaml</Name>
+        <Homepage>http://pyyaml.org/wiki/LibYAML</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>library</IsA>
+        <Summary>YAML 1.1 parser and emitter written in C</Summary>
+        <Description>libyaml is a YAML 1.1 parser and emitter written in C.</Description>
+        <Archive sha1sum="3590cbf092ef4c71bc0a9b404c00a626b1e04dee" type="targz">http://pyyaml.org/download/libyaml/yaml-0.1.7.tar.gz</Archive>
+    </Source>
+
+    <Package>
+        <Name>libyaml</Name>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libyaml-devel</Name>
+        <Summary>Development headers for libyaml</Summary>
+        <Description>libyaml-devel provides development headers for libyaml.</Description>
+        <RuntimeDependencies>
+            <Dependency release="current">libyaml</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="library">/usr/lib/pkgconfig</Path>
+            <Path fileType="doc">/usr/share/doc/libyaml/html/</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-08-07</Date>
+            <Version>0.1.7</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-09-20</Date>
+            <Version>0.1.7</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>0.1.5</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2015-07-22</Date>
+            <Version>0.1.5</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

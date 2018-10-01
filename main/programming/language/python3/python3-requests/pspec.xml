@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>python3-requests</Name>
+        <Homepage>http://www.python-requests.org/</Homepage>
+        <Packager>
+            <Name>Ergün Salman</Name>
+            <Email>ergunsalman@hotmail.com</Email>
+        </Packager>
+        <Summary>Requests is an Apache2 Licensed HTTP library, written in Python, for human beings.</Summary>
+        <Description>Python’s standard urllib2 module provides most of the HTTP capabilities you need</Description>
+        <License>MIT</License>
+        <Archive sha1sum="b6e6ed992c86835aa1a7d7a81fec2aee0d385416" type="targz">https://files.pythonhosted.org/packages/54/1f/782a5734931ddf2e1494e4cd615a51ff98e1879cbe9eecbdfeaf09aa75e9/requests-2.19.1.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>python3-devel</Dependency>
+            <Dependency>python3-setuptools</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch>certs.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>python3-requests</Name>
+        <RuntimeDependencies>
+            <Dependency>python3</Dependency>
+            <Dependency>python3-idna</Dependency>
+            <Dependency>python3-urllib3</Dependency>
+            <Dependency>python3-chardet</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="data">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="6">
+            <Date>2018-05-21</Date>
+            <Version>2.19.1</Version>
+            <Comment>Version Bump.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="5">
+            <Date>2018-05-21</Date>
+            <Version>2.18.4</Version>
+            <Comment>Version Bump.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="4">
+            <Date>2017-03-19</Date>
+            <Version>2.13.0</Version>
+            <Comment>Release Bump.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2016-06-09</Date>
+            <Version>2.9.1</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-06</Date>
+            <Version>2.9.1</Version>
+            <Comment>First release</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-05-08</Date>
+            <Version>2.9.1</Version>
+            <Comment>First release</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

@@ -1,0 +1,99 @@
+<PISI>
+    <Source>
+        <Name>pspp</Name>
+        <Homepage>http://www.gnu.org/software/pspp/pspp.html</Homepage>
+        <Packager>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>app:gui</IsA>
+        <Summary>İstatistik analiz programı</Summary>
+        <Description>İstatistik analiz programı</Description>
+        <Archive type="targz" sha1sum="1dcd193be210b1be42c1285ffaaad59cdfad9521">http://ftp.gnu.org/gnu/pspp/pspp-0.10.2.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>cairo-devel</Dependency>
+            <Dependency versionFrom="1.11">gsl-devel</Dependency>
+            <Dependency>gtk3-devel</Dependency>
+            <Dependency>gtksourceview3-devel</Dependency>
+            <Dependency>plotutils-devel</Dependency>
+            <Dependency>postgresql-lib</Dependency>
+            <Dependency>ncurses-devel</Dependency>
+            <Dependency>readline-devel</Dependency>
+            <Dependency>texinfo</Dependency>
+            <Dependency>desktop-file-utils</Dependency>
+            <Dependency>libxml2-devel</Dependency>
+            <Dependency>libglade-devel</Dependency>
+            <Dependency>gettext-devel</Dependency>
+            <Dependency>zlib-devel</Dependency>
+            <Dependency>icon-theme-hicolor</Dependency>
+            
+        </BuildDependencies>
+    </Source>
+    <Package>
+        <Name>pspp</Name>
+        <Summary>Documents for PSPP</Summary>
+        <RuntimeDependencies>
+            <Dependency>gsl</Dependency>
+            <Dependency>gtk3</Dependency>
+            <Dependency>zlib</Dependency>
+            <Dependency>cairo</Dependency>
+            <Dependency>glib2</Dependency>
+            <Dependency>pango</Dependency>
+            <Dependency>libxml2</Dependency>
+            <Dependency>ncurses</Dependency>
+            <Dependency>readline</Dependency>
+            <Dependency>gtksourceview3</Dependency>
+            <Dependency>postgresql-lib</Dependency>
+            <Dependency>icon-theme-hicolor</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="config">/etc/pspp</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="data">/usr/share/appdata</Path>
+            <Path fileType="data">/usr/share/applications</Path>
+            <Path fileType="data">/usr/share/icons</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+            <Path fileType="data">/usr/share/man</Path>
+            <Path fileType="data">/usr/share/pspp</Path>
+        </Files>
+        <AdditionalFiles>
+            <AdditionalFile owner="root" target="/usr/share/pspp/pspp.desktop" group="root" permission="0644">pspp.desktop</AdditionalFile>
+            <AdditionalFile owner="root" target="/usr/share/locale/tr/LC_MESSAGES/pspp.mo" group="root" permission="0644">pspp.mo</AdditionalFile>
+            <AdditionalFile owner="root" target="/usr/share/pspp/splash.png" permission="0644">splash.png</AdditionalFile>
+        </AdditionalFiles>        
+    </Package>
+    <Package>
+        <Name>pspp-docs</Name>
+        <Files>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="doc">/usr/share/info</Path>
+        </Files>
+        <AdditionalFiles>
+            <AdditionalFile owner="root" target="/usr/share/pspp/pspp.desktop" group="root" permission="0644">pspp.desktop</AdditionalFile>
+<!--             <AdditionalFile owner="root" target="/usr/share/pspp/pspp.mo" group="root" permission="0644">pspp.mo</AdditionalFile> -->
+            <AdditionalFile owner="root" target="/usr/share/pspp/splash.png" group="root" permission="0644">splash.png</AdditionalFile>
+        </AdditionalFiles>
+        <Summary>Documents for PSPP</Summary>
+        <RuntimeDependencies>
+            <Dependency>pspp</Dependency>
+        </RuntimeDependencies>
+    </Package>
+    <History>
+        <Update release="2">
+            <Date>2016-12-10</Date>
+            <Version>0.10.2</Version>
+            <Comment>version bump</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-04-13</Date>
+            <Version>0.10.1</Version>
+            <Comment>version bump</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

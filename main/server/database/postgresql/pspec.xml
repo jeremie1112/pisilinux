@@ -1,0 +1,149 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>postgresql</Name>
+        <Homepage>http://www.postgresql.org/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>service</IsA>
+        <Summary>A powerful, open source relational database system</Summary>
+        <Description>PostgreSQL is a powerful, open source relational database system.</Description>
+        <Archive sha1sum="b0597de368dac410cfb65ce92f89e324bbdc1ea1" type="tarbz2">https://ftp.postgresql.org/pub/source/v10.2/postgresql-10.2.tar.bz2</Archive>
+        <BuildDependencies>
+            <Dependency>mit-kerberos</Dependency>
+            <Dependency>e2fsprogs-devel</Dependency>
+            <Dependency>pam-devel</Dependency>
+            <Dependency>readline-devel</Dependency>
+            <Dependency>zlib-devel</Dependency>
+            <Dependency>python-devel</Dependency>
+            <Dependency>openssl-devel</Dependency>
+            <Dependency>tcl-devel</Dependency>
+            <Dependency>libxslt-devel</Dependency>
+            <Dependency>libxml2-devel</Dependency>
+            <Dependency>openldap-server</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <!--Patch level="1">backend_po_translation.patch</Patch-->
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>postgresql-lib</Name>
+        <IsA>library</IsA>
+        <Summary>Essential shared libraries for any PostgreSQL client program or interface</Summary>
+        <RuntimeDependencies>
+            <Dependency>mit-kerberos</Dependency>
+            <Dependency>python</Dependency>
+            <Dependency>zlib</Dependency>
+            <Dependency>libxml2</Dependency>
+            <Dependency>openssl</Dependency>
+            <Dependency>e2fsprogs</Dependency>
+            <Dependency>libxslt</Dependency>
+            <Dependency>openldap-client</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="library">/usr/lib/pkgconfig</Path>
+            <Path fileType="data">/usr/share/postgresql</Path>
+            <Path fileType="executable">/usr/bin/pg_config</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>postgresql-doc</Name>
+        <IsA>data:doc</IsA>
+        <Summary>Postgresql documents</Summary>
+        <Description>Additional documentation for PostgreSQL.</Description>
+        <RuntimeDependencies>
+            <Dependency release="current">postgresql-lib</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>postgresql-server</Name>
+        <IsA>service</IsA>
+        <RuntimeDependencies>
+            <Dependency release="current">postgresql-lib</Dependency>
+            <Dependency>pam</Dependency>
+            <Dependency>zlib</Dependency>
+            <Dependency>libxml2</Dependency>
+            <Dependency>openssl</Dependency>
+            <Dependency>readline</Dependency>
+            <Dependency>e2fsprogs</Dependency>
+            <Dependency>mit-kerberos</Dependency>
+            <Dependency>openldap-client</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="config">/etc</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+            <Path fileType="data">/usr/share/postgresql/contrib</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="data">/var/lib</Path>
+        </Files>
+        <AdditionalFiles>
+            <AdditionalFile target="/etc/conf.d/postgresql" owner="root" permission="0644">postgresql.conf-8</AdditionalFile>
+        </AdditionalFiles>
+        <Provides>
+            <COMAR script="package.py">System.Package</COMAR>
+            <COMAR script="service.py">System.Service</COMAR>
+        </Provides>
+    </Package>
+
+    <Package>
+        <Name>postgresql-pl</Name>
+        <RuntimeDependencies>
+            <Dependency release="current">postgresql-lib</Dependency>
+            <Dependency>tcl</Dependency>
+            <Dependency>perl</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/pltcl_listmod</Path>
+            <Path fileType="executable">/usr/bin/pltcl_loadmod</Path>
+            <Path fileType="executable">/usr/bin/pltcl_delmod</Path>
+            <Path fileType="library">/usr/lib/postgresql/plperl.so</Path>
+            <Path fileType="library">/usr/lib/postgresql/plpython.so</Path>
+            <Path fileType="library">/usr/lib/postgresql/pltcl.so</Path>
+            <Path fileType="data">/usr/share/postgresql/unknown.pltcl</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-08-03</Date>
+            <Version>10.2</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-09-20</Date>
+            <Version>9.6.2</Version>
+            <Comment>Release bump.</Comment>
+            <Name>Stefan Gronewold</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-08</Date>
+            <Version>9.3.9</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2015-07-03</Date>
+            <Version>9.3.9</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

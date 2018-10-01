@@ -1,0 +1,116 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>p11-kit</Name>
+        <Homepage>http://p11-glue.freedesktop.org/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>BSD</License>
+        <IsA>library</IsA>
+        <PartOf>util.crypt</PartOf>
+        <Summary>Library to work with PKCS#11 modules</Summary>
+        <Description>The p11-kit package Provides a way to load and enumerate PKCS #11 (a Cryptographic Token Interface Standard) modules.</Description>
+        <Archive sha1sum="1c67633736301707d7d0b2b0cf35f9240259deb3" type="targz">https://github.com/p11-glue/p11-kit/releases/download/0.23.9/p11-kit-0.23.9.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency versionFrom="4.13">libtasn1-devel</Dependency>
+            <Dependency>libffi-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>p11-kit</Name>
+        <RuntimeDependencies>
+            <Dependency versionFrom="4.13">libtasn1</Dependency>
+            <Dependency>libffi</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="executable">/usr/libexec/p11-kit</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="doc">/usr/share/gtk-doc</Path>
+            <Path fileType="doc">/usr/share/p11-kit</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="config">/etc/pkcs11</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>p11-kit-devel</Name>
+        <Summary>p11-kit için geliştirme dosyaları</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">p11-kit</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+            <Path fileType="data">/usr/lib32/pkgconfig</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>p11-kit-32bit</Name>
+        <PartOf>emul32</PartOf>
+        <Summary>32-bit shared libraries for p11-kit</Summary>
+        <BuildType>emul32</BuildType>
+        <BuildDependencies>
+            <Dependency versionFrom="4.10">libtasn1-32bit</Dependency>
+            <Dependency>libffi-32bit</Dependency>
+        </BuildDependencies>
+        <RuntimeDependencies>
+            <Dependency release="current">p11-kit</Dependency>
+            <Dependency>libffi-32bit</Dependency>
+            <Dependency>libtasn1-32bit</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib32</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="6">
+            <Date>2018-07-31</Date>
+            <Version>0.23.9</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="5">
+            <Date>2018-02-28</Date>
+            <Version>0.23.9</Version>
+            <Comment>Version Bump.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="4">
+            <Date>2017-02-17</Date>
+            <Version>0.23.2</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2016-06-08</Date>
+            <Version>0.23.1</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-05-27</Date>
+            <Version>0.23.1</Version>
+            <Comment>Release bump</Comment>
+            <Name>Yusuf Aydemir</Name>
+            <Email>yusuf.aydemir@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2015-04-28</Date>
+            <Version>0.23.1</Version>
+            <Comment>First release</Comment>
+            <Name>Yusuf Aydemir</Name>
+            <Email>yusuf.aydemir@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>shared-mime-info</Name>
+        <Homepage>http://freedesktop.org/wiki/Software/shared-mime-info</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>app:console</IsA>
+        <IsA>data</IsA>
+        <Summary>The shared MIME info database</Summary>
+        <Description>shared-mime-info is a package containing a large number of common MIME types, created by converting the existing KDE and GNOME databases to the new format and merging them together, and software for updating the database based on the share-mime-info specification.</Description>
+        <Archive sha1sum="aae41d8a93c665d25bae704f732fdb1c1551cb5c" type="tarxz">http://freedesktop.org/~hadess/shared-mime-info-1.9.tar.xz</Archive>
+        <BuildDependencies>
+            <Dependency>libxml2-devel</Dependency>
+            <Dependency>glib2-devel</Dependency>
+            <Dependency>intltool</Dependency>
+        </BuildDependencies> 
+        <Patches>
+            <Patch level="1">shared-mime-info-xz.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>shared-mime-info</Name>
+        <RuntimeDependencies>
+            <Dependency>libxml2</Dependency>
+            <Dependency>glib2</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="data">/etc/X11/xinit</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="data">/usr/share/applications</Path>
+            <Path fileType="data">/usr/share/mime</Path>
+            <Path fileType="data">/usr/share/pkgconfig</Path>
+            <Path fileType="localedata">/usr/share/locale/</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man</Path>
+        </Files>
+        <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0755" target="/etc/X11/xinit/xinitrc.d/30-update-mime-database.sh">update-mime-database.sh</AdditionalFile>
+            <AdditionalFile owner="root" permission="0644" target="/usr/share/applications/defaults.list">defaults.list</AdditionalFile>
+            <AdditionalFile owner="root" permission="0644" target="/usr/share/applications/mimeapps.list">mimeapps.list</AdditionalFile>
+            <!--AdditionalFile owner="root" permission="0644" target="/usr/share/applications/file-roller-defaults.list">file-roller-defaults.list</AdditionalFile>
+            <AdditionalFile owner="root" permission="0644" target="/usr/share/applications/shotwell-viewer-defaults.list">shotwell-viewer-defaults.list</AdditionalFile>
+            <AdditionalFile owner="root" permission="0644" target="/usr/share/applications/totem-defaults.list">totem-defaults.list</AdditionalFile-->
+            <AdditionalFile owner="root" permission="0644" target="/usr/share/mime/packages/mimetypefixes.xml">mimetypefixes.xml</AdditionalFile>
+        </AdditionalFiles>
+        <Provides>
+            <COMAR script="pakhandler.py">System.PackageHandler</COMAR>
+            <COMAR script='package.py'>System.Package</COMAR>
+        </Provides>
+    </Package>
+
+    <History>
+        <Update release="5">
+            <Date>2018-07-30</Date>
+            <Version>1.9</Version>
+            <Comment>Rebuild New T.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="4">
+            <Date>2018-01-17</Date>
+            <Version>1.9</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-03-19</Date>
+            <Version>1.8</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>1.5</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2015-11-05</Date>
+            <Version>1.5</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

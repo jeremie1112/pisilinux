@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<PISI>
+    <Source>
+        <Name>unbound</Name>
+        <Summary xml:lang="tr">Unbound bir doğrulamalı, yinelemeli ve önbelleklemeli DNS çözümleyicidir. </Summary>
+        <Description xml:lang="tr">Unbound modüler bileşenler seti olarak tasarlandı böylece de güvenli DNS doğrulama ve saplama-çözümleme kolayca mümkün oldu. </Description>
+    </Source>
+</PISI>

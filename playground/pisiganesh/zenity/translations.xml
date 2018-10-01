@@ -1,0 +1,9 @@
+<PISI>
+    <Source>
+        <Name>zenity</Name>
+        <Summary xml:lang="tr">Zenity gdialog bir yeniden yazma</Summary>
+        <Description xml:lang="tr">Zenity gdialog bir yeniden yazma</Description>
+    </Source>
+</PISI>
+
+<!-- By PiSiDo 2.0.0 -->

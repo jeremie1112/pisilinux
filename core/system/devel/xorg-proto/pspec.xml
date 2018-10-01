@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>xorg-proto</Name>
+        <Homepage>http://x.org/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>MIT</License>
+        <IsA>library</IsA>
+        <Summary>X.Org Protocol Headers</Summary>
+        <Description>This package includes the protocol headers needed for X11 development.</Description>
+        <Archive sha1sum="2e4a3db312e1ce81e15515dfcac52ba0aa5a920c" type="tarbz2">mirrors://xorg/individual/proto/xorgproto-2018.4.tar.bz2</Archive>
+        <BuildDependencies>
+            <Dependency>util-macros</Dependency>
+            <Dependency>libxslt</Dependency>
+        </BuildDependencies>
+        <Patches>
+<!--             <Patch level="1">docdir.patch</Patch> -->
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>xorg-proto</Name>
+        <RuntimeDependencies>
+          <!--remove for fix cycle dep-->
+          <!--<Dependency>libXau-devel</Dependency>-->
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man/man7/Xprint.7</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="6">
+            <Date>2018-09-11</Date>
+            <Version>2018.4</Version>
+            <Comment>First release</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="5">
+            <Date>2018-07-15</Date>
+            <Version>7.6</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="4">
+            <Date>2017-01-27</Date>
+            <Version>7.6</Version>
+            <Comment>xproto updates</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2016-04-27</Date>
+            <Version>7.6</Version>
+            <Comment>Release Bump</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-04-27</Date>
+            <Version>7.6</Version>
+            <Comment>A few updates</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-03-08</Date>
+            <Version>7.6</Version>
+            <Comment>First release</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

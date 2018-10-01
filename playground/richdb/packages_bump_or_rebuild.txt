@@ -1,0 +1,345 @@
+Ignore mate,gnome,e17 and games packages.
+
+Version bumps for new versions and if there is no new version
+then rebuild.
+
+İsim: acct, sürüm: 6.5.5, yayım: 1 (problems with rebuild)(problems with rebuild)
+İsim: aeidon, sürüm: 0.19.2, yayım: 1(python error)
+İsim: artha, sürüm: 1.0.2, yayım: 1(problems with gio create patch but build not)
+İsim: asciidoc, sürüm: 8.6.8, yayım: 1(problems with building)(problems with rebuild)
+İsim: b43-fwcutter, sürüm: 015, yayım: 1(problems with building)(problems with rebuild)
+İsim: c-ares, sürüm: 1.9.1, yayım: 1(could not version bump ccflag error)
+İsim: c-ares-devel, sürüm: 1.9.1, yayım: 1(could not version bump ccflag error)
+İsim: c-ares-docs, sürüm: 1.9.1, yayım: 1(could not version bump ccflag error)
+İsim: cakephp, sürüm: 1.3.13, yayım: 1(pisi source)
+İsim: coolreader, sürüm: 3.0.56, yayım: 18 (problems with building)(yeniden sorunlar)
+İsim: crypto++, sürüm: 5.6.1, yayım: 1(problems with building)(yeniden sorunlar)
+İsim: crypto++-devel, sürüm: 5.6.1, yayım: 1(problems with building)(yeniden sorunlar)
+İsim: dvdrip-queue, sürüm: 0.1.3, yayım: 1(python error)
+İsim: dvipdfm, sürüm: 0.13.2d, yayım: 1(problems with building)(yeniden sorunlar)
+İsim: dvipng, sürüm: 1.14, yayım: 1(problems with building)(yeniden sorunlar)
+İsim: dvipost, sürüm: 1.1, yayım: 1(problems with building)(yeniden sorunlar)
+İsim: emacs-emms, sürüm: 3.0, yayım: 1(problems with building)(yeniden sorunlar)
+İsim: exaile, sürüm: 0.3.2.2, yayım: 1(rebuild older version new version failed for build)
+İsim: gaupol, sürüm: 0.19.2, yayım: 1(python error)
+İsim: latex-envlab, sürüm: 1.2, yayım: 1(could not build)
+İsim: latex-leaflet, sürüm: 20041222, yayım: 1(could not build)
+İsim: lbreakout2, sürüm: 2.6.4, yayım: 1(game)
+İsim: libcdaudio, sürüm: 0.99.12, yayım: 1(could not build)
+İsim: libcdaudio-devel, sürüm: 0.99.12, yayım: 1
+İsim: libmcs, sürüm: 0.7.2, yayım: 1(could not build)
+İsim: libmcs-devel, sürüm: 0.7.2, yayım: 1(could not build)
+İsim: libmemcache, sürüm: 1.4.0_rc2, yayım: 1(system)
+İsim: libmemcache-devel, sürüm: 1.4.0_rc2, yayım: 1(system)
+İsim: libmowgli, sürüm: 0.9.50, yayım: 1(system)
+İsim: libmowgli-devel, sürüm: 0.9.50, yayım: 1(system)
+İsim: libnet, sürüm: 1.1.6, yayım: 1(system)
+İsim: libnet-devel, sürüm: 1.1.6, yayım: 1(system)
+İsim: libnetfilter-cthelper, sürüm: 1.0.0, yayım: 1(system)
+İsim: libnetfilter-cthelper-devel, sürüm: 1.0.0, yayım: 1(system)
+İsim: libnetfilter_queue, sürüm: 1.0.2, yayım: 1(system)
+İsim: libnetfilter_queue-devel, sürüm: 1.0.2, yayım: 1(system)
+İsim: libnfnetlink, sürüm: 1.0.1, yayım: 1(system)
+İsim: libnfnetlink-devel, sürüm: 1.0.1, yayım: 1(system)
+İsim: liboobs, sürüm: 2.32.0, yayım: 1(system)
+İsim: liboobs-devel, sürüm: 2.32.0, yayım: 1(system)
+İsim: liboobs-doc, sürüm: 2.32.0, yayım: 1(system)
+İsim: libsmi, sürüm: 0.4.8, yayım: 1(could not build error at test build)
+İsim: libsmi-devel, sürüm: 0.4.8, yayım: 1
+İsim: libsocialweb, sürüm: 0.25.21, yayım: 1(gnome)
+İsim: libsocialweb-devel, sürüm: 0.25.21, yayım: 1(gnome)
+İsim: libvmime, sürüm: 0.7.1, yayım: 1(system)
+İsim: libvmime-devel, sürüm: 0.7.1, yayım: 1(system)
+İsim: libwacom, sürüm: 0.8, yayım: 1(gnome)
+İsim: libwacom-devel, sürüm: 0.8, yayım: 1(gnome)
+İsim: libx86, sürüm: 1.1, yayım: 1(system)
+İsim: libx86-devel, sürüm: 1.1, yayım: 1(system)
+İsim: libxklavier, sürüm: 5.3, yayım: 1(gnome)
+İsim: libxklavier-devel, sürüm: 5.3, yayım: 1(gnome)
+İsim: libxklavier-docs, sürüm: 5.3, yayım: 1(gnome)
+İsim: lightmediascanner, sürüm: 0.4.5.0, yayım: 1
+İsim: lightmediascanner-devel, sürüm: 0.4.5.0, yayım: 1
+İsim: lilycomp, sürüm: 1.0.2, yayım: 1
+İsim: lincity-ng, sürüm: 2.0, yayım: 1
+İsim: linux-atm, sürüm: 2.5.1, yayım: 1
+İsim: linux-atm-devel, sürüm: 2.5.1, yayım: 1
+İsim: lirc, sürüm: 0.9.0, yayım: 1
+İsim: lirc-devel, sürüm: 0.9.0, yayım: 1
+İsim: lm_sensors, sürüm: 3.3.3, yayım: 1
+İsim: lm_sensors-devel, sürüm: 3.3.3, yayım: 1
+İsim: lmarbles, sürüm: 1.0.8, yayım: 1
+İsim: lockdev, sürüm: 1.0.3, yayım: 1
+İsim: lockdev-devel, sürüm: 1.0.3, yayım: 1
+İsim: logrotate, sürüm: 3.7.9, yayım: 1
+İsim: loki, sürüm: 0.1.7, yayım: 1
+İsim: loki-devel, sürüm: 0.1.7, yayım: 1
+İsim: loki-docs, sürüm: 0.1.7, yayım: 1
+İsim: loosecannon, sürüm: 0.5.0, yayım: 1
+İsim: loudmouth, sürüm: 1.4.3, yayım: 1
+İsim: loudmouth-devel, sürüm: 1.4.3, yayım: 1
+İsim: lpsolve, sürüm: 5.5.2.0, yayım: 1
+İsim: lpsolve-devel, sürüm: 5.5.2.0, yayım: 1
+İsim: lrzip, sürüm: 0.614, yayım: 1
+İsim: lrzip-devel, sürüm: 0.614, yayım: 1
+İsim: lsdvd, sürüm: 0.16, yayım: 1
+İsim: lshw, sürüm: 02.16, yayım: 1
+İsim: lsof, sürüm: 4.84, yayım: 1
+İsim: ltrace, sürüm: 0.5.3, yayım: 1
+İsim: ltris, sürüm: 1.0.16, yayım: 1
+İsim: lua, sürüm: 5.1.4, yayım: 1
+İsim: lua-devel, sürüm: 5.1.4, yayım: 1
+İsim: lxappearance-obconf, sürüm: 0.2.0, yayım: 1
+İsim: lxc, sürüm: 0.7.3, yayım: 1
+İsim: lxc-devel, sürüm: 0.7.3, yayım: 1
+İsim: lxpolkit, sürüm: 0.4.1, yayım: 1
+İsim: lxsplit, sürüm: 0.2.4, yayım: 1
+İsim: lynx, sürüm: 2.8.7, yayım: 1
+İsim: lzop, sürüm: 1.03, yayım: 1
+İsim: mlocate, sürüm: 0.26, yayım: 1
+İsim: mobile-broadband-provider-info, sürüm: 20120614, yayım: 1
+İsim: mono-addins, sürüm: 0.6.2, yayım: 1
+İsim: mono-zeroconf, sürüm: 0.9.0, yayım: 1
+İsim: mono-zeroconf-docs, sürüm: 0.9.0, yayım: 1
+İsim: monsterz, sürüm: 0.7.1, yayım: 1
+İsim: mp3gain, sürüm: 1.5, yayım: 1
+İsim: mp3splt-gtk, sürüm: 0.9, yayım: 1
+İsim: mpck, sürüm: 0.19, yayım: 1
+İsim: mpeg2vidcodec, sürüm: 12, yayım: 1
+İsim: mpfi, sürüm: 1.5.1, yayım: 1
+İsim: mpfi-devel, sürüm: 1.5.1, yayım: 1
+İsim: mpgtx, sürüm: 1.3.1, yayım: 1
+İsim: mt-st, sürüm: 1.1, yayım: 1
+İsim: multipath-tools, sürüm: 0.4.9, yayım: 1
+İsim: musicbrainz, sürüm: 2.1.5, yayım: 1
+İsim: musicbrainz-devel, sürüm: 2.1.5, yayım: 1
+İsim: musicbrainz3, sürüm: 3.0.2, yayım: 1
+İsim: musicbrainz3-devel, sürüm: 3.0.2, yayım: 1
+İsim: myrescue, sürüm: 0.9.4, yayım: 1
+İsim: mysql-python, sürüm: 1.2.3, yayım: 1
+İsim: ntl, sürüm: 5.5.2, yayım: 1
+İsim: ntl-devel, sürüm: 5.5.2, yayım: 1
+İsim: ots, sürüm: 0.5.0, yayım: 1
+İsim: podofo, sürüm: 0.9.1, yayım: 1
+İsim: podofo-devel, sürüm: 0.9.1, yayım: 1
+İsim: protobuf, sürüm: 2.4.1, yayım: 1
+İsim: protobuf-devel, sürüm: 2.4.1, yayım: 1
+İsim: qbzr, sürüm: 0.20.2, yayım: 1
+İsim: qca2, sürüm: 2.0.3, yayım: 1
+İsim: qca2-apidocs, sürüm: 2.0.3, yayım: 1
+İsim: qca2-devel, sürüm: 2.0.3, yayım: 1
+İsim: qca2-ossl, sürüm: 2.0.0_beta3, yayım: 1
+İsim: qcomicbook, sürüm: 0.9.0, yayım: 1
+İsim: qconf, sürüm: 1.4, yayım: 1
+İsim: qdevelop, sürüm: 0.28, yayım: 1
+İsim: qedje, sürüm: 0.4.0, yayım: 1
+İsim: qedje-devel, sürüm: 0.4.0, yayım: 1
+İsim: qgit, sürüm: 2.3, yayım: 1
+İsim: qhull, sürüm: 2003.1, yayım: 1
+İsim: qhull-devel, sürüm: 2003.1, yayım: 1
+İsim: qhull-docs, sürüm: 2003.1, yayım: 1
+İsim: qjackctl, sürüm: 0.3.9, yayım: 1
+İsim: qmc2, sürüm: 0.40, yayım: 1
+İsim: qpitch, sürüm: 1.0.1, yayım: 1
+İsim: qrencode, sürüm: 3.3.1, yayım: 1
+İsim: qrencode-devel, sürüm: 3.3.1, yayım: 1
+İsim: qsynth, sürüm: 0.3.6, yayım: 1
+İsim: qt-recordmydesktop, sürüm: 0.3.8, yayım: 1
+İsim: qtemu, sürüm: 1.0.5, yayım: 1
+İsim: qtoctave, sürüm: 0.10.1, yayım: 1
+İsim: queen, sürüm: 1.1, yayım: 1
+İsim: quickformat, sürüm: 1.1.0, yayım: 1
+İsim: quota, sürüm: 4.0.1, yayım: 1
+İsim: rtkit, sürüm: 0.9, yayım: 1
+İsim: sablotron, sürüm: 1.0.3, yayım: 1
+İsim: sablotron-devel, sürüm: 1.0.3, yayım: 1
+İsim: sablotron-docs, sürüm: 1.0.3, yayım: 1
+İsim: sac, sürüm: 1.3, yayım: 1
+İsim: sane-frontends, sürüm: 1.0.14, yayım: 1
+İsim: sash, sürüm: 3.7, yayım: 1
+İsim: schedtool, sürüm: 1.3.0, yayım: 1
+İsim: scientificpython, sürüm: 2.9.2, yayım: 1
+İsim: scientificpython-devel, sürüm: 2.9.2, yayım: 1
+İsim: scientificpython-docs, sürüm: 2.9.2, yayım: 1
+İsim: scourge-data, sürüm: 0.21.1, yayım: 1
+İsim: sdl-gfx, sürüm: 2.0.24, yayım: 1
+İsim: sdl-gfx-32bit, sürüm: 2.0.24, yayım: 1
+İsim: sdl-gfx-devel, sürüm: 2.0.24, yayım: 1
+İsim: sdl-image, sürüm: 1.2.12, yayım: 1
+İsim: sdl-image-32bit, sürüm: 1.2.12, yayım: 1
+İsim: sdl-image-devel, sürüm: 1.2.12, yayım: 1
+İsim: sdl-mixer, sürüm: 1.2.12, yayım: 1
+İsim: sdl-mixer-32bit, sürüm: 1.2.12, yayım: 1
+İsim: sdl-mixer-devel, sürüm: 1.2.12, yayım: 1
+İsim: sdl-pango, sürüm: 0.1.2, yayım: 1
+İsim: sdl-pango-devel, sürüm: 0.1.2, yayım: 1
+İsim: sdl-sound, sürüm: 1.0.3, yayım: 1
+İsim: sdl-sound-devel, sürüm: 1.0.3, yayım: 1
+İsim: sdl-ttf, sürüm: 2.0.11, yayım: 1
+İsim: sdl-ttf-32bit, sürüm: 2.0.11, yayım: 1
+İsim: sdl-ttf-devel, sürüm: 2.0.11, yayım: 1
+İsim: sdlmame, sürüm: 0.150, yayım: 1
+İsim: secure-delete, sürüm: 3.1, yayım: 1
+İsim: serd, sürüm: 0.18.2, yayım: 1
+İsim: serd-devel, sürüm: 0.18.2, yayım: 1
+İsim: serf, sürüm: 1.3.3, yayım: 1
+İsim: serf-devel, sürüm: 1.3.3, yayım: 1
+İsim: series60-remote, sürüm: 0.4.0, yayım: 1
+İsim: sg3_utils, sürüm: 1.34, yayım: 1
+İsim: sg3_utils-devel, sürüm: 1.34, yayım: 1
+İsim: sgml-common, sürüm: 0.6.3, yayım: 1
+İsim: shared-color-targets, sürüm: 0.1.3, yayım: 1
+İsim: sharutils, sürüm: 4.11.1, yayım: 1
+İsim: shntool, sürüm: 3.0.10, yayım: 1
+İsim: shorten, sürüm: 3.6.1, yayım: 1
+İsim: skanlite, sürüm: 0.9, yayım: 1
+İsim: skey, sürüm: 1.1.5, yayım: 1
+İsim: skey-devel, sürüm: 1.1.5, yayım: 1
+İsim: slf4j, sürüm: 1.6.1, yayım: 1
+İsim: slf4j-docs, sürüm: 1.6.1, yayım: 1
+İsim: slim, sürüm: 1.3.6, yayım: 1
+İsim: smartmontools, sürüm: 6.0, yayım: 1
+İsim: smbldap-tools, sürüm: 0.9.9, yayım: 1
+İsim: smc-music, sürüm: 4.1, yayım: 1
+İsim: smillaenlarger, sürüm: 0.9.0, yayım: 1
+İsim: smolt, sürüm: 1.4.2.2, yayım: 1
+İsim: smp_utils, sürüm: 0.98, yayım: 1
+İsim: smtube, sürüm: 1.8, yayım: 1
+İsim: smw, sürüm: 1.7, yayım: 1
+İsim: snack, sürüm: 2.2.10, yayım: 1
+İsim: snakefood, sürüm: 1.4_20121118, yayım: 1
+İsim: snes9x, sürüm: 1.5.3, yayım: 1
+İsim: snort, sürüm: 2.9.5.3, yayım: 1
+İsim: snort-devel, sürüm: 2.9.5.3, yayım: 1
+İsim: sofia-sip, sürüm: 1.12.11, yayım: 1
+İsim: sofia-sip-devel, sürüm: 1.12.11, yayım: 1
+İsim: sonata, sürüm: 1.6.2.1, yayım: 1
+İsim: soundtouch, sürüm: 1.5.0, yayım: 1
+İsim: soundtouch-devel, sürüm: 1.5.0, yayım: 1
+İsim: speech-dispatcher, sürüm: 0.7.1, yayım: 1
+İsim: speech-dispatcher-devel, sürüm: 0.7.1, yayım: 1
+İsim: speed-dreams, sürüm: 2.0.0, yayım: 1
+İsim: speed-dreams-devel, sürüm: 2.0.0, yayım: 1
+İsim: speedcrunch, sürüm: 0.10.1, yayım: 1
+İsim: speedcrunch-docs, sürüm: 0.10.1, yayım: 1
+İsim: speedtouch-firmware, sürüm: 3.0.1, yayım: 1
+İsim: speex, sürüm: 1.2_rc1, yayım: 1
+İsim: speex-32bit, sürüm: 1.2_rc1, yayım: 1
+İsim: speex-devel, sürüm: 1.2_rc1, yayım: 1
+İsim: sphinx2, sürüm: 0.6, yayım: 1
+İsim: sphinx2-devel, sürüm: 0.6, yayım: 1
+İsim: sphinx2-docs, sürüm: 0.6, yayım: 1
+İsim: spice-protocol, sürüm: 0.8.0, yayım: 1
+İsim: splix, sürüm: 2.0.0_20110720, yayım: 1
+İsim: sshfs, sürüm: 2.4, yayım: 1
+İsim: stardict-essential-turkish, sürüm: 0.2, yayım: 1
+İsim: stlport, sürüm: 5.2.1, yayım: 1
+İsim: stlport-devel, sürüm: 5.2.1, yayım: 1
+İsim: stoken, sürüm: 0.2, yayım: 1
+İsim: stoken-devel, sürüm: 0.2, yayım: 1
+İsim: streamripper, sürüm: 1.64.6, yayım: 1
+İsim: subtitleripper, sürüm: 4, yayım: 1
+İsim: supermodel, sürüm: 0.2a, yayım: 1
+İsim: suspend, sürüm: 1.0, yayım: 1
+İsim: swh-plugins, sürüm: 0.4.15, yayım: 1
+İsim: symmetrica, sürüm: 2.0, yayım: 1
+İsim: symmetrica-devel, sürüm: 2.0, yayım: 1
+İsim: synergy, sürüm: 1.4.4, yayım: 1
+İsim: sysinfo, sürüm: 2.3.1, yayım: 1
+İsim: sysvinit, sürüm: 2.88, yayım: 1
+İsim: sysvinit-tools, sürüm: 2.88, yayım: 1
+İsim: t1lib, sürüm: 5.1.2, yayım: 1
+İsim: t1lib-devel, sürüm: 5.1.2, yayım: 1
+İsim: t1utils, sürüm: 1.34, yayım: 1
+İsim: taglib-extras, sürüm: 1.0.1, yayım: 1
+İsim: taglib-extras-devel, sürüm: 1.0.1, yayım: 1
+İsim: taglib-sharp, sürüm: 2.0.3.7, yayım: 1
+İsim: tap-plugins, sürüm: 0.7.2, yayım: 1
+İsim: tcp-wrappers, sürüm: 7.6, yayım: 1
+İsim: tcp-wrappers-devel, sürüm: 7.6, yayım: 1
+İsim: tecnoballz, sürüm: 0.92, yayım: 1
+İsim: teeworlds, sürüm: 0.6.1, yayım: 1
+İsim: telepathy-butterfly, sürüm: 0.5.15, yayım: 1
+İsim: telepathy-idle, sürüm: 0.1.12, yayım: 1
+İsim: telepathy-sofiasip, sürüm: 0.7.1, yayım: 1
+İsim: telepathy-sofiasip-devel, sürüm: 0.7.1, yayım: 1
+İsim: telepathy-sunshine, sürüm: 2.0, yayım: 1
+İsim: telnet-bsd, sürüm: 1.2, yayım: 1
+İsim: tepsonic, sürüm: 20012012, yayım: 1
+İsim: texmaker, sürüm: 3.2.1, yayım: 1
+İsim: tidy, sürüm: 20101110, yayım: 1
+İsim: tidy-devel, sürüm: 20101110, yayım: 1
+İsim: tig, sürüm: 0.17, yayım: 1
+İsim: timezone, sürüm: 0.0_20120927, yayım: 1
+İsim: timidity, sürüm: 2.14.0, yayım: 1
+İsim: timidity-eawpatches, sürüm: 0.12, yayım: 1
+İsim: timidity-shompatches, sürüm: 0.409, yayım: 1
+İsim: tinyxml, sürüm: 2.6.1, yayım: 1
+İsim: tinyxml-devel, sürüm: 2.6.1, yayım: 1
+İsim: tls, sürüm: 1.6, yayım: 1
+İsim: tls-devel, sürüm: 1.6, yayım: 1
+İsim: tmpwatch, sürüm: 2.10.1, yayım: 1
+İsim: tn5250, sürüm: 0.17.4, yayım: 1
+İsim: tn5250-devel, sürüm: 0.17.4, yayım: 1
+İsim: togl, sürüm: 2.0, yayım: 1
+İsim: togl-devel, sürüm: 2.0, yayım: 1
+İsim: tolua++, sürüm: 1.0.93, yayım: 1
+İsim: tolua++-devel, sürüm: 1.0.93, yayım: 1
+İsim: tomcat-servlet-api, sürüm: 5.5.36, yayım: 1
+İsim: tor, sürüm: 0.2.3.25, yayım: 1
+İsim: torrentinfo, sürüm: 1.0.2, yayım: 1
+İsim: torsocks, sürüm: 1.2, yayım: 1
+İsim: tosla, sürüm: 0.1.6, yayım: 1
+İsim: touchfreeze, sürüm: 0.2.5, yayım: 1
+İsim: traceroute, sürüm: 2.0.18, yayım: 1
+İsim: trackballs-music, sürüm: 1.4, yayım: 1
+İsim: transfig, sürüm: 3.2.5d, yayım: 1
+İsim: translate-toolkit, sürüm: 1.9.0, yayım: 1
+İsim: translate-toolkit-docs, sürüm: 1.9.0, yayım: 1
+İsim: tree, sürüm: 1.6.0, yayım: 1
+İsim: tremulous, sürüm: 1.2.0_beta1, yayım: 1
+İsim: tremulous-data, sürüm: 1.2.0_beta1, yayım: 1
+İsim: trigger, sürüm: 0.6.0, yayım: 1
+İsim: trousers, sürüm: 0.3.9, yayım: 1
+İsim: trousers-devel, sürüm: 0.3.9, yayım: 1
+İsim: ttf2pt1, sürüm: 3.4.4, yayım: 1
+İsim: tunctl, sürüm: 1.5, yayım: 1
+İsim: tuxpaint-stamps, sürüm: 20090628, yayım: 1
+İsim: tv-viewer, sürüm: 0.8.2, yayım: 1
+İsim: tvtime, sürüm: 1.0.2, yayım: 1
+İsim: txt2man, sürüm: 1.5.6, yayım: 1
+İsim: ucpp, sürüm: 1.3.4, yayım: 1
+İsim: ucpp-devel, sürüm: 1.3.4, yayım: 1
+İsim: udftools, sürüm: 1.0.0_beta3, yayım: 1
+İsim: uget, sürüm: 1.10.3, yayım: 1
+İsim: umplayer, sürüm: 0.6.8, yayım: 1
+İsim: unalz, sürüm: 0.65, yayım: 1
+İsim: unarj, sürüm: 2.65, yayım: 1
+İsim: uniconvertor, sürüm: 1.1.5, yayım: 1
+İsim: unionfs-utils, sürüm: 0.2.1, yayım: 1
+İsim: unionfs-utils-devel, sürüm: 0.2.1, yayım: 1
+İsim: unixODBC, sürüm: 2.3.1, yayım: 1
+İsim: unixODBC-devel, sürüm: 2.3.1, yayım: 1
+İsim: unixODBC-docs, sürüm: 2.3.1, yayım: 1
+İsim: unpaper, sürüm: 0.3, yayım: 1
+İsim: unpaper-docs, sürüm: 0.3, yayım: 1
+İsim: unshield, sürüm: 0.6, yayım: 1
+İsim: unshield-devel, sürüm: 0.6, yayım: 1
+İsim: uqm, sürüm: 0.6.2, yayım: 1
+İsim: uqm-content, sürüm: 0.7.0, yayım: 1
+İsim: uqm-voice, sürüm: 0.7.0, yayım: 1
+İsim: uqm_3domusic, sürüm: 0.7.0, yayım: 1
+İsim: urbanterrorHD, sürüm: 4.2.012, yayım: 1
+İsim: urlview, sürüm: 0.9, yayım: 1
+İsim: usbmuxd, sürüm: 1.0.8, yayım: 1
+İsim: usbmuxd-devel, sürüm: 1.0.8, yayım: 1
+İsim: utempter, sürüm: 0.5.5, yayım: 1
+İsim: utempter-devel, sürüm: 0.5.5, yayım: 1
+İsim: vbam, sürüm: 1.8.0, yayım: 1
+İsim: vbetool, sürüm: 1.1, yayım: 1
+İsim: virt-wrapper, sürüm: 0.1.1, yayım: 1
+İsim: vixie-cron, sürüm: 4.1, yayım: 1
+İsim: volumeicon, sürüm: 0.5.0, yayım: 1
+İsim: xdelta3, sürüm: 3.0z, yayım: 1 (build problems)
+İsim: xdvik, sürüm: 22.84.16, yayım: 1 (build problems)
+İsim: xhfs, sürüm: 3.2.6, yayım: 1 (cannot find it github) comment groni:(look here https://github.com/pisilinux/PisiLinux/blob/c57ff2785bda2c4eb1c8d67b0dba813e6f6a8efb/hardware/disk/hfsutils/pspec.xml and follow the package name)
+İsim: xjadeo, sürüm: 0.7.6, yayım: 1 (no rebuild needed, just added)

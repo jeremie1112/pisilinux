@@ -1,0 +1,90 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>farstream</Name>
+        <Homepage>http://www.freedesktop.org/wiki/Software/Farstream</Homepage>
+        <Packager>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Packager>
+        <License>LGPLv2</License>
+        <IsA>library</IsA>
+        <Summary>Farstream (formerly Farsight) - Audio/Video Communications Framework</Summary>
+        <Description>Farstream (formerly Farsight) - Audio/Video Communications Framework</Description>
+        <Archive sha1sum="e6d9388aaf44e06b7cb4e0297a8e4c53fe16be63" type="targz">https://freedesktop.org/software/farstream/releases/farstream/farstream-0.2.8.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>libnice-devel</Dependency>
+            <Dependency>valgrind</Dependency>
+            <Dependency>gobject-introspection-devel</Dependency>
+            <Dependency>gstreamer-devel</Dependency>
+            <Dependency>gstreamer-devel</Dependency>
+            <Dependency>gst-plugins-base-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>farstream</Name>
+        <RuntimeDependencies>
+            <Dependency>glib2</Dependency>
+            <Dependency>libnice</Dependency>
+            <Dependency>gstreamer</Dependency>
+            <Dependency>gst-plugins-base</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="library">/usr/lib/farstream-0.2</Path>
+            <Path fileType="library">/usr/lib/gstreamer-0.1</Path>
+            <Path fileType="library">/usr/lib/libfarstream-0.2*</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="data">/usr/share/farstream</Path>
+            <Path fileType="data">/usr/share/gir-1.0</Path>
+            <Path fileType="data">/usr/share</Path>
+        </Files>
+    </Package>
+    
+    <Package>
+        <Name>farstream-devel</Name>
+        <Summary>Development files for farstream</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">farstream</Dependency>
+            <Dependency>gstreamer-devel</Dependency>
+            <Dependency>gst-plugins-base-devel</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-09-10</Date>
+            <Version>0.2.8</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-05-15</Date>
+            <Version>0.2.8</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Kamil Atlı</Name>
+            <Email>suvari@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>0.2.7</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-03-30</Date>
+            <Version>0.2.7</Version>
+            <Comment>First release</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

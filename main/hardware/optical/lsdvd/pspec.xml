@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>lsdvd</Name>
+        <Homepage>http://untrepid.com/lsdvd</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>app:console</IsA>
+        <Summary>Small application for listing the contents of DVDs</Summary>
+        <Description>lsdvd is a small application which lists the contents of DVDs to your terminal.</Description>
+        <Archive sha1sum="aa44b8c33c66df2a131e469988ced2b11ebf9aab" type="targz">mirrors://sourceforge/lsdvd/lsdvd-0.17.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>libdvdread-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <!--<Patch level="1">lsdvd-0.16-types.patch</Patch>-->
+            <!--<Patch level="1">lsdvd-0.16-strip-trailing-spaces.patch</Patch>-->
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>lsdvd</Name>
+        <RuntimeDependencies>
+            <Dependency>libdvdread</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-08-18</Date>
+            <Version>0.17</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-04-07</Date>
+            <Version>0.17</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Kamil Atlı</Name>
+            <Email>suvari@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>0.17</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-01-26</Date>
+            <Version>0.17</Version>
+            <Comment>First release</Comment>
+            <Name>Stefan Gronewold</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

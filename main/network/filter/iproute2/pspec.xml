@@ -1,0 +1,90 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>iproute2</Name>
+        <Homepage>http://linux-net.osdl.org/index.php/Iproute2</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>app:console</IsA>
+        <Summary>Kernel routing and traffic control utilities</Summary>
+        <Description>Iproute2 is a collection of utilites for controlling TCP/IP networking and traffic control in Linux.</Description>
+        <Archive sha1sum="33de969d5f3308f1c69ebff04536347574e85f48" type="tarxz">https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-4.15.0.tar.xz</Archive>
+        <BuildDependencies>
+            <Dependency versionFrom="1.6.0">iptables-devel</Dependency>
+            <Dependency>db-devel</Dependency>
+            <Dependency>elfutils</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch>0001-make-iproute2-fhs-compliant.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>iproute2</Name>
+        <RuntimeDependencies>
+            <Dependency versionFrom="1.6.0">iptables</Dependency>
+            <Dependency>db</Dependency>
+            <Dependency>elfutils</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="config">/etc</Path>
+            <Path fileType="executable">/sbin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/share/tc</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="data">/usr/share/bash-completion</Path>
+            <Path fileType="data">/var/lib</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="6">
+            <Date>2018-08-13</Date>
+            <Version>4.15.0</Version>
+            <Comment>Rebuild New T.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="5">
+            <Date>2018-06-09</Date>
+            <Version>4.14.0</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="4">
+            <Date>2017-01-29</Date>
+            <Version>4.9.0</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2016-10-19</Date>
+            <Version>4.8.0</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>4.4.0</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-03-05</Date>
+            <Version>4.4.0</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

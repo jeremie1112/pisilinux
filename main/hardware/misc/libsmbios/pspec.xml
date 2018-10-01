@@ -1,0 +1,93 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>libsmbios</Name>
+        <Homepage>http://linux.dell.com/libsmbios/main/index.html</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <License>OSL-2.0</License>
+        <IsA>library</IsA>
+        <IsA>app:console</IsA>
+        <Summary>Provide access to (SM)BIOS information</Summary>
+        <Description>libsmbios project aims towards providing access to as much BIOS information as possible. It does this by providing a library of functions that can be used as well as sample binaries.</Description>
+        <Archive sha1sum="84bc52f51bc1ecdcc392f402c5ceef2221bd56b9" type="targz">https://codeload.github.com/dell/libsmbios/tar.gz/v2.4.2</Archive>
+        <BuildDependencies>
+              <Dependency>libxml2-devel</Dependency>
+              <Dependency>chrpath</Dependency>
+              <Dependency>doxygen</Dependency>
+          </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>libsmbios</Name>
+        <RuntimeDependencies>
+            <Dependency>libgcc</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="config">/etc</Path>
+            <Path fileType="executable">/usr/sbin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man/man3</Path>
+            <Path fileType="man">/usr/share/man/man1</Path>
+            <Path fileType="data">/usr/share/smbios-utils</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libsmbios-devel</Name>
+        <Summary>Development files for libsmbios</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">libsmbios</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include/Makefile.am</Path>
+            <Path fileType="header">/usr/include/smbios</Path>
+            <Path fileType="header">/usr/include/smbios_c</Path>
+            <Path fileType="library">/usr/lib/pkgconfig</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="5">
+            <Date>2018-09-01</Date>
+            <Version>2.4.2</Version>
+            <Comment>Rebuild New T.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="4">
+            <Date>2017-12-11</Date>
+            <Version>2.3.3</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-04-29</Date>
+            <Version>2.3.3</Version>
+            <Comment>new release</Comment>
+            <Name>Ali Algül</Name>
+            <Email>aligulle3801@gmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>2.3.0</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-04-01</Date>
+            <Version>2.3.0</Version>
+            <Comment>First release</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

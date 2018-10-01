@@ -1,0 +1,98 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>libspectre</Name>
+        <Homepage>http://libspectre.freedesktop.org</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>library</IsA>
+        <Summary>A small library for rendering Postscript documents</Summary>
+        <Description>libspectre is a small library for rendering Postscript documents. It provides a convenient easy to use API for handling and rendering Postscript documents.</Description>
+        <Archive sha1sum="322499a5ba8874bc0cc20426b0e429024bf1a573" type="targz">http://libspectre.freedesktop.org/releases/libspectre-0.2.8.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>ghostscript-devel</Dependency>
+            <!-- Cairo is needed in tests only! -->
+            <Dependency>cairo-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch>libspectre-0.2.7-gs918.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>libspectre</Name>
+        <RuntimeDependencies>
+            <Dependency>ghostscript</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libspectre-devel</Name>
+        <Summary>Development files for libspectre</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">libspectre</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+            <Path fileType="data">/usr/lib32/pkgconfig</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libspectre-32bit</Name>
+        <PartOf>emul32</PartOf>
+        <Summary>32-bit shared libraries for libspectre</Summary>
+        <BuildType>emul32</BuildType>
+        <BuildDependencies>
+            <Dependency>ghostscript-32bit</Dependency>
+            <Dependency>cairo-32bit</Dependency>
+        </BuildDependencies>
+        <RuntimeDependencies>
+            <Dependency release="current">libspectre</Dependency>
+            <Dependency>ghostscript-32bit</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib32</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-08-08</Date>
+            <Version>0.2.8</Version>
+            <Comment>Rebuild New T.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-03-02</Date>
+            <Version>0.2.8</Version>
+            <Comment>Version Bump.</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>0.2.7</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2015-11-02</Date>
+            <Version>0.2.7</Version>
+            <Comment>First release</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

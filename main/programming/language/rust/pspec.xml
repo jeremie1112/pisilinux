@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>rust</Name>
+        <Homepage>https://www.rust-lang.org/en-US/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>MIT</License>
+        <IsA>app</IsA>
+        <Summary>Systems programming language focused on safety, speed and concurrency</Summary>
+        <Description>Systems programming language focused on safety, speed and concurrency</Description>
+        <Archive sha1sum="54e4a19cd7eea451fea568644e4a3e264efcf36a" type="targz">https://static.rust-lang.org/dist/rustc-1.27.0-src.tar.gz</Archive>
+        <AdditionalFiles>
+            <AdditionalFile target="config.toml">bootstrap-config.toml</AdditionalFile>
+        </AdditionalFiles>
+        <BuildDependencies>
+            <Dependency>perl</Dependency>
+            <Dependency>cmake</Dependency>
+            <Dependency>ninja</Dependency>
+            <Dependency>ocaml</Dependency>
+            <Dependency>valgrind</Dependency>
+            <Dependency>lldb-devel</Dependency>
+            <Dependency>zlib-devel</Dependency>
+            <Dependency>glibc-devel</Dependency>
+            <Dependency>libxml2-devel</Dependency>
+            <Dependency>openssl-devel</Dependency>
+            <Dependency>libssh2-devel</Dependency>
+            <Dependency>curl-devel</Dependency>
+            <Dependency>python-devel</Dependency>
+            <Dependency>libffi-devel</Dependency>
+            <Dependency>llvm-clang-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+<!--             <Patch>0001-librustc_llvm-build-Force-link-against-libffi.patch</Patch> -->
+        </Patches>
+       
+    </Source>
+
+    <Package>
+        <Name>rust</Name>
+        
+        <RuntimeDependencies>
+            <Dependency>curl</Dependency>
+            <Dependency>zlib</Dependency>
+            <Dependency>libgcc</Dependency>
+            <Dependency>libssh2</Dependency>
+            <Dependency>openssl</Dependency>
+        </RuntimeDependencies>
+        
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="config">/etc</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="data">/usr/share</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="data">/usr/share/zsh</Path>
+        </Files>
+        
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-08-30</Date>
+            <Version>1.27.0</Version>
+            <Comment>Version Bump.</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2018-04-17</Date>
+            <Version>1.25.0</Version>
+            <Comment>Version Bump</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2017-11-13</Date>
+            <Version>1.21.0</Version>
+            <Comment>Version Bump</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2017-09-26</Date>
+            <Version>1.20.0</Version>
+            <Comment>First release</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

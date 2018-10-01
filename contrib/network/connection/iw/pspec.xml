@@ -1,0 +1,70 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>iw</Name>
+        <Homepage>https://wireless.wiki.kernel.org/en/users/documentation/iw</Homepage>
+        <Packager>
+            <Name>İbrahim KARAGÜZEL</Name>
+            <Email>karaguzelibrahim@gmail.com</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>app:console</IsA>
+        <Summary>nl80211-based configuration utility for wireless devices</Summary>
+        <Description>iw is a new nl80211 based CLI configuration utility for wireless devices using the mac80211 kernel stack.</Description>
+        <Archive sha1sum="dc39351639bff32b6f0d9645e72b08353bb42320" type="targz">https://www.kernel.org/pub/software/network/iw/iw-4.3.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>libnl-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>iw</Name>
+        <RuntimeDependencies>
+            <Dependency>libnl</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/sbin</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="5">
+            <Date>2016-02-18</Date>
+            <Version>4.3</Version>
+            <Comment>Version bump, built with docker</Comment>
+            <Name>İbrahim KARAGÜZEL</Name>
+            <Email>karaguzelibrahim@gmail.com</Email>
+        </Update>
+        <Update release="4">
+            <Date>2015-02-16</Date>
+            <Version>3.17</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2014-02-06</Date>
+            <Version>3.13</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Yusuf Aydemir</Name>
+            <Email>yusuf.aydemir@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2013-03-16</Date>
+            <Version>3.8</Version>
+            <Comment>V.Bump</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>osman.erkan@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2012-08-28</Date>
+            <Version>3.6</Version>
+            <Comment>First release</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>osman.erkan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

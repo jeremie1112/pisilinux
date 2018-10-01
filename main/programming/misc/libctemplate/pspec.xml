@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>libctemplate</Name>
+        <Homepage>https://github.com/OlafvdSpek/ctemplate</Homepage>
+        <Packager>
+            <Name>Pisi Linux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>BSD</License>
+        <IsA>library</IsA>
+        <Summary>CTemplate is a simple but powerful template language for C++.</Summary>
+        <Description>It emphasizes separating logic from presentation: it is impossible to embed application logic in this template language.</Description>
+        <Archive sha1sum="be6ba46bf64287887f9b806719a851af50f79acd" type="targz">https://github.com/OlafvdSpek/ctemplate/archive/ctemplate-2.3.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>glibc-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>libctemplate</Name>
+        <RuntimeDependencies>
+            <Dependency>libgcc</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="binary">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libctemplate-devel</Name>
+        <Summary>Development files for libctemplate</Summary>
+        <RuntimeDependencies>
+         <Dependency release="current">libctemplate</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-09-09</Date>
+            <Version>2.3</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Kamil Atlı</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-04-30</Date>
+            <Version>2.3</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Kamil Atlı</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>2.3</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2015-11-22</Date>
+            <Version>2.3</Version>
+            <Comment>First release</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

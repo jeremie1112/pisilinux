@@ -1,0 +1,9 @@
+<PISI>
+    <Source>
+        <Name>smplayer-skins</Name>
+        <Summary xml:lang="tr">SMPlayer temalar</Summary>
+        <Description xml:lang="tr">SMPlayer temalar</Description>
+    </Source>
+</PISI>
+
+<!-- By PiSiDo 2.0.0 -->

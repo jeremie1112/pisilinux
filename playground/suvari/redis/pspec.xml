@@ -1,0 +1,58 @@
+<PISI>
+    <Source>
+        <Name>redis</Name>
+        <Homepage>http://redis.io</Homepage>
+        <Packager>
+            <Name>Kamil Atlı</Name>
+            <Email>suvari@pisilinux.org</Email>
+        </Packager>
+        <License>BSD</License>
+        <IsA>library</IsA>
+        <Summary>Advanced key-value store</Summary>
+        <Description>Redis is an open source, BSD licensed, advanced key-value cache and store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets, sorted sets, bitmaps and hyperloglogs.</Description>
+        <Archive sha1sum="c75fd32900187a7c9f9d07c412ea3b3315691c65" type="targz">http://download.redis.io/releases/redis-3.0.0.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>gperftools-devel</Dependency>
+<!--             <Dependency>jemalloc-devel</Dependency> -->
+        </BuildDependencies>
+        <Patches>
+<!--             <Patch level="1">redis.conf-sane-defaults.patch</Patch> -->
+        </Patches>
+    </Source>
+    <Package>
+        <Name>redis</Name>
+        <Files>
+            <Path fileType="data">/usr/share</Path>
+            <Path fileType="config">/etc</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="executable">/usr/bin</Path>
+        </Files>
+        <AdditionalFiles>
+            <AdditionalFile target="/usr/share/redis/redis.conf" permission="0644" group="root" owner="root">redis.conf</AdditionalFile>
+            <AdditionalFile target="/usr/share/redis/redis.desktop" permission="0644" group="root" owner="root">redis.desktop</AdditionalFile>
+            <AdditionalFile target="/usr/share/redis/service.py" permission="0644" group="root" owner="root">service.py</AdditionalFile>
+        </AdditionalFiles>
+    </Package>
+    
+    <Package>
+        <Name>redis-devel</Name>
+        <Summary>Development files for redis</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">redis</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="library">/usr/lib/pkgconfig</Path>
+        </Files>
+    </Package>
+    
+    <History>
+        <Update release="1">
+            <Date>2015-04-19</Date>
+            <Version>3.0.0</Version>
+            <Comment>First release</Comment>
+            <Name>Kamil Atlı</Name>
+            <Email>suvari@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

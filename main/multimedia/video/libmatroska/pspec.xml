@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>libmatroska</Name>
+        <Homepage>http://www.matroska.org/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>library</IsA>
+        <Summary>Extensible multimedia container format based on EBML</Summary>
+        <Description>Matroska is an extensible open standard Audio/Video container. It aims to become THE standard of multimedia container formats. Matroska is usually found as .mkv files (matroska video) and .mka files (matroska audio).</Description>
+        <Archive sha1sum="bd0908f6e8c2207a566855d15d8c6488f5ac4349" type="tarbz2">https://dl.matroska.org/downloads/libmatroska/libmatroska-1.4.5.tar.bz2</Archive>
+        <BuildDependencies>
+            <Dependency>libebml-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>libmatroska</Name>
+        <RuntimeDependencies>
+            <Dependency>libebml</Dependency>
+            <Dependency>libgcc</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libmatroska-devel</Name>
+        <Summary>Development files for libmatroska</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">libmatroska</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="header">/usr/lib/pkgconfig</Path>
+            <!-- FIXME: Remove this if not necessary -->
+            <Path fileType="man">/usr/share/man/man3</Path>
+        </Files>
+    </Package>
+
+    <History>
+         <Update release="4">
+            <Date>2018-08-03</Date>
+            <Version>1.4.5</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-02-03</Date>
+            <Version>1.4.5</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>1.4.2</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2015-08-20</Date>
+            <Version>1.4.2</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

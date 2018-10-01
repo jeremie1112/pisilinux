@@ -1,0 +1,216 @@
+<PISI>
+    <Source>
+        <Name>oxygen</Name>
+        <Homepage>https://projects.kde.org/projects/kde/workspace/oxygen</Homepage>
+        <Packager>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Packager>
+        <License>LGPL</License>
+        <Summary>KDE Oxygen style</Summary>
+        <Description>KDE Oxygen style</Description>
+        <BuildDependencies>
+            <Dependency versionFrom="5.7.1">qt5-base-devel</Dependency>
+            <Dependency versionFrom="5.7.1">qt5-declarative-devel</Dependency>
+            <Dependency versionFrom="5.7.1">qt5-x11extras</Dependency>
+            <Dependency>kcmutils-devel</Dependency>
+            <Dependency>frameworkintegration-devel</Dependency>
+            <Dependency>kcompletion-devel</Dependency>
+            <Dependency>kconfig-devel</Dependency>
+            <Dependency>kguiaddons-devel</Dependency>
+            <Dependency>ki18n-devel</Dependency>
+            <Dependency>kservice-devel</Dependency>
+            <Dependency>kwidgetsaddons-devel</Dependency>
+            <Dependency>kwindowsystem-devel</Dependency>
+            <Dependency>cairo-devel</Dependency>
+            <Dependency>libxcb-devel</Dependency>
+            <Dependency>kwayland-devel</Dependency>
+            <Dependency>gtk3-devel</Dependency>
+            <Dependency>kdoctools-devel</Dependency>
+            <Dependency>kdecorations-devel</Dependency>
+            <Dependency>plasma-workspace-devel</Dependency>
+            <Dependency>extra-cmake-modules</Dependency>
+        </BuildDependencies>
+        <Archive sha1sum="566a82f382dc8601c31a81b17f4af4d6ee7d872b" type="tarxz">mirrors://kde/stable/plasma/5.12.5/oxygen-5.12.5.tar.xz</Archive>
+    </Source>
+    <Package>
+        <Name>oxygen</Name>
+        <RuntimeDependencies>
+            <Dependency>ki18n</Dependency>
+            <Dependency>libgcc</Dependency>
+            <Dependency>libxcb</Dependency>
+            <Dependency>kconfig</Dependency>
+            <Dependency versionFrom="5.7.1">qt5-base</Dependency>
+            <Dependency>kguiaddons</Dependency>
+            <Dependency>kcompletion</Dependency>
+            <Dependency>kcoreaddons</Dependency>
+            <Dependency>kdecorations</Dependency>
+            <Dependency>kwindowsystem</Dependency>
+            <Dependency versionFrom="5.7.1">qt5-x11extras</Dependency>
+            <Dependency>kconfigwidgets</Dependency>
+            <Dependency>kwidgetsaddons</Dependency>
+            <Dependency>kwayland</Dependency>
+            <Dependency>frameworkintegration</Dependency>
+            <Dependency>kcmutils</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="data">/usr/share/sounds</Path>
+            <Path fileType="data">/usr/share/icons</Path>
+            <Path fileType="data">/usr/share/locale</Path>
+            <Path fileType="data">/usr/share/plasma</Path>
+            <Path fileType="data">/usr/share/kstyle</Path>
+            <Path fileType="data">/usr/share/kservices5</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="21">
+            <Date>2018-08-11</Date>
+            <Version>5.12.5</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="20">
+            <Date>2018-05-14</Date>
+            <Version>5.12.5</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="19">
+            <Date>2018-04-23</Date>
+            <Version>5.12.4</Version>
+            <Comment>Version bump</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="18">
+            <Date>2018-04-06</Date>
+            <Version>5.12.4</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="17">
+            <Date>2018-03-22</Date>
+            <Version>5.12.3</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="16">
+            <Date>2018-02-03</Date>
+            <Version>5.11.5</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="15">
+            <Date>2017-12-15</Date>
+            <Version>5.11.4</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="14">
+            <Date>2017-11-08</Date>
+            <Version>5.11.3</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="13">
+            <Date>2017-11-02</Date>
+            <Version>5.11.2</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="12">
+            <Date>2017-10-14</Date>
+            <Version>5.11.0</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="11">
+            <Date>2017-09-13</Date>
+            <Version>5.10.5</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="10">
+            <Date>2017-06-21</Date>
+            <Version>5.10.2</Version>
+            <Comment>version bump</Comment>
+            <Name>Ali Algul</Name>
+            <Email>aligulle3801@gmail.com</Email>
+        </Update>
+        <Update release="9">
+            <Date>2017-03-01</Date>
+            <Version>5.8.5</Version>
+            <Comment>Rebuild for new Toolchain.</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+        <Update release="8">
+            <Date>2017-01-01</Date>
+            <Version>5.8.5</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+        <Update release="7">
+            <Date>2016-11-26</Date>
+            <Version>5.8.4</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Stefan Gronewold(groni)</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+        <Update release="6">
+            <Date>2016-11-03</Date>
+            <Version>5.8.3</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Stefan Gronewold</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+        <Update release="5">
+            <Date>2016-10-20</Date>
+            <Version>5.8.2</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Stefan Gronewold</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+        <Update release="4">
+            <Date>2016-10-06</Date>
+            <Version>5.8.0</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Stefan Gronewold</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2016-07-30</Date>
+            <Version>5.7.2</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Yusuf Aydemir</Name>
+            <Email>yusuf.aydemir@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-05-18</Date>
+            <Version>5.6.4</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Burak Ertürk</Name>
+            <Email>burakerturk@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-04-08</Date>
+            <Version>5.6.2</Version>
+            <Comment>First release</Comment>
+            <Name>Yusuf Aydemir</Name>
+            <Email>yusuf.aydemir@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

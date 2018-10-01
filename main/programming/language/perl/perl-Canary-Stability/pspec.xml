@@ -1,0 +1,60 @@
+<PISI>
+    <Source>
+        <Name>perl-Canary-Stability</Name>
+        <Homepage>https://metacpan.org/release/Canary-Stability</Homepage>
+        <Packager>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv1</License>
+        <IsA>library</IsA>
+        <Summary>CPAN/Canary-Stability - canary to check perl compatability for schmorp's modules</Summary>
+        <Description>CPAN/Canary-Stability - canary to check perl compatability for schmorp's modules</Description>
+        <Archive sha1sum="9d3c5476081da9200ef59cacafea55bd011b6d8a" type="targz">https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/Canary-Stability-2012.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>perl</Dependency>
+        </BuildDependencies>
+    </Source>
+    
+    <Package>
+        <Name>perl-Canary-Stability</Name>
+        <Summary>CPAN/Canary-Stability - canary to check perl compatability for schmorp's modules</Summary>
+        <RuntimeDependencies>
+            <Dependency>perl</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="all">/</Path>
+        </Files>
+    </Package>
+    
+    <History>
+        <Update release="4">
+            <Date>2018-07-26</Date>
+            <Version>2012</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-01-24</Date>
+            <Version>2012</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>2011</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-03-27</Date>
+            <Version>2011</Version>
+            <Comment>First Release</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>alsa-firmware</Name>
+        <Homepage>http://www.alsa-project.org</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <License>GPLv2+</License>
+        <License>LGPLv2+</License>
+        <License>BSD</License>
+        <IsA>data</IsA>
+        <Summary>Firmware for several ALSA-supported sound cards</Summary>
+        <Description>alsa-firmware contains the firmware binaries for a number of sound cards supported by the ALSA project.</Description>
+        <Archive sha1sum="414f0b03ea4337c3bd4a9e689f33040173cba529" type="tarbz2">ftp://ftp.alsa-project.org/pub/firmware/alsa-firmware-1.0.29.tar.bz2</Archive>
+    </Source>
+
+    <Package>
+        <Name>alsa-firmware</Name>
+        <Files>
+            <Path fileType="data">/usr/share/alsa/firmware</Path>
+            <Path fileType="data">/lib/firmware</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-08-03</Date>
+            <Version>1.0.29</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Kamil Atlı</Name>
+            <Email>suvari@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-02-18</Date>
+            <Version>1.0.29</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Kamil Atlı</Name>
+            <Email>suvari@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>1.0.29</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2015-03-04</Date>
+            <Version>1.0.29</Version>
+            <Comment>First release</Comment>
+            <Name>Hakan Yıldız</Name>
+            <Email>hknyldz93@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

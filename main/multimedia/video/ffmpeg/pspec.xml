@@ -1,0 +1,210 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>ffmpeg</Name>
+        <Homepage>http://ffmpeg.org</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <License>GPLv3</License>
+        <License>LGPLv2</License>
+        <License>LGPLv3</License>
+        <IsA>app:console</IsA>
+        <Summary>A command-line tool to record, convert and stream audio and video</Summary>
+        <Description>FFmpeg is a complete solution to record, convert and stream audio and video.</Description>
+        <Archive sha1sum="cb2d672a0c08607658175fc21e3d7d10e82a52d4" type="targz">https://ffmpeg.org/releases/ffmpeg-4.0.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>freetype-devel</Dependency>
+            <Dependency>faac-devel</Dependency>
+            <Dependency>lame-devel</Dependency>
+            <Dependency>x264-devel</Dependency>
+            <Dependency>x265-devel</Dependency>
+            <Dependency>libva-devel</Dependency>
+            <Dependency>libsdl2-devel</Dependency>
+            <Dependency>libvpx-devel</Dependency>
+            <Dependency>libass-devel</Dependency>
+            <Dependency>libopus-devel</Dependency>
+            <Dependency>alsa-lib-devel</Dependency>
+            <Dependency>libvdpau-devel</Dependency>
+            <Dependency>libtheora-devel</Dependency>
+            <Dependency>libvorbis-devel</Dependency>
+            <Dependency>gnutls-devel</Dependency>
+            <Dependency>celt-devel</Dependency>
+            <Dependency>gsm-devel</Dependency>
+            <Dependency>libbluray-devel</Dependency>
+            <Dependency>opencore-amr-devel</Dependency>
+            <Dependency>libmodplug-devel</Dependency>
+            <Dependency>pulseaudio-libs-devel</Dependency>
+<!--             <Dependency>openjpeg-devel</Dependency> -->
+            <Dependency>openjpeg2-devel</Dependency>
+            <Dependency>frei0r-plugins-devel</Dependency>
+            <Dependency>rtmpdump-devel</Dependency>
+            <Dependency>schroedinger-devel</Dependency>
+            <Dependency>speex-devel</Dependency>
+            <Dependency>yasm-devel</Dependency>
+            <Dependency>libv4l-devel</Dependency>
+            <Dependency>pkgconfig</Dependency>
+            <Dependency>libvo-amrwbenc-devel</Dependency>
+            <Dependency>libvo-aacenc-devel</Dependency>
+            <Dependency>xvid-devel</Dependency>
+            <Dependency>libdc1394-devel</Dependency>
+            <Dependency>libnut-devel</Dependency>
+            <Dependency>libcdio-paranoia-devel</Dependency>
+            <Dependency>libXv-devel</Dependency>
+            <Dependency>libidn-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch>chromium.patch</Patch>
+<!--             <Patch>fs56089.patch</Patch> -->
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>ffmpeg</Name>
+        <RuntimeDependencies>
+            <Dependency>gsm</Dependency>
+            <Dependency>celt</Dependency>
+            <Dependency>faac</Dependency>
+            <Dependency>lame</Dependency>
+            <Dependency>x264</Dependency>
+            <Dependency>x265</Dependency>
+            <Dependency>xvid</Dependency>
+            <Dependency>zlib</Dependency>
+            <Dependency>bzip2</Dependency>
+            <Dependency>speex</Dependency>
+            <Dependency>libva</Dependency>
+            <Dependency>libXv</Dependency>
+            <Dependency>gnutls</Dependency>
+            <Dependency>libX11</Dependency>
+            <Dependency>libnut</Dependency>
+            <Dependency>libsdl2</Dependency>
+            <Dependency>libv4l</Dependency>
+            <Dependency>libvpx</Dependency>
+            <Dependency>libxcb</Dependency>
+            <Dependency>libass</Dependency>
+            <Dependency>libopus</Dependency>
+            <Dependency>libXext</Dependency>
+            <Dependency>alsa-lib</Dependency>
+            <Dependency>freetype</Dependency>
+            <Dependency>libvdpau</Dependency>
+            <Dependency>openjpeg2</Dependency>
+            <Dependency>rtmpdump</Dependency>
+            <Dependency>libbluray</Dependency>
+            <Dependency>libdc1394</Dependency>
+            <Dependency>libtheora</Dependency>
+            <Dependency>libvorbis</Dependency>
+            <Dependency>fontconfig</Dependency>
+            <Dependency>libmodplug</Dependency>
+            <Dependency>libvo-aacenc</Dependency>
+            <Dependency>opencore-amr</Dependency>
+            <Dependency>schroedinger</Dependency>
+            <Dependency>libvo-amrwbenc</Dependency>
+            <Dependency>pulseaudio-libs</Dependency>
+            <Dependency>libcdio-paranoia</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="config">/etc</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="data">/usr/share/ffmpeg</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>ffmpeg-devel</Name>
+        <Summary>Development files for ffmpeg</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">ffmpeg</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+        </Files>
+    </Package>
+
+
+    <History>
+        <Update release="11">
+            <Date>2018-08-03</Date>
+            <Version>4.0</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="10">
+            <Date>2018-05-19</Date>
+            <Version>4.0</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="9">
+            <Date>2018-05-05</Date>
+            <Version>4.0</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+         <Update release="8">
+            <Date>2018-02-18</Date>
+            <Version>3.4.2</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="7">
+            <Date>2018-02-18</Date>
+            <Version>3.3.6</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="6">
+            <Date>2018-01-13</Date>
+            <Version>3.3.6</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="5">
+            <Date>2018-01-04</Date>
+            <Version>3.3.6</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="4">
+            <Date>2017-02-17</Date>
+            <Version>3.2.4</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2016-06-13</Date>
+            <Version>3.0.2</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>2.8.6</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-02-16</Date>
+            <Version>2.8.6</Version>
+            <Comment>First release</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

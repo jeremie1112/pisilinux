@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>yali-theme-pisilinux</Name>
+        <Homepage>http://www.pisilinux.org</Homepage>
+        <Packager>
+            <Name>Pisi Linux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>data</IsA>
+        <Summary>PiSi Linux theme files for YALI</Summary>
+        <Description>yali-branding includes PiSi Linux theme files for YALI(Yet Another Linux Installer).</Description>
+        <Archive sha1sum="ec9981bf0898b98585ae6bf96a437efa44f3519a" type="targz">https://github.com/forYali/yali-theme-pisilinux/archive/0.4.2.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>qt5-base</Dependency>
+        </BuildDependencies>
+        <!--Patches>
+            <Patch>rcc.patch</Patch>
+        </Patches-->
+    </Source>
+
+    <Package>
+        <Name>yali-theme-pisilinux</Name>
+        <Files>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="data">/usr/share/yali/theme</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-08-13</Date>
+            <Version>0.4.2</Version>
+            <Comment>Rebuild New T.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-04-04</Date>
+            <Version>0.4.2</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2017-03-22</Date>
+            <Version>0.4.1</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="1">
+            <Date>2017-03-15</Date>
+            <Version>0.4</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

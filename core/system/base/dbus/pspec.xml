@@ -1,0 +1,151 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>dbus</Name>
+        <Homepage>http://dbus.freedesktop.org/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <License>AFL-2.1</License>
+        <IsA>service</IsA>
+        <Summary>A message bus system, a simple way for applications to talk to each other</Summary>
+        <Description>D-Bus supplies both a system daemon (for events such as "new hardware device added" or "printer queue changed") and a per-user-login-session daemon (for general IPC needs among user applications). Also, the message bus is built on top of a general one-to-one message passing framework, which can be used by any two apps to communicate directly (without going through the message bus daemon). Currently the communicating applications are on one computer, but TCP/IP option is available and remote support planned.</Description>
+        <Archive sha1sum="8e50e46796e8297eaa633da3a61cdc79a500e34a" type="targz">https://dbus.freedesktop.org/releases/dbus/dbus-1.12.8.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>expat-devel</Dependency>
+            <Dependency>libX11-devel</Dependency>
+            <!--<Dependency>doxygen</Dependency>-->
+            <Dependency>libcap-ng-devel</Dependency>
+            <Dependency>autoconf-archive</Dependency>
+            <!--<Dependency>xmlto</Dependency>-->
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>dbus</Name>
+        <RuntimeDependencies>
+            <Dependency>expat</Dependency>
+            <Dependency>libcap-ng</Dependency>
+            <!--libX11 dbus-x11 paketi ayrılınca buradan silinecek-->
+            <!--<Dependency>libX11</Dependency>-->
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="config">/etc/dbus-1</Path>
+            <Path fileType="config">/usr/lib/tmpfiles.d/dbus.conf</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="library">/usr/libexec</Path>
+            <Path fileType="data">/usr/share/dbus-1</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="data">/usr/share/xml</Path>
+            <Path fileType="data">/run/dbus</Path>
+            <Path fileType="data">/var/lib/dbus</Path>
+            <Path fileType="data">/lib/systemd/system</Path>
+        </Files>
+        <AdditionalFiles>
+             <AdditionalFile owner="root" permission="0644" target="/usr/lib/tmpfiles.d/dbus.conf">tmpfiles.conf</AdditionalFile>
+        </AdditionalFiles>
+        <Provides>
+             <COMAR script="package.py">System.Package</COMAR>
+        </Provides>
+    </Package>
+
+    <Package>
+        <Name>dbus-x11</Name>
+        <PartOf>x11.util</PartOf>
+        <RuntimeDependencies>
+            <Dependency>libX11</Dependency>
+            <Dependency>dbus</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/dbus-launch</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>dbus-devel</Name>
+        <PartOf>system.devel</PartOf>
+        <Summary>Development files for dbus</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">dbus</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+            <Path fileType="data">/usr/lib32/pkgconfig</Path>
+            <Path fileType="library">/usr/lib/dbus-1.0/include</Path>
+            <Path fileType="man">/usr/share/man/man3</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>dbus-32bit</Name>
+        <PartOf>emul32</PartOf>
+        <Summary>32-bit shared libraries for dbus</Summary>
+        <BuildType>emul32</BuildType>
+        <BuildDependencies>
+            <Dependency>expat-32bit</Dependency>
+        </BuildDependencies>
+        <RuntimeDependencies>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib32</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="7">
+            <Date>2018-07-23</Date>
+            <Version>1.12.8</Version>
+            <Comment>Version bump</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="6">
+            <Date>2018-07-15</Date>
+            <Version>1.11.8</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="5">
+            <Date>2017-01-25</Date>
+            <Version>1.11.8</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="4">
+            <Date>2016-09-14</Date>
+            <Version>1.11.0</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Ergün Salman</Name>
+            <Email>poyraz76@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2016-09-14</Date>
+            <Version>1.11.0</Version>
+            <Comment>Fix Release</Comment>
+            <Name>Ergün Salman</Name>
+            <Email>poyraz76@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-04-27</Date>
+            <Version>1.11.0</Version>
+            <Comment>Release Bump</Comment>
+            <Name>PisiLinux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-03-04</Date>
+            <Version>1.11.0</Version>
+            <Comment>First release</Comment>
+            <Name>Hakan Yıldız</Name>
+            <Email>hknuldz93@gmail.com</Email>
+        </Update>
+    </History>
+  </PISI>

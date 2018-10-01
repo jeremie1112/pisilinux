@@ -1,0 +1,147 @@
+<PISI>
+    <Source>
+        <Name>kreport</Name>
+        <Homepage>http://www.kexi-project.org/</Homepage>
+        <Packager>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2+</License>
+        <IsA>app:console</IsA>
+        <Summary>A framework for creation and generation of reports in multiple formats</Summary>
+        <Description>A framework for creation and generation of reports in multiple formats</Description>
+        <BuildDependencies>
+            <Dependency>extra-cmake-modules</Dependency>
+            <Dependency>qt5-base-devel</Dependency>
+            <Dependency>qt5-declarative-devel</Dependency>
+            <Dependency>qt5-webkit-devel</Dependency>
+            <Dependency>qt5-linguist</Dependency>
+            <Dependency>kproperty-devel</Dependency>
+            <Dependency>kconfig-devel</Dependency>
+            <Dependency>kguiaddons-devel</Dependency>
+            <Dependency>kwidgetsaddons-devel</Dependency>
+            <Dependency>kcoreaddons-devel</Dependency>
+            <Dependency>marble-devel</Dependency>
+            <Dependency>ki18n-devel</Dependency>
+        </BuildDependencies>
+        <Archive sha1sum="d029cd1c6719952696121cd4e5095db4d09c794d" type="tarxz">https://download.kde.org/stable/kreport/src/kreport-3.1.0.tar.xz</Archive>
+    </Source>
+
+    <Package>
+        <Name>kreport</Name>
+        <Summary>A framework for creation and generation of reports in multiple formats</Summary>
+        <RuntimeDependencies>
+            <Dependency>libgcc</Dependency>
+            <Dependency>marble</Dependency>
+            <Dependency>kconfig</Dependency>
+            <Dependency>qt5-base</Dependency>
+            <Dependency>kproperty</Dependency>
+            <Dependency>qt5-webkit</Dependency>
+            <Dependency>kcoreaddons</Dependency>
+            <Dependency>kwidgetsaddons</Dependency>
+            <Dependency>qt5-declarative</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="data">/usr/share</Path>
+            <Path fileType="library">/usr/lib/libKReport3*</Path>
+            <Path fileType="library">/usr/lib/cmake</Path>
+            <Path fileType="library">/usr/lib/qt5</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>kreport-devel</Name>
+        <Summary>Developments files for kreport.</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">kreport</Dependency>
+            <Dependency>qt5-base-devel</Dependency>
+            <Dependency>kproperty-devel</Dependency>
+            <Dependency>qt5-webkit-devel</Dependency>
+            <Dependency>qt5-declarative-devel</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib/pkgconfig</Path>
+            <Path fileType="header">/usr/include</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="11">
+            <Date>2018-09-10</Date>
+            <Version>3.1.0</Version>
+            <Comment>Version Bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="10">
+            <Date>2018-08-11</Date>
+            <Version>3.0.2</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+        <Update release="9">
+            <Date>2018-05-15</Date>
+            <Version>3.0.2</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="8">
+            <Date>2018-04-25</Date>
+            <Version>3.0.2</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="7">
+            <Date>2018-03-23</Date>
+            <Version>3.0.2</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="6">
+            <Date>2018-02-03</Date>
+            <Version>3.0.2</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="5">
+            <Date>2017-12-16</Date>
+            <Version>3.0.2</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="4">
+            <Date>2017-10-16</Date>
+            <Version>3.0.2</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-07-14</Date>
+            <Version>3.0.2</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2017-06-30</Date>
+            <Version>3.0.1</Version>
+            <Comment>Release bump.</Comment>
+            <Name>Kamil Atlı</Name>
+            <Email>suvari@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2016-12-31</Date>
+            <Version>3.0.0</Version>
+            <Comment>First release</Comment>
+            <Name>Alihan Öztürk</Name>
+            <Email>alihan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>

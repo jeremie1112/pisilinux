@@ -1,0 +1,100 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>libmikmod</Name>
+        <Homepage>http://mikmod.raphnet.net/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>LGPLv2.1</License>
+        <IsA>library</IsA>
+        <Summary>A library to play a wide range of module formats</Summary>
+        <Description>libmikmod is a portable sound library, which used to be packaged with the MikMod module player, but is now released independentely. It is capable of playing samples as well as module files, using the OSS driver for output, as well as Alsa and EsounD. Supported module format include mod, s3m, xm, it, med, mtm and 669, to name a few.</Description>
+        <Archive sha1sum="addcc17354691d981ea5d9adb4c29194b9d2156c" type="targz">http://sourceforge.net/projects/mikmod/files/libmikmod/3.3.11.1/libmikmod-3.3.11.1.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>audiofile-devel</Dependency>
+            <Dependency>alsa-lib-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>libmikmod</Name>
+        <RuntimeDependencies>            
+            <Dependency>pulseaudio-libs</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc/libmikmod</Path>
+            <Path fileType="info">/usr/share/info</Path>
+            <Path fileType="man">/usr/share/man</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libmikmod-devel</Name>
+        <Summary>Development files for libmikmod</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">libmikmod</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/libmikmod-config</Path>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/share/aclocal</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libmikmod-32bit</Name>
+        <PartOf>emul32</PartOf>
+        <Summary>32-bit shared libraries for libmikmod</Summary>
+        <BuildType>emul32</BuildType>
+        <BuildDependencies>
+            <Dependency>audiofile-32bit</Dependency>
+            
+            <Dependency>alsa-lib-32bit</Dependency>
+            <Dependency>pulseaudio-libs-32bit</Dependency>
+        </BuildDependencies>
+        <RuntimeDependencies>
+            <Dependency release="current">libmikmod</Dependency>
+            <Dependency>audiofile-32bit</Dependency>
+            <Dependency>alsa-lib-32bit</Dependency>
+            <Dependency>pulseaudio-libs-32bit</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib32</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="4">
+            <Date>2018-08-29</Date>
+            <Version>3.3.11.1</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="3">
+            <Date>2017-02-18</Date>
+            <Version>3.3.10</Version>
+            <Comment>Version Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="2">
+            <Date>2016-06-09</Date>
+            <Version>3.3.7</Version>
+            <Comment>Release Bump</Comment>
+            <Name>Pisi Linux Community</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2015-10-19</Date>
+            <Version>3.3.7</Version>
+            <Comment>First release</Comment>
+            <Name>Stefan Gronewold</Name>
+            <Email>groni@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>
